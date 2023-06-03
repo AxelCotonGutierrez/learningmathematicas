@@ -17,7 +17,7 @@ title: Mathematĭca
 name: Mathematĭca
 description: 
   Blog dedicado a juegos para aprender Matemáticas
-baseurl: /learningmathematicas
+baseurl:"" /learningmathematicas
 github_username:  AxelCotonGutierrez
 
 # jekyll-paginate configuration
