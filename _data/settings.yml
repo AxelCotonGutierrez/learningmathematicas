@@ -13,7 +13,7 @@ menu:
         link: /projects/Infantil
         submenu:
         - name: Matemáticas
-          link: /projects/MInfantil
+          link: /projects/Infantil/MInfantil
       - name: Primaria
         link: /projects/ourlegacy
   - name: Entradas
