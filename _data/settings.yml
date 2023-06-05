@@ -11,7 +11,7 @@ menu:
     submenu:
       - name: Infantil
         link: /projects/Infantil
-        submenu:
+        subsubmenu:
         - name: Matemáticas
           link: /projects/Infantil/MInfantil
       - name: Primaria
