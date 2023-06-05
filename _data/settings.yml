@@ -1,33 +1,28 @@
 # Change 'comments' to true for Disqus comments
 disqus:
   comments: true
-  disqus_shortname: 'apham'
+  disqus_shortname: 'learningmathematicas'
 
 # If you are not using Google Analytics, please change 'google-ID' to an empty string
-google-ID: 'UA-91332049-1'
+google-ID: ''
 
 menu: 
-  - name: Featured Projects
+  - name: Nivel Educativo
     submenu:
-      - name: MicroBam
+      - name: Infantil
         link: /projects/microbam
-      - name: OurLegacy
+      - name: Primaria
         link: /projects/ourlegacy
-  - name: Posts
+  - name: Entradas
     link: /
-  - name: Tags
+  - name: Etiquetas
     link: /tags
-  - name: About
+  - name: Blog
     link: /about
-  - name: Follow me
+  - name: Siguenos
     submenu:
       - name: GitHub
         icon: github
-        link: http://github.com/alainpham
-      - name: LinkedIn
-        icon: linkedin-square
-        link: http://www.linkedin.com/in/alainpham
-      - name: Twitter
-        icon: twitter
-        link: https://twitter.com/koint
+        link: https://github.com/AxelCotonGutierrez
+     
     
