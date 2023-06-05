@@ -1,3 +1,4 @@
+--- 
 layout: default 
 title: Mathematĭca
 description: Blog de Matemáticas para Educación de Personas Adultas
@@ -12,7 +13,7 @@ comments: true
     <span>Anterior</span>
   {% endif %}
   | <span class="page_number">
-    Página: {{ paginator.page }} of {{ paginator.total_pages }}
+    Page: {{ paginator.page }} of {{ paginator.total_pages }}
   </span> |
   {% if paginator.next_page %}
     <a href="{{ paginator.next_page_path | relative_url }}">Next</a>
@@ -26,8 +27,7 @@ comments: true
     <div class="list-group-item">
       <a href="{{ post.url | relative_url }}">
         <h4 class="list-group-item-heading">{{ post.title }}</h4>
-   	<h6 class="list-group-item-heading">{{ post.published | date: '%B %d, %Y' }} | (Última actualización: {{ post.date | date: '%B %d, %Y' }})</h6>
-
+     <h6 class="list-group-item-heading">{{ post.published | date: 'd de %B de %Y' }} | (Última actualización: {{ post.date | date: 'd de %B de %Y' }})</h6>
       </a>
       {% for tag in post.tags %}
         <a class="label label-default" href="/tags/#{{ tag | slugify }}">{{ tag }}</a>
@@ -50,7 +50,7 @@ comments: true
     <span>Anterior</span>
   {% endif %}
   | <span class="page_number">
-    Página: {{ paginator.page }} of {{ paginator.total_pages }}
+    Page: {{ paginator.page }} of {{ paginator.total_pages }}
   </span> |
   {% if paginator.next_page %}
     <a href="{{ paginator.next_page_path | relative_url }}">Next</a>
