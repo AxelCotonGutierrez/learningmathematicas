@@ -10,7 +10,7 @@ menu:
   - name: Nivel Educativo
     submenu:
       - name: Infantil
-        link: /projects/microbam
+        link: /projects/Infantil
       - name: Primaria
         link: /projects/ourlegacy
   - name: Entradas
