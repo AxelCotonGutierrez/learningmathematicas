@@ -7,7 +7,7 @@
 
 	{% if page.id %}
 	<p>
-		<strong>{{ page.published | date: '%B %d, %Y' }}</strong> ( last updated : {{ page.date | date: '%B %d, %Y' }} )
+		<strong>{{ page.published | date: '%d/%m/%Y' }} (última actualización: {{ page.date | date: '%d/%m/%Y' }})
 		<br>
 		{% for tag in page.tags %}
 			<a class="label label-default" href="/tags/#{{ tag | slugify }}">{{ tag }}</a>
@@ -21,17 +21,17 @@
 	</p>
 	{% endif %}
 	<hr>
-	<h1>Abstract</h1>
+	<h1>Resumen</h1>
 	{% endif %}
 
 	{{ content }}
 
 
 	{% if page.id %}
-	<p>Originally published {{ page.published | date: '%B %d, %Y' }}
-    <br> Latest update {{ page.date | date: '%B %d, %Y' }}</p>
+	<p>Originalmente publicado {{ page.published | date: '%B %d, %Y' }}
+    <br> Ùltima actualización {{ page.date | date: '%B %d, %Y' }}</p>
 
-    <p><strong>Related posts :</strong></p>
+    <p><strong>Entradas relacionadas :</strong></p>
         <ul>
 	    {% for allpost in site.posts %}
 			  {% for tag in page.tags %}
