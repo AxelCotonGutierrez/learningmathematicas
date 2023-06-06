@@ -8,8 +8,9 @@ google-ID: 'G-K1CHGHX488'
 
 menu: 
   - name: Infantil
-    link: /projects/Infantil
     submenu:
+        name: Infantil
+        link: /projects/Infantil
       - name: Matemáticas
         link: /projects/Infantil/MInfantil.html
       - name: Primaria
