@@ -52,5 +52,15 @@
 	</div>
 	{% include footer.html %}
 	{% include analytics.html %}
+
+	
+	{% if post.excerpt %}
+	<!-- Mostrar el extracto -->
+	{{ post.excerpt }}
+
+	<!-- Mostrar el enlace "Leer más" -->
+	<a href="{{ post.url }}">Leer más</a>
+	{% endif %}
+	
 </body>
 </html>
