@@ -36,14 +36,11 @@ exclude:
 include: ["_pages"]
 permalink: /posts/:title/
 excerpt_separator: <!--more-->
-author: 
+excerpt_link: '<span class="read-more">Leer más</span>'
+author: Axel
 
-# Configuración de internacionalización (i18n)
-i18n:
-  lang: es
-  permalink: /:title/
-  excerpt_separator: "<!--more-->"
-  excerpt_link: '<span class="read-more">Leer más</span>'
+
+ 
   
 host: 0.0.0.0
 
