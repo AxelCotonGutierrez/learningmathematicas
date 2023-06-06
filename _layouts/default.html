@@ -28,11 +28,11 @@
 
 	<!-- Mostrar el enlace "Leer más" -->
 	<a href="{{ page.url }}">Leer más</a>
-	{% endif %}
-	{% endif %}
-
+	{% else %}
+	<!-- Mostrar el contenido completo -->
 	{{ content }}
-
+	{% endif %}
+	{% endif %}
 
 	{% if page.id %}
 	<p>Originalmente publicado {{ page.published | date: '%d/%m/%Y' }}
@@ -61,4 +61,5 @@
 	{% include analytics.html %}
 </body>
 </html>
+
 
