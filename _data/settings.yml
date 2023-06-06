@@ -27,10 +27,6 @@ menu:
     link: /tags
   - name: Blog
     link: /about
-  - name: Siguenos
-    submenu:
-      - name: GitHub
-        icon: github
-        link: https://github.com/AxelCotonGutierrez
+  
      
     
