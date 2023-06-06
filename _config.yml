@@ -36,7 +36,6 @@ exclude:
 include: ["_pages"]
 permalink: /posts/:title/
 excerpt_separator: <!--more-->
-excerpt_link: '<span class="Read-more">Leer más</span>'
 author: Axel
 
 
