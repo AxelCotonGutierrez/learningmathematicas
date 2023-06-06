@@ -7,6 +7,13 @@ disqus:
 google-ID: 'G-K1CHGHX488'
 
 menu: 
+  - name: Infantil
+    link: /projects/Infantil
+    submenu:
+      - name: Matemáticas
+        link: /projects/Infantil/MInfantil
+      - name: Primaria
+        link: /projects/ourlegacy
   - name: Nivel Educativo
     submenu:
       - name: Infantil
