@@ -13,7 +13,7 @@
 			<a class="label label-default" href="/tags/#{{ tag | slugify }}">{{ tag }}</a>
 		{% endfor %}
     </p>
-	{% if page.github %}
+	{%if page.github %}
 	<p>
     	<a href="{{ page.github }}" class="btn btn-default">
 		    <i class="fa fa-github fa-2x"></i>  {{ page.github }}
@@ -22,17 +22,11 @@
 	{% endif %}
 	<hr>
 	<h1>Resumen</h1>
-	{% if page.excerpt %}
-	<!-- Mostrar el extracto -->
-	{{ page.excerpt }}
+	
+	{% endif %}
 
-	<!-- Mostrar el enlace "Leer más" -->
-	<a href="{{ page.url }}">Leer más</a>
-	{% else %}
-	<!-- Mostrar el contenido completo -->
 	{{ content }}
-	{% endif %}
-	{% endif %}
+
 
 	{% if page.id %}
 	<p>Originalmente publicado {{ page.published | date: '%d/%m/%Y' }}
@@ -59,6 +53,10 @@
 	</div>
 	{% include footer.html %}
 	{% include analytics.html %}
+
+	
+	
+	
 </body>
 </html>
 
