@@ -13,7 +13,7 @@
 			<a class="label label-default" href="/tags/#{{ tag | slugify }}">{{ tag }}</a>
 		{% endfor %}
     </p>
-	{%if page.github %}
+	{% if page.github %}
 	<p>
     	<a href="{{ page.github }}" class="btn btn-default">
 		    <i class="fa fa-github fa-2x"></i>  {{ page.github }}
@@ -22,12 +22,12 @@
 	{% endif %}
 	<hr>
 	<h1>Resumen</h1>
-	{% if post.excerpt %}
+	{% if page.excerpt %}
 	<!-- Mostrar el extracto -->
-	{{ post.excerpt }}
+	{{ page.excerpt }}
 
 	<!-- Mostrar el enlace "Leer más" -->
-	<a href="{{ post.url }}">Leer más</a>
+	<a href="{{ page.url }}">Leer más</a>
 	{% endif %}
 	{% endif %}
 
@@ -59,9 +59,6 @@
 	</div>
 	{% include footer.html %}
 	{% include analytics.html %}
-
-	
-	
-	
 </body>
 </html>
+
