@@ -11,7 +11,7 @@ menu:
     link: /projects/Infantil
     submenu:
       - name: Matemáticas
-        link: /projects/Infantil/MInfantil
+        link: /projects/Infantil/MInfantil.html
       - name: Primaria
         link: /projects/ourlegacy
   - name: Nivel Educativo
