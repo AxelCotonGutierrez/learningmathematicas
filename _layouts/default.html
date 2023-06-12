@@ -13,13 +13,38 @@
 			<a class="label label-default" href="/learningmathematicas/tags/#{{ tag | slugify }}">{{ tag }}</a>
 		{% endfor %}
     </p>
-	{%if page.github %}
-	<p>
-    	<a href="{{ page.github }}" class="btn btn-default">
-		    <i class="fa fa-github fa-2x"></i>  {{ page.github }}
-			</a>
-	</p>
-	{% endif %}
+	{% if page.github %}
+  <p>
+    <a href="{{ page.github }}" class="btn btn-default">
+      <i class="fa fa-github fa-2x"></i>  {{ page.github }}
+    </a>
+  </p>
+{% endif %}
+
+{% if page.github2 %}
+  <p>
+    <a href="{{ page.github2 }}" class="btn btn-default">
+      <i class="fa fa-github fa-2x"></i>  {{ page.github2 }}
+    </a>
+  </p>
+{% endif %}
+
+{% if page.github3 %}
+  <p>
+    <a href="{{ page.github3 }}" class="btn btn-default">
+      <i class="fa fa-github fa-2x"></i>  {{ page.github3 }}
+    </a>
+  </p>
+{% endif %}
+
+{% if page.github4 %}
+  <p>
+    <a href="{{ page.github4 }}" class="btn btn-default">
+      <i class="fa fa-github fa-2x"></i>  {{ page.github4 }}
+    </a>
+  </p>
+{% endif %}
+
 	<hr>
 	<h1>Resumen</h1>
 	
