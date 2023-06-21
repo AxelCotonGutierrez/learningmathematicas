@@ -1,5 +1,8 @@
-# learningmathematicas
-¿Qué es este blog y cuál es su objetivo?
+# Blog learningmathematicas
+
+![Juego de la recta numérica](/assets/images/top.jpg)
+
+<h1>¿Qué es este blog y cuál es su objetivo?</h1>
 
 Cuando se lee este blog, se puede tener la impresión de que está dirigido a la enseñanza de Ciencias a niños en primaria y jóvenes en secundaria. Sin embargo, la realidad difiere considerablemente.
 
