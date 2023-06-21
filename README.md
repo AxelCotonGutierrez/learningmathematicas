@@ -1,6 +1,6 @@
 # Blog learningmathematicas
 
-![Juego de la recta numérica](/assets/images/top.jpg)
+![Logo del Blog de Axel Cotón Gutiérrez](/assets/images/top.jpg)
 
 <h1>¿Qué es este blog y cuál es su objetivo?</h1>
 
