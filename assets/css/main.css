@@ -161,6 +161,13 @@ h3:before {
 	color: #ffffff;
 }
 
+.responsive-table {
+	display: grid;
+	grid-template-columns: 1fr; /* Una columna en dispositivos móviles */
+	gap: 20px; /* Espacio entre las columnas */
+	text-align: center; /* Centra el contenido */
+  }
+
 /* Estilos para dispositivos móviles */
 @media (max-width: 767px) {
     body {
@@ -168,7 +175,9 @@ h3:before {
         margin-bottom: 4em;
         padding-top: 2em;
     }
-
+	.responsive-table {
+    grid-template-columns: repeat(3, 1fr); /* Tres columnas en pantallas más grandes */
+  	}
     .container {
         /* Ajusta el tamaño de fuente para dispositivos móviles */
         font-size: 1em;
