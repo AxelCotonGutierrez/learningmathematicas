@@ -161,18 +161,43 @@ h3:before {
 	color: #ffffff;
 }
 
-@media ( max-width : 767px) {
-	.navbar-default .navbar-nav .open .dropdown-menu>li>a {
-		color: #ffffff;
-	}
-	.navbar-default .navbar-nav .open .dropdown-menu>li>a:hover,
-		.navbar-default .navbar-nav .open .dropdown-menu>li>a:focus {
-		color: #ffffff;
-	}
-	.navbar-default .navbar-nav .open .dropdown-menu>.active>a,
-		.navbar-default .navbar-nav .open .dropdown-menu>.active>a:hover,
-		.navbar-default .navbar-nav .open .dropdown-menu>.active>a:focus {
-		color: #ffffff;
-		background-color: #12421f;
-	}
+/* Estilos para dispositivos móviles */
+@media (max-width: 767px) {
+    body {
+        /* Ajusta el padding y margin para dispositivos móviles */
+        margin-bottom: 4em;
+        padding-top: 2em;
+    }
+
+    .container {
+        /* Ajusta el tamaño de fuente para dispositivos móviles */
+        font-size: 1em;
+    }
+
+    .jumbotron h1 {
+        /* Ajusta el tamaño de fuente del encabezado para dispositivos móviles */
+        font-size: 2em;
+    }
+
+    /* Ajusta el estilo del footer para dispositivos móviles */
+    .footer {
+        position: relative;
+        padding: 1em;
+        height: auto;
+        text-align: center;
+    }
+
+    .footer-links {
+        text-align: center;
+        float: none;
+        margin: 0;
+    }
+
+    .navbar-default .navbar-nav .open .dropdown-menu>li>a,
+    .navbar-default .navbar-nav .open .dropdown-menu>li>a:hover,
+    .navbar-default .navbar-nav .open .dropdown-menu>li>a:focus {
+        /* Ajusta el color de los elementos del menú desplegable en dispositivos móviles */
+        color: #000000;
+        background-color: transparent; /* Cambia el fondo a transparente */
+    }
 }
