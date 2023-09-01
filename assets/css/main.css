@@ -175,25 +175,9 @@ h3:before {
         margin-bottom: 4em;
         padding-top: 2em;
     }
-	.responsive-container {
-		display: flex;
-		flex-direction: column;
-	  }
-	  
-	  .responsive-row {
-		display: flex;
-		flex-direction: row;
-		flex-wrap: wrap;
-		justify-content: center;
-		margin-bottom: 20px; /* Espacio entre las filas */
-	  }
-	  
-	  .responsive-item {
-		flex: 1;
-		padding: 10px; /* Espacio entre los elementos */
-		text-align: center;
-		max-width: 300px; /* Ancho máximo de cada elemento */
-	  }
+	.responsive-table {
+    grid-template-columns: repeat(3, 1fr); /* Tres columnas en pantallas más grandes */
+  	}
     .container {
         /* Ajusta el tamaño de fuente para dispositivos móviles */
         font-size: 1em;
