@@ -19,14 +19,14 @@ menu:
     submenu:
       - name: Infantil
         link: /projects/Infantil
-      - name: Primaria
-        link: /projects/ourlegacy
   - name: Entradas
     link: /
   - name: Etiquetas
     link: /tags
   - name: Blog
     link: /about
-  
-     
+  - name: Utilidades
+    submenu:
+      - name: Glosario
+        link: https://axelcotongutierrez.github.io/GlosarioCT/
     
