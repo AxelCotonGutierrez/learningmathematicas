@@ -19,7 +19,7 @@ menu:
     submenu:
       - name: Infantil
         link: /projects/Infantil
-      - name: Infantil
+      - name: Primaria
         link: /projects/Primaria/Primaria.html
   - name: Entradas
     link: /
