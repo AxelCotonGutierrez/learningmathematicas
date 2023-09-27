@@ -12,7 +12,7 @@ menu:
       - name: Infantil
         link: /projects/Infantil
       - name: Primaria
-        link: /projects/Primaria/Primaria.html
+        link: /projects/Primaria
   - name: Entradas
     link: /
   - name: Etiquetas
