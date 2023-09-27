@@ -13,8 +13,6 @@ menu:
         link: /projects/Infantil
       - name: Matemáticas
         link: /projects/Infantil/MInfantil.html
-      - name: Primaria
-        link: /projects/ourlegacy
   - name: Nivel Educativo
     submenu:
       - name: Infantil
