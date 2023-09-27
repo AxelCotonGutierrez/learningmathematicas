@@ -19,6 +19,8 @@ menu:
     submenu:
       - name: Infantil
         link: /projects/Infantil
+      - name: Infantil
+        link: /projects/Primaria
   - name: Entradas
     link: /
   - name: Etiquetas
