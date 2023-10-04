@@ -199,7 +199,7 @@ h3:before {
     .navbar-default .navbar-nav .open .dropdown-menu>li>a:hover,
     .navbar-default .navbar-nav .open .dropdown-menu>li>a:focus {
         /* Ajusta el color de los elementos del menú desplegable en dispositivos móviles */
-        color: #EFF419;
+        color: #FFFFFF;
         background-color: transparent; /* Cambia el fondo a transparente */
     }
 
