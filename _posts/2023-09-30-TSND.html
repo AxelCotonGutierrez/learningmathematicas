@@ -278,9 +278,16 @@ function displayResult() {
   const resultDiv = document.createElement("div");
   resultDiv.innerHTML = resultMessage;
 
-  // Reemplaza el formulario con el resultado
-  quizForm.innerHTML = "";
-  quizForm.appendChild(resultDiv);
+  // Agrega el resultado debajo del formulario
+quizForm.insertAdjacentElement("afterend", resultDiv);
+
+// Agrega un botón de reinicio debajo del resultado
+const resetButton = document.createElement("button");
+  resetButton.innerHTML = "Reiniciar Test";
+  resetButton.addEventListener("click", function () {
+    location.reload();
+  });
+  quizForm.insertAdjacentElement("afterend", resetButton);
 }
 </script>
 
