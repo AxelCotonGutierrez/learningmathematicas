@@ -279,15 +279,18 @@ function displayResult() {
   resultDiv.innerHTML = resultMessage;
 
   // Agrega el resultado debajo del formulario
-quizForm.insertAdjacentElement("afterend", resultDiv);
+  quizForm.insertAdjacentElement("afterend", resultDiv);
 
 // Agrega un botón de reinicio debajo del resultado
-const resetButton = document.createElement("button");
+  const resetButton = document.createElement("button");
   resetButton.innerHTML = "Reiniciar Test";
   resetButton.addEventListener("click", function () {
     location.reload();
   });
   quizForm.insertAdjacentElement("afterend", resetButton);
+
+  // Agrega un salto de línea entre los botones de reinicio y enviar
+  quizForm.insertAdjacentHTML("beforeend", "<br>");
 }
 </script>
 
