@@ -24,132 +24,265 @@ tags: [Primaria, ESO, ESPA, ESPAD, Matemáticas, Teoría, Sistema Numérico Deci
 <h1>TEST SOBRE EL SISTEMA NUMÉRICO DECIMAL</h1>
 
 
-    <form id="quiz-form">
-        <!-- Pregunta 1 -->
-        <label for="question1"><span style="color: #2b00fe;"><b> 1. ¿Qué son los números en la vida diaria?</b></span></label><br>
-        <input type="radio" name="question1" value="a">a) Letras de un idioma.<br>
-        <input type="radio" name="question1" value="b">b) Etiquetas para contar y medir cantidades.<br>
-        <input type="radio" name="question1" value="c">c) Herramientas para construir palabras.<br>
-        <input type="radio" name="question1" value="d">d) Colores para representar cosas.<br><br>
+<form id="quiz-form">
+    
+</form>
 
-        <!-- Pregunta 2 -->
-        <label for="question2"><span style="color: #2b00fe;"><b>2. ¿Cuántos dígitos existen en el sistema de numeración decimal?</b></span></label><br>
-        <input type="radio" name="question2" value="a">a) 20<br>
-        <input type="radio" name="question2" value="b">b) 5<br>
-        <input type="radio" name="question2" value="c">c) 10<br>
-        <input type="radio" name="question2" value="d">d) 100<br><br>
+  <script>
+  // Define an array of 20 questions
+  const questions = [
+  {
+    question: "¿Qué son los números en la vida diaria?",
+    options: [
+      "a. Letras de un idioma.",
+      "b. Etiquetas para contar y medir cantidades.",
+      "c. Herramientas para construir palabras.",
+      "d. Colores para representar cosas."
+    ],
+    answer: "b",
+  },
+  {
+    question: "¿Cuántos dígitos existen en el sistema de numeración decimal?",
+    options: [
+      "a. 20",
+      "b. 5",
+      "c. 10",
+      "d. 100"
+    ],
+    answer: "c",
+  },
+  {
+    question: "¿Qué significa 'decimal' en el sistema de numeración decimal?",
+    options: [
+      "a. Basado en 100.",
+      "b. Basado en 10.",
+      "c. Basado en 1.",
+      "d. Basado en 50."
+    ],
+    answer: "b",
+  },
+  {
+    question: "¿Cuál es el valor de un dígito en el lugar de las unidades de millar?",
+    options: [
+      "a. 1",
+      "b. 10",
+      "c. 100",
+      "d. 1000"
+    ],
+    answer: "d",
+  },
+  {
+    question: "¿Qué representa cada diez unidades de millar?",
+    options: [
+      "a. Una decena de millar.",
+      "b. Una centena de millar.",
+      "c. Una unidad de millar.",
+      "d. Una unidad."
+    ],
+    answer: "a",
+  },
+  {
+    question: "¿Qué sistema de numeración utilizamos en la vida cotidiana?",
+    options: [
+      "a. Sistema binario.",
+      "b. Sistema octal.",
+      "c. Sistema hexadecimal.",
+      "d. Sistema decimal."
+    ],
+    answer: "d",
+  },
+  {
+    question: "¿Cuál es el valor de un dígito en el lugar de las centenas de millón?",
+    options: [
+      "a. 10 000 000",
+      "b. 1 000 000",
+      "c. 100 000 000",
+      "d. 1 000 000 000"
+    ],
+    answer: "c",
+  },
+  {
+    question: "¿Cuántas centenas de millar hay en un millón?",
+    options: [
+      "a. 1",
+      "b. 10",
+      "c. 100",
+      "d. 1000"
+    ],
+    answer: "b",
+  },
+  {
+    question: "¿Qué es la notación posicional en el sistema de numeración decimal?",
+    options: [
+      "a. Una forma de escribir números con palabras.",
+      "b. Una forma de representar números con símbolos especiales.",
+      "c. Una forma de distinguir unidades, decenas, centenas y más.",
+      "d. Una forma de escribir números en forma de fracciones."
+    ],
+    answer: "c",
+  },
+  {
+    question: "¿Qué representa el valor intrínseco de una cifra?",
+    options: [
+      "a) La cantidad que expresa aisladamente",
+      "b) La ausencia de cantidad",
+      "c) La posición de la cifra",
+      "d) El valor en función de la posición"
+    ],
+    answer: "a",
+  },
+  {
+    question: "¿Qué es el valor posicional de una cifra?",
+    options: [
+      "a) La cantidad que expresa aisladamente",
+      "b) La ausencia de cantidad",
+      "c) La posición de la cifra",
+      "d) El valor en función de la posición"
+    ],
+    answer: "d",
+  },
+  {
+    question: "¿Cómo se llama la posición que ocupa una cifra en un número?",
+    options: [
+      "a) Lugar",
+      "b) Orden",
+      "c) Rango",
+      "d) Grado"
+    ],
+    answer: "b",
+  },
+  {
+    question: "¿Cómo se obtiene el valor posicional de una cifra en el sistema decimal?",
+    options: [
+      "a) Sumando",
+      "b) Dividiendo",
+      "c) Multiplicando por potencias de 10",
+      "d) Restando"
+    ],
+    answer: "c",
+  },
+  {
+    question: "¿Qué es el sistema largo en los sistemas de numeración?",
+    options: [
+      "a) El sistema común en la mayoría de los países de habla hispana",
+      "b) El sistema más utilizado en los Estados Unidos",
+      "c) El sistema común en España",
+      "d) El sistema utilizado en Asia"
+    ],
+    answer: "c",
+  },
+  {
+    question: "¿En el sistema corto, un 'billón' equivale a cuántos millones?",
+    options: [
+      "a) 100 millones",
+      "b) 1 millón",
+      "c) 1000 millones",
+      "d) 1 000 000 millones"
+    ],
+    answer: "c",
+  },
+  {
+    question: "¿Cómo se llama la forma de escribir un número como suma de los valores de sus cifras?",
+    options: [
+      "a. Forma polinómica.",
+      "b. Forma compleja.",
+      "c. Forma fractal.",
+      "d. Forma geométrica."
+    ],
+    answer: "a",
+  }
+];
 
-        <!-- Pregunta 3 -->
-        <label for="question3"><span style="color: #2b00fe;"><b>3. ¿Qué significa "decimal" en el sistema de numeración decimal?</b></span></label><br>
-        <input type="radio" name="question3" value="a">a) Basado en 100.<br>
-        <input type="radio" name="question3" value="b">b) Basado en 10.<br>
-        <input type="radio" name="question3" value="c">c) Basado en 1.<br>
-        <input type="radio" name="question3" value="d">d) Basado en 50.<br><br>
+  
+let selectedQuestions = [];
 
+function selectRandomQuestions() {
+  // Reorganiza el array de preguntas al azar
+  for (let i = questions.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [questions[i], questions[j]] = [questions[j], questions[i]];
+  }
 
-        <!-- Pregunta 4 -->
-        <label for="question4"><span style="color: #2b00fe;"><b>4. ¿Cuál es el valor de un dígito en el lugar de las unidades de millar?</b></span></label><br>
-        <input type="radio" name="question4" value="a">a) 1<br>
-        <input type="radio" name="question4" value="b">b) 10<br>
-        <input type="radio" name="question4" value="c">c) 100<br>
-        <input type="radio" name="question4" value="d">d) 1000<br><br>
+  // Elige las primeras 10 preguntas para el test
+  selectedQuestions = questions.slice(0, 10);
+}
 
+function displayQuestions() {
+  const quizForm = document.getElementById("quiz-form");
 
-        <!-- Pregunta 5 -->
-        <label for="question5"><span style="color: #2b00fe;"><b>5.	¿Qué representa cada diez unidades de millar?</b></span></label><br>
-        <input type="radio" name="question5" value="a">a) Una decena de millar.<br>
-        <input type="radio" name="question5" value="b">b) Una centena de millar.<br>
-        <input type="radio" name="question5" value="c">c) Una unidad de millar.<br>
-        <input type="radio" name="question5" value="d">d) Una unidad.<br><br>
-        
-        
-        <!-- Pregunta 6 -->
-        <label for="question6"><span style="color: #2b00fe;"><b>6.	¿Qué sistema de numeración utilizamos en la vida cotidiana?</b></span></label><br>
-        <input type="radio" name="question6" value="a">a) Sistema binario.<br>
-        <input type="radio" name="question6" value="b">b) Sistema octal.<br>
-        <input type="radio" name="question6" value="c">c) Sistema hexadecimal.<br>
-        <input type="radio" name="question6" value="d">d) Sistema decimal.<br><br>
+  selectedQuestions.forEach((question, index) => {
+    const questionNumber = index + 1;
 
-        <!-- Pregunta 7 -->
-        <label for="question7"><span style="color: #2b00fe;"><b>7.	¿Cuál es el valor de un dígito en el lugar de las centenas de millón?</b></span></label><br>
-        <input type="radio" name="question7" value="a">a) 10 000 000<br>
-        <input type="radio" name="question7" value="b">b) 1 000 000<br>
-        <input type="radio" name="question7" value="c">c) 100 000 000<br>
-        <input type="radio" name="question7" value="d">d) 1 000 000 000<br><br>
+    // Crea el elemento de la pregunta
+    const questionDiv = document.createElement("div");
+    questionDiv.innerHTML = `<span style="color: #2b00fe;"><b>${questionNumber}. ${question.question}</b></span><br>`;
 
+    
+    // Crea las opciones para la pregunta
+    question.options.forEach((option, optionIndex) => {
+      const optionInput = document.createElement("input");
+      optionInput.setAttribute("type", "radio");
+      optionInput.setAttribute("name", `question${questionNumber}`);
+      optionInput.setAttribute("value", option.charAt(0).toLowerCase());
+      optionInput.id = `q${questionNumber}_option${optionIndex}`;
 
-        <!-- Pregunta 8 -->
-        <label for="question8"><span style="color: #2b00fe;"><b>8.	¿Cuántas centenas de millar hay en un millón?</b></span></label><br>
-        <input type="radio" name="question8" value="a">a) 1<br>
-        <input type="radio" name="question8" value="b">b) 10<br>
-        <input type="radio" name="question8" value="c">c) 100<br>
-        <input type="radio" name="question8" value="d">d) 1000<br><br>
+      const optionLabel = document.createElement("label");
+      optionLabel.setAttribute("for", `q${questionNumber}_option${optionIndex}`);
+      optionLabel.innerHTML = option;
 
-        <!-- Pregunta 9 -->
-        <label for="question9"><span style="color: #2b00fe;"><b>9.	¿Qué es la notación posicional en el sistema de numeración decimal?</b></span></label><br>
-        <input type="radio" name="question9" value="a">a) Una forma de escribir números con palabras.<br>
-        <input type="radio" name="question9" value="b">b) Una forma de representar números con símbolos especiales.<br>
-        <input type="radio" name="question9" value="c">c) Una forma de distinguir unidades, decenas, centenas y más.<br>
-        <input type="radio" name="question9" value="d">d) Una forma de escribir números en forma de fracciones.<br><br>
+      questionDiv.appendChild(optionInput);
+      questionDiv.appendChild(optionLabel);
+      questionDiv.appendChild(document.createElement("br"));
+    });
 
-        <!-- Pregunta 10 -->
-        <label for="question10"><span style="color: #2b00fe;"><b>10.	¿Cómo se llama la forma de escribir un número como suma de los valores de sus cifras?</b></span></label><br>
-        <input type="radio" name="question10" value="a">a) Forma polinómica.<br>
-        <input type="radio" name="question10" value="b">b) Forma compleja.<br>
-        <input type="radio" name="question10" value="c">c) Forma fractal.<br>
-        <input type="radio" name="question10" value="d">d) Forma geométrica.<br><br>
+    // Agrega la pregunta y opciones al formulario
+    quizForm.appendChild(questionDiv);
+    quizForm.appendChild(document.createElement("br")); // Agrega un salto de línea entre preguntas
+  });
+// Agrega un salto de línea entre preguntas
+quizForm.appendChild(document.createElement("br"));
+  
+  
+  // Agregar el botón de envío al final
+  const submitButton = document.createElement("input");
+  submitButton.setAttribute("type", "submit");
+  submitButton.setAttribute("value", "Enviar");
+  quizForm.appendChild(submitButton);
+}
 
-        <input type="submit" value="Enviar">
-    </form>
+const quizForm = document.getElementById("quiz-form");
+selectRandomQuestions();
+displayQuestions();
 
-    <div id="results"></div>
+quizForm.addEventListener("submit", function (event) {
+  event.preventDefault();
+  displayResult();
+});
 
-    <script>
-        const quizForm = document.getElementById("quiz-form");
-        const resultsDiv = document.getElementById("results");
+function displayResult() {
+  let score = 0;
 
-        quizForm.addEventListener("submit", function (e) {
-            e.preventDefault();
-            const answers = {
-                question1: document.querySelector('input[name="question1"]:checked').value,
-                question2: document.querySelector('input[name="question2"]:checked').value,
-                question3: document.querySelector('input[name="question3"]:checked').value,
-                question4: document.querySelector('input[name="question4"]:checked').value,
-                question5: document.querySelector('input[name="question5"]:checked').value,
-                question6: document.querySelector('input[name="question6"]:checked').value,
-                question7: document.querySelector('input[name="question7"]:checked').value,
-                question8: document.querySelector('input[name="question8"]:checked').value,
-                question9: document.querySelector('input[name="question9"]:checked').value,
-                question10: document.querySelector('input[name="question10"]:checked').value,
+  for (const question of selectedQuestions) {
+    const questionNumber = selectedQuestions.indexOf(question) + 1;
+    const selectedOption = document.querySelector(`input[name="question${questionNumber}"]:checked`).value;
 
-            };
+    if (selectedOption === question.answer) {
+      score++;
+    }
+  }
 
-            const correctAnswers = {
-                question1: "b",
-                question2: "c",
-                question3: "b",
-                question4: "d",
-                question5: "a",
-                question6: "d",
-                question7: "c",
-                question8: "b",
-                question9: "c",
-                question10: "a",
-            
-            
-              };
+  const percentage = (score / selectedQuestions.length) * 100;
 
-            let score = 0;
-            for (const question in answers) {
-                if (answers[question] === correctAnswers[question]) {
-                    score++;
-                }
-            }
+  // Muestra el resultado
+  const resultMessage = `Puntuación: ${score} de ${selectedQuestions.length} (${percentage}%)`;
+  const resultDiv = document.createElement("div");
+  resultDiv.innerHTML = resultMessage;
 
-            const percentage = (score / Object.keys(answers).length) * 100;
-            resultsDiv.innerHTML = `Puntuación: ${score} de ${Object.keys(answers).length} (${percentage}%)`;
-        });
-    </script>
+  // Reemplaza el formulario con el resultado
+  quizForm.innerHTML = "";
+  quizForm.appendChild(resultDiv);
+}
+</script>
 
 
 
