@@ -57,21 +57,26 @@
 	<p>Originalmente publicado {{ page.published | date: '%d/%m/%Y' }}
     <br> Ùltima actualización {{ page.date | date: '%d/%m/%Y' }}</p>
 
-    <p><strong>Entradas relacionadas:</strong></p>
-<ul>
-  {% for allpost in site.posts %}
-    {% for tag in page.tags %}
-      {% if allpost.tags contains tag and allpost.id != page.id %}
-        <li>
-          <a href="{{ site.baseurl }}{{ allpost.url }}">
-            {{ allpost.title }}
-          </a>
-        </li>
-        {% break %}
-      {% endif %}
-    {% endfor %}
-  {% endfor %}
-</ul>
+    <p><strong>Últimas Entradas relacionadas:</strong></p>
+    <ul>
+      {% assign count = 0 %}
+      {% for allpost in site.posts %}
+        {% for tag in page.tags %}
+          {% if allpost.tags contains tag and allpost.id != page.id %}
+            <li>
+              <a href="{{ site.baseurl }}{{ allpost.url }}">
+                {{ allpost.title }}
+              </a>
+            </li>
+            {% assign count = count | plus: 1 %}
+            {% if count >= 5 %}
+              {% break %}
+            {% endif %}
+          {% endif %}
+        {% endfor %}
+      {% endfor %}
+    </ul>
+    
 	{% endif %}
 
 	{% include disqus.html %}
