@@ -58,24 +58,24 @@
     <br> Ùltima actualización {{ page.date | date: '%d/%m/%Y' }}</p>
 
     <p><strong>Últimas Entradas relacionadas:</strong></p>
+   
     <ul>
       {% assign count = 0 %}
       {% for allpost in site.posts %}
-        {% for tag in page.tags %}
-          {% if allpost.tags contains tag and allpost.id != page.id %}
+        {% if count < 5 %}
+          {% assign common_tags = allpost.tags | where_exp: "tag", "page.tags contains tag" %}
+          {% if common_tags.size > 0 and allpost.id != page.id %}
             <li>
               <a href="{{ site.baseurl }}{{ allpost.url }}">
                 {{ allpost.title }}
               </a>
             </li>
             {% assign count = count | plus: 1 %}
-            {% if count >= 5 %}
-              {% break %}
-            {% endif %}
           {% endif %}
-        {% endfor %}
+        {% endif %}
       {% endfor %}
     </ul>
+    
     
 	{% endif %}
 
