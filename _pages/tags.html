@@ -18,42 +18,7 @@ Here we generate all the tags.
 <br/>
 
 {% for tag in tags %}
-   <a class="label label-success" href="{{ site.baseurl }}/tags/#{{ tag | slugify }}" > {{ tag }} </a> &nbsp;
-{% endfor %}
-
-{% for tag in tags %}
-  <h4 id="{{ tag | slugify }}">{{ tag }}</h4>
-  <ul>
-    {% assign tag_related_posts = tag_posts | where: "tags", tag %}
-    {% for post in tag_related_posts %}
-      <li>
-        <a href="{{ site.baseurl }}{{ post.url }}">
-          {{ post.title }}
-        </a>
-      </li>
-    {% endfor %}
-  </ul>
-{% endfor %}---
-layout: default
-title: Etiquetas
-permalink: /tags/
----
-
-{% comment %}
-Here we generate all the tags.
-{% endcomment %}
-
-{% assign tag_posts = site.posts | where_exp: "post", "post.tags.size > 0" %}
-
-{% assign tags = "" %}
-{% for post in tag_posts %}
-  {% assign tags = tags | concat: post.tags | uniq %}
-{% endfor %}
-
-<br/>
-
-{% for tag in tags %}
-   <a class="label label-success" href="#" data-tag="{{ tag | slugify }}" onclick="showRelatedPosts('{{ tag | slugify }}')">{{ tag }}</a> &nbsp;
+   <a class="label label-success tag-link" href="#" data-tag="{{ tag | slugify }}">{{ tag }}</a> &nbsp;
 {% endfor %}
 
 {% for tag in tags %}
@@ -73,18 +38,26 @@ Here we generate all the tags.
 {% endfor %}
 
 <script>
-function showRelatedPosts(tag) {
-  // Oculta todos los divs de posts relacionados
-  var relatedPostsDivs = document.getElementsByClassName('related-posts');
-  for (var i = 0; i < relatedPostsDivs.length; i++) {
-    relatedPostsDivs[i].style.display = 'none';
-  }
+document.addEventListener('DOMContentLoaded', function() {
+  var tagLinks = document.querySelectorAll('.tag-link');
+  
+  tagLinks.forEach(function(tagLink) {
+    tagLink.addEventListener('click', function(e) {
+      e.preventDefault();
 
-  // Muestra el div específico para la etiqueta seleccionada
-  var selectedDiv = document.getElementById(tag);
-  if (selectedDiv) {
-    selectedDiv.style.display = 'block';
-  }
-}
+      // Oculta todos los divs de posts relacionados
+      var relatedPostsDivs = document.querySelectorAll('.related-posts');
+      relatedPostsDivs.forEach(function(div) {
+        div.style.display = 'none';
+      });
+
+      // Muestra el div específico para la etiqueta seleccionada
+      var tag = tagLink.getAttribute('data-tag');
+      var selectedDiv = document.getElementById(tag);
+      if (selectedDiv) {
+        selectedDiv.style.display = 'block';
+      }
+    });
+  });
+});
 </script>
-
