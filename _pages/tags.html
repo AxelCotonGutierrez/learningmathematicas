@@ -8,26 +8,11 @@ permalink: /tags/
 Here we generate all the tags.
 {% endcomment %}
 
-{% assign rawtags = "" %}
-{% for post in site.posts %}
-  {% assign ttags = post.tags | join:'|' | append:'|' %}
-  {% assign rawtags = rawtags | append:ttags %}
-{% endfor %}
-
-{% assign rawtags = rawtags | split:'|' | sort %}
+{% assign tag_posts = site.posts | where_exp: "post", "post.tags.size > 0" %}
 
 {% assign tags = "" %}
-
-{% for tag in rawtags %}
-  {% if tag != "" %}
-    {% if tags == "" %}
-      {% assign tags = tag | split:'|' %}
-    {% endif %}
-
-    {% unless tags contains tag %}
-      {% assign tags = tags | join:'|' | append:'|' | append:tag | split:'|' %}
-    {% endunless %}
-  {% endif %}
+{% for post in tag_posts %}
+  {% assign tags = tags | concat: post.tags | uniq %}
 {% endfor %}
 
 <br/>
@@ -39,14 +24,13 @@ Here we generate all the tags.
 {% for tag in tags %}
   <h4 id="{{ tag | slugify }}">{{ tag }}</h4>
   <ul>
-    {% for post in site.posts %}
-      {% if post.tags contains tag %}
-        <li>
-          <a href="{{ site.baseurl }}{{ post.url }}">
-            {{ post.title }}
-          </a>
-        </li>
-      {% endif %}
+    {% assign tag_related_posts = tag_posts | where: "tags", tag %}
+    {% for post in tag_related_posts %}
+      <li>
+        <a href="{{ site.baseurl }}{{ post.url }}">
+          {{ post.title }}
+        </a>
+      </li>
     {% endfor %}
   </ul>
 {% endfor %}
