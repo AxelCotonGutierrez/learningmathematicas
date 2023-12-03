@@ -1,0 +1,172 @@
+#contenedor-superior {
+    display: flex;
+    justify-content: left; /* Centrar los botones */
+    margin-bottom: 10px;
+    max-width: 70%;
+    margin: 0 auto;
+}
+
+.boton_menu_cursos {
+    width: 58px;
+    height: 58px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border: 3px solid rgb(7, 7, 7);
+    color: white;
+    font-size: 9px;
+    font-weight: bold;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    margin-right: 5px; /* Ajusta según el espacio deseado entre botones */
+    overflow: hidden; /* Añadido para ocultar el pseudo-elemento */
+}
+
+
+.boton_menu_cursos.boton_1 {
+    background-color: #FF5733; /* Color para el botón 1, ajusta según tu diseño */
+}
+
+.boton_menu_cursos.boton_2 {
+    background-color: #33FF57; /* Color para el botón 2, ajusta según tu diseño */
+}
+
+.boton_menu_cursos.boton_3 {
+    background-color: #5733FF; /* Color para el botón 3, ajusta según tu diseño */
+}
+
+.boton_menu_cursos:not(.on) {
+    filter: grayscale(90%);
+}
+
+#contenedor-principal {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 10px;
+    max-width: 70%;
+    margin: 0 auto;
+}
+
+.subcontenedor {
+    width: 45%;
+    max-width: 48%;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    padding: 10px;
+}
+
+#contenedor-principal.sin-borde {
+    /* Estilo cuando no hay botones activos */
+    border: none;
+}
+
+.subcontenedor.sin-bordes {
+    /* Estilo cuando no hay botones activos */
+    border: none;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+td, th {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.fila_oculta {
+    display: none;
+}
+.cursonivel {
+    text-align: left;
+    color: #001F3F;
+    font-weight: bold;
+    font-size: 20px;
+}
+.centrado {
+    text-align: center;
+    background-color:#B1CB59;
+    color: white;
+    font-weight: bold;
+}
+.centrado2 {
+    text-align: center;
+    font-weight: bold;
+    color: rgb(54, 121, 229);
+}
+
+.tema {
+    text-align: left;
+   
+}
+
+.fila_oculta td:nth-child(1){
+    max-width: 15px; /* Ajusta según sea necesario */
+}
+
+.fila_oculta td:nth-child(3),
+.fila_oculta td:nth-child(4),
+.fila_oculta td:nth-child(5) {
+    max-width: 5px; /* Ajusta según sea necesario */
+    word-wrap: break-word;
+}
+
+.fila_oculta td:nth-child(2) {
+    width: auto; /* Ocupa el resto del espacio disponible */
+}
+
+.fila_oculta td {
+    border: 0;
+}
+
+/* Estilo común para los círculos */
+.circulo {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin-bottom: 4px; /* Espacio entre círculos en la misma columna */
+}
+
+/* Estilo común para dividir en dos columnas */
+.columna {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Estilos específicos para cada botón y columna */
+.fila_oculta[data-codigos*="boton_1"] .columna .circulo.boton_1 { background-color: #FF0000; }
+.fila_oculta[data-codigos*="boton_2"] .columna .circulo.boton_2 { background-color: #FFA500; }
+.fila_oculta[data-codigos*="boton_3"] .columna .circulo.boton_3 { background-color: #c0c029; }
+.fila_oculta[data-codigos*="boton_4"] .columna .circulo.boton_4 { background-color: #00FF00; }
+.fila_oculta[data-codigos*="boton_5"] .columna .circulo.boton_5 { background-color: #008000; }
+.fila_oculta[data-codigos*="boton_6"] .columna .circulo.boton_6 { background-color: #00FFFF; }
+.fila_oculta[data-codigos*="boton_7"] .columna .circulo.boton_7 { background-color: #0000FF; }
+.fila_oculta[data-codigos*="boton_8"] .columna .circulo.boton_8 { background-color: #000080; }
+.fila_oculta[data-codigos*="boton_9"] .columna .circulo.boton_9 { background-color: #800080; }
+.fila_oculta[data-codigos*="boton_10"] .columna .circulo.boton_10 { background-color: #4B0082; }
+.fila_oculta[data-codigos*="boton_11"] .columna .circulo.boton_11 { background-color: #FF00FF; }
+.fila_oculta[data-codigos*="boton_12"] .columna .circulo.boton_12 { background-color: #FFC0CB; }
+.fila_oculta[data-codigos*="boton_13"] .columna .circulo.boton_13 { background-color: #7c7c5a; }
+.fila_oculta[data-codigos*="boton_14"] .columna .circulo.boton_14 { background-color: #FFDAB9; }
+.fila_oculta[data-codigos*="boton_15"] .columna .circulo.boton_15 { background-color: #FF7F50; }
+.fila_oculta[data-codigos*="boton_16"] .columna .circulo.boton_16 { background-color: #FF6347; }
+.fila_oculta[data-codigos*="boton_17"] .columna .circulo.boton_17 { background-color: #DC143C; }
+.fila_oculta[data-codigos*="boton_18"] .columna .circulo.boton_18 { background-color: #FFD700; }
+.fila_oculta[data-codigos*="boton_19"] .columna .circulo.boton_19 { background-color: #4B0082; }
+.fila_oculta[data-codigos*="boton_20"] .columna .circulo.boton_20 { background-color: #9400D3; }
+
+/* Estilo para el cuadrado */
+.cuadrado {
+    width: 12px;
+    height: 12px;
+    margin-bottom: 4px; /* Espacio entre figuras en la misma columna */
+}
+
+/* Estilo específico para el cuadrado del botón 21 */
+.fila_oculta[data-codigos*="boton_21"] .columna .cuadrado.boton_21 { background-color: #510615; }

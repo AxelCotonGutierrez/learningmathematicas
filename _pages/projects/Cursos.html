@@ -1,0 +1,167 @@
+---
+layout: default
+title: Cursos
+permalink: /projects/Cursos/
+description: Contenidos para todos los cursos y materias
+comments: true
+---
+<link rel="stylesheet" href="cursos.css">
+<p style="text-align: justify;">
+ 
+  Bienvenido a nuestra oferta académica, donde encontrarás una detallada lista de competencias 
+  y contenidos relacionados con las diversas materias y cursos disponibles. 
+  La selección de un curso o materia es simple: solo debes pulsar el botón correspondiente.
+  Cada elemento de la lista está vinculado a recursos adicionales, como <b>Teoría para Docentes (TD)</b>,
+   <b>Teoría (T)</b>, <b>Historia (H)</b>, <b>Ejercicios y Problemas (EP)</b>, <b>Examen tipo Test (ET)</b>, 
+   <b>Preguntas de Examen resueltas (ER)</b>, <b>Vídeos (V)</b>, <b>Soroban (S)</b> y <b>Juegos (J)</b>, 
+  que brindan una comprensión más profunda y una experiencia interactiva de aprendizaje.
+</p>
+<p style="text-align: justify;">
+
+  Es posible que actualmente no dispongamos de información sobre la materia o curso que estás 
+  buscando. Sin embargo, queremos informarte que estamos trabajando diligentemente para ampliar 
+  nuestra oferta académica.
+
+  Estamos comprometidos a proporcionar información detallada y actualizada sobre una variedad 
+  de materias y cursos. Te invitamos a visitarnos en el futuro, ya que continuamos implementando 
+  nueva información educativa.
+
+  Agradecemos tu paciencia y comprensión mientras trabajamos para enriquecer nuestra plataforma 
+  con contenido educativo relevante. ¡Esperamos poder ofrecerte la información que necesitas pronto!
+</p>
+<!-- Contenedor superior con botones -->
+<div id="contenedor-superior">
+
+<p class="cursonivel" style="margin-right: 20px;">Infantil y Primaria:   </p> 
+<div id="activar_boton_1" class="boton_menu_cursos" onclick="toggleBoton('boton_1')" style="background-color: #FF0000;">Infantil</div>
+<div id="activar_boton_2" class="boton_menu_cursos" onclick="toggleBoton('boton_2')" style="background-color: #FFA500;">1.º de Primaria</div>
+<div id="activar_boton_3" class="boton_menu_cursos" onclick="toggleBoton('boton_3')" style="background-color: #c0c029;">2.º de Primaria</div>
+<div id="activar_boton_4" class="boton_menu_cursos" onclick="toggleBoton('boton_4')" style="background-color: #00FF00">3.º de Primaria</div>
+<div id="activar_boton_5" class="boton_menu_cursos" onclick="toggleBoton('boton_5')" style="background-color: #008000">4.º de Primaria</div>
+<div id="activar_boton_6" class="boton_menu_cursos" onclick="toggleBoton('boton_6')" style="background-color: #00FFFF">5.º de Primaria</div>
+<div id="activar_boton_7" class="boton_menu_cursos" onclick="toggleBoton('boton_7')" style="background-color: #0000FF">6.º de Primaria</div>
+
+
+</div>
+<br>
+<div id="contenedor-superior">
+<p class="cursonivel" style="margin-right: 20px;">ESO y Bachilleraro:    </p>
+<div id="activar_boton_8" class="boton_menu_cursos" onclick="toggleBoton('boton_8')" style="background-color: #000080;">1.º ESO</div>
+<div id="activar_boton_9" class="boton_menu_cursos" onclick="toggleBoton('boton_9')" style="background-color: #800080;">2.º ESO</div>
+<div id="activar_boton_10" class="boton_menu_cursos" onclick="toggleBoton('boton_10')" style="background-color: #4B0082;">3.º ESO</div>
+<div id="activar_boton_11" class="boton_menu_cursos" onclick="toggleBoton('boton_11')" style="background-color: #FF00FF">4.º ESO A</div>
+<div id="activar_boton_12" class="boton_menu_cursos" onclick="toggleBoton('boton_12')" style="background-color: #FFC0CB">4.º ESO B</div>
+
+<div id="activar_boton_13" class="boton_menu_cursos" onclick="toggleBoton('boton_13')" style="background-color: #7c7c5a">1.º Bachilleraro</div>
+<div id="activar_boton_14" class="boton_menu_cursos" onclick="toggleBoton('boton_14')" style="background-color: #FFDAB9">1.º Bachillerato CS</div>
+<div id="activar_boton_15" class="boton_menu_cursos" onclick="toggleBoton('boton_15')" style="background-color: #FF7F50">2.º Bachilleraro</div>
+<div id="activar_boton_16" class="boton_menu_cursos" onclick="toggleBoton('boton_16')" style="background-color: #FF6347">2.º Bachillerato CS</div>
+</div>
+<br>
+
+<div id="contenedor-superior">
+<p class="cursonivel" style="margin-right: 20px;">Adultos (ESPA/ESPAD):   </p>
+<div id="activar_boton_17" class="boton_menu_cursos" onclick="toggleBoton('boton_17')" style="background-color: #DC143C;">1.º ESPA</div>
+<div id="activar_boton_18" class="boton_menu_cursos" onclick="toggleBoton('boton_18')" style="background-color: #FFD700;">2.º ESPA</div>
+<div id="activar_boton_19" class="boton_menu_cursos" onclick="toggleBoton('boton_19')" style="background-color: #4B0082;">3.º ESPA</div>
+<div id="activar_boton_20" class="boton_menu_cursos" onclick="toggleBoton('boton_20')" style="background-color: #9400D3">4.º ESPA</div>
+</div>
+<br>
+<div id="contenedor-superior" style=" justify-content: center;">
+
+<div id="activar_boton_21" class="boton_menu_cursos" onclick="toggleBoton('boton_21')" style="background-color: #510615;">Matemáticas</div>
+
+</div>
+<br>
+<!-- Contenedor principal con subcontenedores -->
+<div id="contenedor-principal" class="sin-borde">
+<div class="subcontenedor sin-bordes">
+
+  <table>
+      <tr class="fila_oculta" data-codigos="boton_1 boton_2 boton_21">
+          <td class="centrado" colspan="5">CONTAR</td>
+      </tr>
+      <tr class="fila_oculta" data-codigos="boton_1 boton_21">
+          <td class="centrado2">CA000</td>
+          <td class="tema">¿Qué es contar? (TD) (V) (S)</td>
+          <td>
+              <div class="columna">
+                  <!-- Círculo para botón 1 -->
+                  <div class="circulo boton_1"></div>
+                  <!-- Puedes agregar más círculos según sea necesario -->
+              </div>
+              
+          </td>
+          <td>
+              <div class="columna">
+                  <!-- Círculo para botón 1 -->
+                  <div class="cuadrado boton_21"></div>
+                  <!-- Puedes agregar más círculos según sea necesario -->
+              </div>
+             
+          </td>
+          
+          <td>  <a href="tu_link_aqui" target="_blank">
+              <img src="forw.png" alt="Icono Forward" width="12" height="12">
+          </a></td>
+
+      </tr>
+      <tr class="fila_oculta" data-codigos="boton_1 boton_21">
+          <td class="centrado2">C-001</td>
+          <td class="tema">Contar hasta 3</td>
+          <td>
+              <div class="columna">
+                  <!-- Círculo para botón 1 -->
+                  <div class="circulo boton_1"></div>
+                  <!-- Puedes agregar más círculos según sea necesario -->
+              </div>
+              
+          </td>
+          <td>
+              <div class="columna">
+                  <!-- Círculo para botón 1 -->
+                  <div class="cuadrado boton_21"></div>
+                  <!-- Puedes agregar más círculos según sea necesario -->
+              </div>
+             
+          </td>
+          
+          <td>  <a href="tu_link_aqui" target="_blank">
+              <img src="forw.png" alt="Icono Forward" width="12" height="12">
+          </a></td>
+
+      </tr>
+      <tr class="fila_oculta" data-codigos="boton_1">
+          <td class="centrado2">C002</td>
+          <td class="tema">Contar hasta 5</td>
+          <td class="circulos"></td></td>
+          <td>  <a href="tu_link_aqui" target="_blank">
+              <img src="forw.png" alt="Icono Forward" width="12" height="12">
+          </a></td>
+
+      </tr>
+      <tr class="fila_oculta" data-codigos="boton_1 boton_3">
+          <td>Fila 3 - Boton 1 y Boton 3</td>
+      </tr>
+  </table>
+</div>
+
+
+<div class="subcontenedor">
+  <table>
+      <tr class="fila_oculta" data-codigos="boton_2">
+          <td>Fila 4 - Boton 2</td>
+      </tr>
+      <tr class="fila_oculta" data-codigos="boton_1 boton_2">
+          <td>Fila 5 - Boton 1 y Boton 2</td>
+      </tr>
+      <tr class="fila_oculta" data-codigos="boton_3">
+          <td>Fila 6 - Boton 3</td>
+      </tr>
+  </table>
+</div>
+</div>
+
+<script src="cursos.js"></script>
+
+</script>
