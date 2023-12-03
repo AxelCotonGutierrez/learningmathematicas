@@ -2,7 +2,7 @@
     display: flex;
     justify-content: left; /* Centrar los botones */
     margin-bottom: 10px;
-    max-width: 70%;
+    max-width: 100%;
     margin: 0 auto;
 }
 
@@ -47,7 +47,7 @@
     flex-wrap: wrap;
     justify-content: space-between;
     padding: 10px;
-    max-width: 70%;
+    max-width: 100%;
     margin: 0 auto;
 }
 
