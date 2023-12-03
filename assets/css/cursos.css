@@ -50,13 +50,14 @@
     max-width: 100%;
     margin: 0 auto;
 }
-
 .subcontenedor {
-    max-width: 48%;
+    width: 49.5%; /* Puedes ajustar este valor según tus necesidades */
+    max-width: 50%;
     margin-bottom: 10px;
     border: 1px solid #ddd;
     padding: 10px;
 }
+
 
 #contenedor-principal.sin-borde {
     /* Estilo cuando no hay botones activos */
