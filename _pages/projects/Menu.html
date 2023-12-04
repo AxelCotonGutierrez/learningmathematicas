@@ -56,6 +56,8 @@ comments: true
     padding: 20px;
     display: none;
     border-radius: 8px;
+    transform: scale(0.8); /* Ajusta el valor de la escala según tus necesidades */
+    transform-origin: top;
   }
 
   h2 {
@@ -82,16 +84,6 @@ comments: true
             padding: 10px;
             margin-top: 10px;
         }
-
-.content.small {
-    transform: scale(0.8); /* Ajusta el factor de escala según tus necesidades */
-    transform-origin: top left; /* Establece el origen de la transformación */
-}
-
-/* Otra clase para ocultar el contenido */
-.hidden {
-    display: none;
-}
 </style>
 
 
@@ -184,7 +176,7 @@ comments: true
 </div>
 
 <!-- Contenedor para mostrar contenido de enlaces -->
-<div id="contenidoMenu" class="content hidden"></div>
+<div id="contenidoMenu" class="content" style="display: none;"></div>
 
 
     <script>
@@ -253,12 +245,7 @@ function buttonClick(targetIdOrUrl) {
             var content = document.getElementById(targetIdOrUrl);
             content.style.display = 'block';
         }
-          // Después de cargar el contenido, aplica la clase para controlar el tamaño
-          var content = document.getElementById('contenidoMenu');
-        content.className = 'content small';
-        content.style.display = 'block';
     }
-    
 
     // Función para extraer el contenido del body de una página HTML
     function extractBodyContent(html) {
