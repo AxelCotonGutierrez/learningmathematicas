@@ -107,6 +107,13 @@ td, th {
 }
 
 
+.fila_oculta td:nth-child(3),
+.fila_oculta td:nth-child(4),
+.fila_oculta td:nth-child(5) {
+    max-width: 5px; /* Ajusta según sea necesario */
+    word-wrap: break-word;
+}
+
 
 .fila_oculta td {
     border: 0;
