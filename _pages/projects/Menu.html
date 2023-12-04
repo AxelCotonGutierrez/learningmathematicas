@@ -235,10 +235,6 @@ function buttonClick(targetIdOrUrl) {
                     var content = document.getElementById('contenidoMenu');
                     content.innerHTML = bodyContent;
                     content.style.display = 'block';
-
-                    // Aplica estilos al contenido cargado
-                    content.style.transform = 'scale(0.8)'; // Ajusta el factor de escala según tus necesidades
-                    content.style.transformOrigin = 'top left'; // Establece el origen de la transformación
                 }
             };
             xhr.send();
@@ -246,9 +242,6 @@ function buttonClick(targetIdOrUrl) {
             // Si no es una URL, asume que es un identificador interno y muestra el contenido correspondiente
             var content = document.getElementById(targetIdOrUrl);
             content.style.display = 'block';
-            // Aplica estilos al contenido cargado
-            content.style.transform = 'scale(0.8)'; // Ajusta el factor de escala según tus necesidades
-            content.style.transformOrigin = 'top left'; // Establece el origen de la transformación
         }
     }
 
@@ -265,7 +258,7 @@ function buttonClick(targetIdOrUrl) {
         // Función simple para verificar si una cadena parece ser una URL
         return str.startsWith('http') || str.startsWith('www');
     }
-    
+
 function buttonOut(button) {
   if (button.classList.contains('additional-button')) {
     // Restaurar el color solo si es un botón adicional
