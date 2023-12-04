@@ -48,7 +48,7 @@
     width: 49.5%; /* Puedes ajustar este valor según tus necesidades */
     max-width: 50%;
     margin-bottom: 10px;
-    border: 1px solid #ddd;
+    border: none;
     padding: 10px;
 }
 
