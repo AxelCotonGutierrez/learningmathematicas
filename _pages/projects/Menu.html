@@ -237,8 +237,8 @@ function buttonClick(targetIdOrUrl) {
                     content.style.display = 'block';
 
                     // Aplica estilos al contenido cargado
-                    content.style.maxWidth = '100%'; // Puedes ajustar esto según tus necesidades
-                    content.style.overflowX = 'auto'; // Añade desplazamiento horizontal si es necesario
+                    content.style.transform = 'scale(0.8)'; // Ajusta el factor de escala según tus necesidades
+                    content.style.transformOrigin = 'top left'; // Establece el origen de la transformación
                 }
             };
             xhr.send();
@@ -262,7 +262,6 @@ function buttonClick(targetIdOrUrl) {
         // Función simple para verificar si una cadena parece ser una URL
         return str.startsWith('http') || str.startsWith('www');
     }
-    
 
 function buttonOut(button) {
   if (button.classList.contains('additional-button')) {
