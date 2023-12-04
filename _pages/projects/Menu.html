@@ -84,12 +84,55 @@ comments: true
 </style>
 
 <nav>
+  <a href="#" onclick="mostrarMenu('Contar')">Contar</a>
   <a href="#" onclick="mostrarMenu('sistemaNumericoDecimal')">Sistema Numérico Decimal</a>
   <!-- Agrega más enlaces según tus necesidades -->
 </nav>
   <br>
   <br>         
-          
+  <div id="Contar" class="menu">
+    <!-- Contenido del menú del Sistema Numérico Decimal -->
+    <h2>Contar</h2>
+    <div class="index-container">
+        <div class="index" id="index1">
+            <!-- Contenido del menú específico -->
+            <h2 style="text-align: center;">Contar</h2>
+            <div class="button-container">
+                <div class="additional-button" data-target="<p style='text-align: justify;'>
+                    <span>Para poder desarrolar con éxito este apartado debes dominar los siguientes conceptos previos:</span>
+                </p><ul style='text-align: left;'>
+                    <li><b>Contar y Numerar.</b></li>
+                    <li><b>Concepto de Número.</b></li>
+                    <li><b>Concepto de Dígito.</b></li>
+                    <li><b>Valor Posicional.</b></li></ul>" onmouseover="buttonHover(this)" onmouseout="buttonOut(this)"><b>CONOCIMIENTOS PREVIOS</b>
+                </div>
+                <div class="additional-button"
+                    data-target="<p style='text-align: justify;'>
+                        <span>En este enlace, se encuentra a disposición la totalidad 
+                            de la teoría necesaria para alcanzar una comprensión completa de los conceptos que estamos abordando.
+                        </span>
+                    </p>"
+                    onmouseover="buttonHover(this)" onmouseout="buttonOut(this)"
+                    onclick="buttonClick('https://axelcotongutierrez.github.io/learningmathematicas/posts/SND/')">
+                    <b>TEORÍA</b>
+                </div>
+
+                <!-- Puedes agregar más botones según tus necesidades -->
+            </div>
+
+            <div class="content" id="content">
+                <h2>Texto de Sección 1</h2>
+            </div>
+
+            <div class="additional-buttons">
+                <div class="additional-button" onmouseover="buttonHover(this, 'Texto de Botón 1', 'link_del_boton_1')" onmouseout="buttonOut()">Botón 1</div>
+                <div class="additional-button" onmouseover="buttonHover(this, 'Texto de Botón 2', 'link_del_boton_2')" onmouseout="buttonOut()">Botón 2</div>
+                <div class="additional-button" onmouseover="buttonHover(this, 'Texto de Botón 3', 'link_del_boton_3')" onmouseout="buttonOut()">Botón 3</div>
+            </div>
+        </div>
+    </div>
+</div>
+   
   <div id="sistemaNumericoDecimal" class="menu">
     <!-- Contenido del menú del Sistema Numérico Decimal -->
     <h2>Sistema Numérico Decimal</h2>
