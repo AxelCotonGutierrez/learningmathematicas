@@ -77,7 +77,11 @@ comments: true
     background-color: #777;
   }
 
-
+  #contenidoMenu {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-top: 10px;
+        }
 </style>
 
 
@@ -203,6 +207,9 @@ comments: true
         mostrarMenuDesdeURL();
 </script>
 
+
+
+
 <script>
 function buttonHover(button) {
   button.style.backgroundColor = "#E3FD9D";
@@ -239,6 +246,7 @@ function buttonClick(targetIdOrUrl) {
         return str.startsWith('http') || str.startsWith('www');
     }
 
+    
 
 function buttonOut(button) {
   if (button.classList.contains('additional-button')) {
