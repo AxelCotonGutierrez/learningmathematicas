@@ -107,6 +107,10 @@ td, th {
 }
 
 
+.fila_oculta td:nth-child(2) {
+    width: 30%; /* Ajusta según sea necesario */
+}
+
 
 .fila_oculta td {
     border: 0;
