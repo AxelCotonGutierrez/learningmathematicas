@@ -30,19 +30,9 @@
      border-radius: 50%;
 }
 
-.boton_menu_cursos.boton_1 {
-    background-color: #FF5733; /* Color para el botón 1, ajusta según tu diseño */
-}
 
-.boton_menu_cursos.boton_2 {
-    background-color: #33FF57; /* Color para el botón 2, ajusta según tu diseño */
-}
-
-.boton_menu_cursos.boton_3 {
-    background-color: #5733FF; /* Color para el botón 3, ajusta según tu diseño */
-}
-
-.boton_menu_cursos:not(.on) {
+.boton_menu_cursos:not(.on),
+.boton_menu_cursos1:not(.on) {
     filter: grayscale(90%);
 }
 
@@ -68,10 +58,7 @@
     border: none;
 }
 
-.subcontenedor.sin-bordes {
-    /* Estilo cuando no hay botones activos */
-    border: none;
-}
+
 
 table {
     width: 100%;
