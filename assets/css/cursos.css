@@ -33,7 +33,7 @@
 
 .boton_menu_cursos:not(.on),
 .boton_menu_cursos1:not(.on) {
-    filter: grayscale(90%);
+    filter: grayscale(50%);
 }
 
 #contenedor-principal {
@@ -57,7 +57,6 @@
     /* Estilo cuando no hay botones activos */
     border: none;
 }
-
 
 
 table {
@@ -96,9 +95,6 @@ td, th {
     text-align: left;
    
 }
-
-
-
 
 .fila_oculta td {
     border: 0;
