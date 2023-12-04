@@ -8,8 +8,8 @@
 
 .boton_menu_cursos,
 .boton_menu_cursos1 {
-    width: 70px;
-    height: 70px;
+    width: 60px;
+    height: 60px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -17,7 +17,7 @@
     cursor: pointer;
     border: 3px solid rgb(7, 7, 7);
     color: white;
-    font-size: 10px;
+    font-size: 9px;
     font-weight: bold;
     text-align: center;
     position: relative;
