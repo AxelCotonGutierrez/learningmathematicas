@@ -6,10 +6,10 @@
     margin: 0 auto;
 }
 
-.boton_menu_cursos {
+.boton_menu_cursos,
+.boton_menu_cursos1 {
     width: 70px;
     height: 70px;
-    border-radius: 50%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -26,6 +26,9 @@
     overflow: hidden; /* Añadido para ocultar el pseudo-elemento */
 }
 
+.boton_menu_cursos {
+     border-radius: 50%;
+}
 
 .boton_menu_cursos.boton_1 {
     background-color: #FF5733; /* Color para el botón 1, ajusta según tu diseño */
