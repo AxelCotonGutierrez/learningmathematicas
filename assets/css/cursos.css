@@ -124,7 +124,9 @@ td, th {
 .fila_oculta td {
     border: 0;
 }
-
+.fila_oculta td {
+    max-width: none; /* Anula cualquier restricción de ancho máximo */
+}
 /* Estilo común para los círculos */
 .circulo {
     width: 12px;
