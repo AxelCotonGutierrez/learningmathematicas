@@ -107,7 +107,7 @@ td, th {
 }
 
 .fila_oculta td:nth-child(1){
-    width: auto; /* Ajusta según sea necesario */
+    max-width: 5%; /* Ajusta según sea necesario */
 }
 
 .fila_oculta td:nth-child(3),
