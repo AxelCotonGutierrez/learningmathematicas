@@ -5,8 +5,11 @@ permalink: /projects/Menu/
 description: Menús par las distinas materias y cursos
 comments: true
 ---
+
 <style>
-  
+  .menu {
+            display: none;
+        }
   .index-container {
     width: 100%;
     margin: 0 auto;
@@ -80,62 +83,90 @@ comments: true
   }
 </style>
 
-
+<nav>
+  <a href="#" onclick="mostrarMenu('sistemaNumericoDecimal')">Sistema Numérico Decimal</a>
+  <!-- Agrega más enlaces según tus necesidades -->
+</nav>
   <br>
   <br>         
           
-  <div class="index-container">
-    <div class="index" id="index1">
+  <div id="sistemaNumericoDecimal" class="menu">
+    <!-- Contenido del menú del Sistema Numérico Decimal -->
+    <h2>Sistema Numérico Decimal</h2>
+    <div class="index-container">
+        <div class="index" id="index1">
+            <!-- Contenido del menú específico -->
             <h2 style="text-align: center;">SISTEMA NUMÉRICO DECIMAL</h2>
-      <div class="button-container">
-        <div class="additional-button" data-target="<p style='text-align: justify;'>
-          <span>Para poder desarrolar con éxito este apartado debes dominar los siguientes conceptos previos:</span>
-        </p><ul style='text-align: left;'>
-          <li><b>Contar y Numerar.</b></li>
-          <li><b>Concepto de Número.</b></li>
-          <li><b>Concepto de Dígito.</b></li>
-          <li><b>Valor Posicional.</b></li></ul>" onmouseover="buttonHover(this)" onmouseout="buttonOut(this)"><b>CONOCIMIENTOS PREVIOS</b>
+            <div class="button-container">
+                <div class="additional-button" data-target="<p style='text-align: justify;'>
+                    <span>Para poder desarrolar con éxito este apartado debes dominar los siguientes conceptos previos:</span>
+                </p><ul style='text-align: left;'>
+                    <li><b>Contar y Numerar.</b></li>
+                    <li><b>Concepto de Número.</b></li>
+                    <li><b>Concepto de Dígito.</b></li>
+                    <li><b>Valor Posicional.</b></li></ul>" onmouseover="buttonHover(this)" onmouseout="buttonOut(this)"><b>CONOCIMIENTOS PREVIOS</b>
+                </div>
+                <div class="additional-button"
+                    data-target="<p style='text-align: justify;'>
+                        <span>En este enlace, se encuentra a disposición la totalidad 
+                            de la teoría necesaria para alcanzar una comprensión completa de los conceptos que estamos abordando.
+                        </span>
+                    </p>"
+                    onmouseover="buttonHover(this)" onmouseout="buttonOut(this)"
+                    onclick="buttonClick('https://axelcotongutierrez.github.io/learningmathematicas/posts/SND/')">
+                    <b>TEORÍA</b>
+                </div>
+
+                <!-- Puedes agregar más botones según tus necesidades -->
+            </div>
+
+            <div class="content" id="content">
+                <h2>Texto de Sección 1</h2>
+            </div>
+
+            <div class="additional-buttons">
+                <div class="additional-button" onmouseover="buttonHover(this, 'Texto de Botón 1', 'link_del_boton_1')" onmouseout="buttonOut()">Botón 1</div>
+                <div class="additional-button" onmouseover="buttonHover(this, 'Texto de Botón 2', 'link_del_boton_2')" onmouseout="buttonOut()">Botón 2</div>
+                <div class="additional-button" onmouseover="buttonHover(this, 'Texto de Botón 3', 'link_del_boton_3')" onmouseout="buttonOut()">Botón 3</div>
+            </div>
         </div>
-          <div class="additional-button"
-     data-target="<p style='text-align: justify;'>
-                    <span>En este enlace, se encuentra a disposición la totalidad 
-                          de la teoría necesaria para alcanzar una comprensión completa de los conceptos que estamos abordando.
-                    </span>
-                  </p>"
-     onmouseover="buttonHover(this)" onmouseout="buttonOut(this)"
-     onclick="buttonClick('https://axelcotongutierrez.github.io/learningmathematicas/posts/SND/')">
-    <b>TEORÍA</b>
+    </div>
 </div>
 
 
-     
-                  <div class="button" onmouseover="buttonHover(this, 'Texto de Sección 3', 'link_del_blog_3')" onmouseout="buttonOut(this)">Enlace 3</div>
-        <div class="button" onmouseover="buttonHover(this, 'Texto de Sección 4', 'link_del_blog_4')" onmouseout="buttonOut(this)">Enlace 4</div>
-        <div class="button" onmouseover="buttonHover(this, 'Texto de Sección 5', 'link_del_blog_5')" onmouseout="buttonOut(this)">Enlace 5</div>
-        <div class="button" onmouseover="buttonHover(this, 'Texto de Sección 6', 'link_del_blog_6')" onmouseout="buttonOut(this)">Enlace 6</div>
-        <div class="button" onmouseover="buttonHover(this, 'Texto de Sección 7', 'link_del_blog_7')" onmouseout="buttonOut(this)">Enlace 7</div>
-        <div class="button" onmouseover="buttonHover(this, 'Texto de Sección 8', 'link_del_blog_8')" onmouseout="buttonOut(this)">Enlace 8</div>
-      </div>
-
-      <div class="content" id="content">
-        <h2>Texto de Sección 1</h2>
-      </div>
-
-      <div class="additional-buttons">
-        <div class="additional-button" onmouseover="buttonHover(this, 'Texto de Botón 1', 'link_del_boton_1')" onmouseout="buttonOut()">Botón 1</div>
-        <div class="additional-button" onmouseover="buttonHover(this, 'Texto de Botón 2', 'link_del_boton_2')" onmouseout="buttonOut()">Botón 2</div>
-        <div class="additional-button" onmouseover="buttonHover(this, 'Texto de Botón 3', 'link_del_boton_3')" onmouseout="buttonOut()">Botón 3</div>
-      </div>
-    </div>
-    <br>
-    <br>
-  </div>
-  
-      </p>
-
-
-    </div>
     <script>
+  // Función para mostrar el menú correspondiente
+  function mostrarMenuDesdeURL() {
+            // Verificar si hay parámetros en la URL
+            var urlParams = new URLSearchParams(window.location.search);
+            var menuParam = urlParams.get('menu');
+
+            // Mostrar el menú correspondiente al parámetro en la URL
+            if (menuParam) {
+                mostrarMenu(menuParam);
+            }
+        }
+
+        // Función para mostrar el menú según el ID
+        function mostrarMenu(menuId) {
+            // Oculta todos los menús
+            var menus = document.getElementsByClassName('menu');
+            for (var i = 0; i < menus.length; i++) {
+                menus[i].style.display = 'none';
+            }
+
+            // Muestra el menú correspondiente al enlace seleccionado
+            var menuSeleccionado = document.getElementById(menuId);
+            if (menuSeleccionado) {
+                menuSeleccionado.style.display = 'block';
+            }
+        }
+
+        // Llamar a la función al cargar la página
+        mostrarMenuDesdeURL();
+</script>
+
+<script>
 function buttonHover(button) {
   button.style.backgroundColor = "#E3FD9D";
   document.getElementById('content').style.display = "block";
