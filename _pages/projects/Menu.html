@@ -224,14 +224,20 @@ function buttonHover(button) {
 }
 
 function buttonClick(targetIdOrUrl) {
-        
-
-        // Si el parámetro es una URL, abre la URL en el contenedor de contenido
+        // Si el parámetro es una URL, carga solo el contenido del body en el contenedor de contenido
         if (isUrl(targetIdOrUrl)) {
-            // Muestra el contenido correspondiente al enlace seleccionado
-            var content = document.getElementById('contenidoMenu');
-            content.innerHTML = `<iframe src="${targetIdOrUrl}" style="width: 100%; height: 100%;"></iframe>`;
-            content.style.display = 'block';
+            // Realiza una solicitud AJAX para obtener el contenido del body de la URL
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET', targetIdOrUrl, true);
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == 4 && xhr.status == 200) {
+                    var bodyContent = extractBodyContent(xhr.responseText);
+                    var content = document.getElementById('contenidoMenu');
+                    content.innerHTML = bodyContent;
+                    content.style.display = 'block';
+                }
+            };
+            xhr.send();
         } else {
             // Si no es una URL, asume que es un identificador interno y muestra el contenido correspondiente
             var content = document.getElementById(targetIdOrUrl);
@@ -239,11 +245,19 @@ function buttonClick(targetIdOrUrl) {
         }
     }
 
+    // Función para extraer el contenido del body de una página HTML
+    function extractBodyContent(html) {
+        var bodyStart = html.indexOf('<body>');
+        var bodyEnd = html.indexOf('</body>');
+        return bodyStart !== -1 && bodyEnd !== -1
+            ? html.substring(bodyStart + 6, bodyEnd)
+            : html;
+    }
+
     function isUrl(str) {
         // Función simple para verificar si una cadena parece ser una URL
         return str.startsWith('http') || str.startsWith('www');
     }
-
     
 
 function buttonOut(button) {
