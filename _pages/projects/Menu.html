@@ -175,6 +175,8 @@ comments: true
 
 <!-- Contenedor para mostrar contenido de enlaces -->
 <div id="contenidoMenu" class="content" style="display: none;"></div>
+
+
     <script>
   // Función para mostrar el menú correspondiente
   function mostrarMenuDesdeURL() {
@@ -222,11 +224,7 @@ function buttonHover(button) {
 }
 
 function buttonClick(targetIdOrUrl) {
-        // Oculta todos los menús
-        var contents = document.getElementsByClassName('menu');
-        for (var i = 0; i < contents.length; i++) {
-            contents[i].style.display = 'none';
-        }
+        
 
         // Si el parámetro es una URL, abre la URL en el contenedor de contenido
         if (isUrl(targetIdOrUrl)) {
