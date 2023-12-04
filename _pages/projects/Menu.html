@@ -213,9 +213,19 @@ function buttonHover(button) {
   document.querySelector('.content').innerHTML = targetContent;
 }
 
-function buttonClick(link) {
-  // Cambiar la ventana de destino del enlace
-  window.open(link, '_blank');
+function buttonClick(pageId) {
+  // Ocultar todos los menús
+  var menus = document.getElementsByClassName('menu');
+  for (var i = 0; i < menus.length; i++) {
+    menus[i].style.display = 'none';
+  }
+
+  // Mostrar el contenido correspondiente al enlace seleccionado
+  var content = document.getElementById(pageId);
+  content.style.display = 'block';
+
+  // También puedes cargar el contenido de la página desde el servidor si es necesario
+  // Aquí asumimos que ya tienes el contenido en la página y solo lo estás mostrando/ocultando
 }
 
 function buttonOut(button) {
