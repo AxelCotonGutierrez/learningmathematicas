@@ -169,7 +169,8 @@ comments: true
     </div>
 </div>
 
-
+<!-- Contenedor para mostrar contenido de enlaces -->
+<div id="contenidoMenu" class="content" style="display: none;"></div>
     <script>
   // Función para mostrar el menú correspondiente
   function mostrarMenuDesdeURL() {
@@ -213,20 +214,31 @@ function buttonHover(button) {
   document.querySelector('.content').innerHTML = targetContent;
 }
 
-function buttonClick(pageId) {
-  // Ocultar todos los menús
-  var menus = document.getElementsByClassName('menu');
-  for (var i = 0; i < menus.length; i++) {
-    menus[i].style.display = 'none';
-  }
+function buttonClick(targetIdOrUrl) {
+        // Oculta todos los menús
+        var contents = document.getElementsByClassName('menu');
+        for (var i = 0; i < contents.length; i++) {
+            contents[i].style.display = 'none';
+        }
 
-  // Mostrar el contenido correspondiente al enlace seleccionado
-  var content = document.getElementById(pageId);
-  content.style.display = 'block';
+        // Si el parámetro es una URL, abre la URL en el contenedor de contenido
+        if (isUrl(targetIdOrUrl)) {
+            // Muestra el contenido correspondiente al enlace seleccionado
+            var content = document.getElementById('contenidoMenu');
+            content.innerHTML = `<iframe src="${targetIdOrUrl}" style="width: 100%; height: 100%;"></iframe>`;
+            content.style.display = 'block';
+        } else {
+            // Si no es una URL, asume que es un identificador interno y muestra el contenido correspondiente
+            var content = document.getElementById(targetIdOrUrl);
+            content.style.display = 'block';
+        }
+    }
 
-  // También puedes cargar el contenido de la página desde el servidor si es necesario
-  // Aquí asumimos que ya tienes el contenido en la página y solo lo estás mostrando/ocultando
-}
+    function isUrl(str) {
+        // Función simple para verificar si una cadena parece ser una URL
+        return str.startsWith('http') || str.startsWith('www');
+    }
+
 
 function buttonOut(button) {
   if (button.classList.contains('additional-button')) {
