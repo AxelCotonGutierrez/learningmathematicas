@@ -252,14 +252,22 @@ function buttonClick(targetIdOrUrl) {
         }
     }
 
-    // Función para extraer el contenido del body de una página HTML
-    function extractBodyContent(html) {
-        var bodyStart = html.indexOf('<body>');
-        var bodyEnd = html.indexOf('</body>');
-        return bodyStart !== -1 && bodyEnd !== -1
-            ? html.substring(bodyStart + 6, bodyEnd)
-            : html;
+    // Función para extraer el contenido del body de una página HTML a partir de la etiqueta <h1>
+function extractBodyContent(html) {
+    var bodyStart = html.indexOf('<body>');
+    var bodyEnd = html.indexOf('</body>');
+    
+    if (bodyStart !== -1 && bodyEnd !== -1) {
+        var bodyContent = html.substring(bodyStart + 6, bodyEnd);
+        var h1Start = bodyContent.indexOf('<h1>');
+        
+        if (h1Start !== -1) {
+            return bodyContent.substring(h1Start);
+        }
     }
+    
+    return html;
+}
 
     function isUrl(str) {
         // Función simple para verificar si una cadena parece ser una URL
