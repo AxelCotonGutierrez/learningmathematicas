@@ -10,8 +10,8 @@
 		<strong>{{ page.published | date: '%d/%m/%Y' }} (última actualización: {{ page.date | date: '%d/%m/%Y' }})
 		<br>
 		{% for tag in page.tags %}
-			<a class="label label-default" href="/learningmathematicas/tags/#{{ tag | slugify }}">{{ tag }}</a>
-		{% endfor %}
+    <a class="label label-default custom-tag" href="/learningmathematicas/tags/#{{ tag | slugify }}">{{ tag }}</a>
+{% endfor %}
     </p>
 	{% if page.github %}
   <p>
