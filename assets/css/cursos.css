@@ -152,3 +152,30 @@ table tr td.centrado {
 
 /* Estilo específico para el cuadrado del botón 21 */
 .fila_oculta[data-codigos*="boton_21"] .columna .cuadrado.boton_21 { background-color: #510615; }
+
+/* Estilo para adaptar a dispositivos móviles */
+@media (max-width: 767px) {
+    #contenedor-principal {
+        flex-direction: column; /* Cambia la dirección del contenedor principal a columna */
+    }
+
+    .subcontenedor {
+        width: 100%; /* Ocupa el ancho completo del contenedor principal */
+    }
+
+    .boton_menu_cursos,
+    .boton_menu_cursos1 {
+        width: 30px; /* Ajusta el tamaño de los botones según tus preferencias */
+        height: 30px;
+        font-size: 8px; /* Ajusta el tamaño del texto según tus preferencias */
+        margin-bottom: 5px; /* Añade espacio entre botones */
+    }
+
+    /* Estilo específico para círculos y cuadrados en dispositivos móviles */
+    .fila_oculta .columna .circulo,
+    .fila_oculta .columna .cuadrado {
+        width: 8px; /* Ajusta el tamaño de círculos y cuadrados para dispositivos móviles */
+        height: 8px;
+        margin-bottom: 3px; /* Ajusta el espacio entre figuras en la misma columna */
+    }
+}
