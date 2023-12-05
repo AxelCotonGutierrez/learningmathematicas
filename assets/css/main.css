@@ -206,6 +206,11 @@ h3:before {
         color: #FFFFFF;
         background-color: transparent; /* Cambia el fondo a transparente */
     }
-
+	.post-container {
+		max-width: 90%; /* ajusta el ancho máximo según tus preferencias */
+		margin: 0 auto; /* centra el contenido */
+		padding: 10px; /* añade un relleno alrededor del contenido del post */
+	}
+	
 	
 }
