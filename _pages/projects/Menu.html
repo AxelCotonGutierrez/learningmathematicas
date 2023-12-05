@@ -106,16 +106,19 @@ comments: true
                     Contar es una habilidad fundamental en matemáticas que nos permite determinar la cantidad de elementos en 
                     un conjunto. En este artículo, te guiaré paso a paso a través del proceso de contar, siguiendo las distintas 
                     fases que conlleva.
-                </p>" onmouseover="buttonHover(this)" onmouseout="buttonOut(this)"><b>Teoría para Docentes</b>
+                </p>" onmouseover="buttonHover(this)" onmouseout="buttonOut(this)"
+                onclick="buttonClick('https://axelcotongutierrez.github.io/learningmathematicas/posts/Contar/')">
+                <b>Teoría para Docentes</b>
+                
                 </div>
                 <div class="additional-button"
                     data-target="<p style='text-align: justify;'>
                         <span>En este enlace, se encuentra a disposición la totalidad 
                             de la teoría necesaria para alcanzar una comprensión completa de los conceptos que estamos abordando.
                         </span>
-                    </p>"
+                    </p>"onclick="buttonClick('https://axelcotongutierrez.github.io/learningmathematicas/posts/Contar/')"></div>
                     onmouseover="buttonHover(this)" onmouseout="buttonOut(this)"
-                    onclick="buttonClick('https://axelcotongutierrez.github.io/learningmathematicas/posts/Contar/')">
+                    
                     <b>TEORÍA</b>
                 </div>
 
@@ -271,7 +274,7 @@ function extractBodyContent(html) {
 function buttonOut(button) {
   if (button.classList.contains('additional-button')) {
     // Restaurar el color solo si es un botón adicional
-    button.style.backgroundColor = "none";
+    button.style.backgroundColor = "ransparent";
   }
 
   document.getElementById('content').style.display = "none";
