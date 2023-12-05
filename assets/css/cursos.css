@@ -157,27 +157,27 @@ table tr td.centrado {
 @media (max-width: 767px) {
     #contenedor-principal {
         flex-direction: column; /* Cambia la dirección del contenedor principal a columna */
+        width: 100%; /* Ocupa el 100% del ancho disponible en dispositivos móviles */
     }
 
     .subcontenedor {
-        width: 100%; /* Ocupa el ancho completo del contenedor principal */ 
+        width: 100%; /* Ocupa el 100% del ancho disponible en dispositivos móviles */
         max-width: none; /* Anula cualquier restricción de ancho máximo */
-
     }
 
     .boton_menu_cursos,
     .boton_menu_cursos1 {
         width: 30px; /* Ajusta el tamaño de los botones según tus preferencias */
         height: 30px;
-        font-size: 8px; /* Ajusta el tamaño del texto según tus preferencias */
+        font-size: 10px; /* Ajusta el tamaño del texto según tus preferencias */
         margin-bottom: 5px; /* Añade espacio entre botones */
     }
 
     /* Estilo específico para círculos y cuadrados en dispositivos móviles */
     .fila_oculta .columna .circulo,
     .fila_oculta .columna .cuadrado {
-        width: 8px; /* Ajusta el tamaño de círculos y cuadrados para dispositivos móviles */
-        height: 8px;
+        width: 10px; /* Ajusta el tamaño de círculos y cuadrados para dispositivos móviles */
+        height: 10px;
         margin-bottom: 3px; /* Ajusta el espacio entre figuras en la misma columna */
     }
 }
