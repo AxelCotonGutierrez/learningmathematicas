@@ -161,7 +161,11 @@ h3:before {
 	color: #ffffff;
 }
 
-
+.post-container {
+    max-width: 90%; /* ajusta el ancho máximo según tus preferencias */
+    margin: 0 auto; /* centra el contenido */
+    padding: 20px; /* añade un relleno alrededor del contenido del post */
+}
 
 /* Estilos para dispositivos móviles */
 @media (max-width: 767px) {
