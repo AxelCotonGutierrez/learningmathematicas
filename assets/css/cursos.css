@@ -169,15 +169,15 @@ table tr td.centrado {
     .boton_menu_cursos1 {
         width: 30px; /* Ajusta el tamaño de los botones según tus preferencias */
         height: 30px;
-        font-size: 10px; /* Ajusta el tamaño del texto según tus preferencias */
+        font-size: 6px; /* Ajusta el tamaño del texto según tus preferencias */
         margin-bottom: 5px; /* Añade espacio entre botones */
     }
 
     /* Estilo específico para círculos y cuadrados en dispositivos móviles */
     .fila_oculta .columna .circulo,
     .fila_oculta .columna .cuadrado {
-        width: 10px; /* Ajusta el tamaño de círculos y cuadrados para dispositivos móviles */
-        height: 10px;
+        width: 8px; /* Ajusta el tamaño de círculos y cuadrados para dispositivos móviles */
+        height: 8px;
         margin-bottom: 3px; /* Ajusta el espacio entre figuras en la misma columna */
     }
 }
