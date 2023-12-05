@@ -33,7 +33,7 @@
 
 .boton_menu_cursos:not(.on),
 .boton_menu_cursos1:not(.on) {
-    filter: grayscale(50%);
+    filter: grayscale(25%);
 }
 
 #contenedor-principal {
