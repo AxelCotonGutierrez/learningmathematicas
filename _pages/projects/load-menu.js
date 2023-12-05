@@ -1,35 +1,40 @@
-// Función para cargar el menú específico
-const loadMenu = async (menuId) => {
-    const response = await fetch('menus.json');
-    const menus = await response.json();
+// load-menu.js
+
+// Función para cargar el menú desde el archivo JSON
+function loadMenu(menuId) {
+    fetch('menus.json')  // Ajusta la ruta según la ubicación real de tu archivo JSON
+      .then(response => response.json())
+      .then(data => {
+        const menuData = data[menuId];
+        if (menuData) {
+          // Llama a una función para construir el menú usando los datos cargados
+          buildMenu(menuData);
+        }
+      })
+      .catch(error => console.error('Error al cargar el menú:', error));
+  }
   
-    const menu = menus[menuId];
+  // Función para construir el menú a partir de los datos
+  function buildMenu(menuData) {
+    const indexContainer = document.querySelector('.index-container');
+    // Elimina el contenido existente en el contenedor
+    indexContainer.innerHTML = '';
   
-    if (menu) {
-      const indexContainer = document.querySelector('.index');
-      indexContainer.innerHTML = `<h1 style="text-align: center;">${menuId}</h1>`;
-      
-      const buttonsContainer = document.querySelector('.button-container');
-      buttonsContainer.innerHTML = ''; // Limpiar contenido anterior
+    // Itera sobre los elementos del menú y crea los botones dinámicamente
+    menuData.forEach(item => {
+      const button = document.createElement('div');
+      button.className = 'additional-button';
+      button.innerHTML = item.content;
+      // Añade los manejadores de eventos según sea necesario
+      button.addEventListener('mouseover', () => eval(item.onmouseover));
+      button.addEventListener('mouseout', () => eval(item.onmouseout));
+      button.addEventListener('click', () => eval(item.onclick));
   
-      // Crear botones dinámicamente
-      menu.forEach((buttonData) => {
-        const button = document.createElement('div');
-        button.classList.add('additional-button');
-        button.innerHTML = `<b>${buttonData.label}</b>`;
-        
-        // Asignar atributos a los eventos
-        button.onmouseover = () => eval(buttonData.onmouseover);
-        button.onmouseout = () => eval(buttonData.onmouseout);
-        button.onclick = () => eval(buttonData.onclick);
+      // Añade el botón al contenedor
+      indexContainer.appendChild(button);
+    });
+  }
   
-        buttonsContainer.appendChild(button);
-      });
-    } else {
-      console.error(`Menu with ID '${menuId}' not found.`);
-    }
-  };
-  
-  // Cargar menú al cargar la página (puedes cambiar el nombre del menú según sea necesario)
+  // Llama a la función para cargar el menú específico
   loadMenu('Contar');
   
