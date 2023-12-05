@@ -167,10 +167,7 @@ h3:before {
     padding: 20px; /* añade un relleno alrededor del contenido del post */
 }
 
-.custom-tag {
-    width: 90%; /* Reduzca el ancho en un 10% */
-    /* Otros estilos que desees aplicar */
-}
+
 
 /* Estilos para dispositivos móviles */
 @media (max-width: 767px) {
@@ -217,8 +214,5 @@ h3:before {
 		padding: 10px; /* añade un relleno alrededor del contenido del post */
 	}
 	
-	.custom-tag {
-		width: 90%; /* Reduzca el ancho en un 10% */
-		/* Otros estilos que desees aplicar */
-	}
+	
 }
