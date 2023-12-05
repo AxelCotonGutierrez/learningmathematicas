@@ -160,7 +160,9 @@ table tr td.centrado {
     }
 
     .subcontenedor {
-        width: 100%; /* Ocupa el ancho completo del contenedor principal */
+        width: 100%; /* Ocupa el ancho completo del contenedor principal */ 
+        max-width: none; /* Anula cualquier restricción de ancho máximo */
+
     }
 
     .boton_menu_cursos,
