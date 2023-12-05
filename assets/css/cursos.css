@@ -85,6 +85,12 @@ td, th {
     color: #3498db;
     font-weight: bold;
 }
+
+/* Estilo para la primera celda con la clase .centrado en cada tabla */
+table tr td.centrado {
+    border-radius: 10px; /* Ajusta el valor según tus preferencias */
+    border: 1px solid #3498db; /* Ajusta el color y grosor del borde según tus preferencias */
+}
 .centrado2 {
     text-align: center;
     font-weight: bold;
