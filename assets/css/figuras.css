@@ -3,8 +3,7 @@
     width: 50px; /* Ajusta el ancho según tus preferencias */
     height: 50px; /* Ajusta el alto según tus preferencias */
     margin-right: 10px; /* Espacio entre figuras en la misma fila */
-    position: relative;
-    display: inline-block; /* Para que las figuras estén en línea */
+   
   }
 
   /* Clases de color asociadas a las figuras según el color proporcionado en el título */
