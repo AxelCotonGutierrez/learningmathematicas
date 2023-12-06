@@ -32,7 +32,7 @@
 
   /* Estilo para el tooltip (texto emergente) */
   .figura:hover::before {
-    content: var(--tooltip-text);
+    content: attr(data-tooltip);
     position: absolute;
     background-color: #333;
     color: #fff;
