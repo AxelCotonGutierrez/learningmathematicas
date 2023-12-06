@@ -7,7 +7,7 @@
 
 /* Estilo para los cuadrados */
 .cuadrado {
-    border-radius: 0%; /* Cambia el color según el título */
+    background-color: #510615; /* Cambia el color según el título */
 }
 
 /* Estilo para los círculos */
