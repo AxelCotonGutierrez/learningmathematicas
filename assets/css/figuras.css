@@ -1,47 +1,5 @@
  /* Estilo común para las figuras */
  .figura {
-    width: 50px; /* Ajusta el ancho según tus preferencias */
-    height: 50px; /* Ajusta el alto según tus preferencias */
-    margin-right: 10px; /* Espacio entre figuras en la misma fila */
-   
-  }
-
-  /* Clases de color asociadas a las figuras según el color proporcionado en el título */
-  .color-cuadrado1 {
-    background-color: #510615; /* Color para cuadrado */
-    --tooltip-text: "Matemáticas";
-  }
-
-  .color-circulo1 {
-    border-radius: 50%;
-    background-color: #FF0000; /* Color para círculo */
-    --tooltip-text: "Infantil";
-  }
-
-  .color-cuadrado2 {
-    background-color: #510715; /* Color para cuadrado */
-    --tooltip-text: "Descripción para el cuadrado 2";
-  }
-
-  .color-circulo2 {
-    border-radius: 50%;
-    background-color: #FF000F; /* Color para círculo */
-  
-
-  /* Estilo para el tooltip (texto emergente) */
-  .figura:hover::before {
-    content: attr(data-tooltip);
-    position: absolute;
-    background-color: #333;
-    color: #fff;
-    padding: 5px;
-    border-radius: 5px;
-    font-size: 14px;
-    bottom: 100%; /* Posiciona el tooltip arriba de la figura */
-    left: 50%; /* Centra el tooltip horizontalmente */
-    transform: translateX(-50%); /* Ajusta la posición horizontal del tooltip */
-  } /* Estilo común para las figuras */
-  .figura {
     width: 20px; /* Ajusta el ancho según tus preferencias */
     height: 20px; /* Ajusta el alto según tus preferencias */
     margin-right: 4px; /* Espacio entre figuras en la misma fila */
