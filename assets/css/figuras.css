@@ -1,0 +1,26 @@
+/* Estilo común para las figuras */
+.figura {
+    width: 12px;
+    height: 12px;
+    margin-right: 4px; /* Espacio entre figuras en la misma fila */
+}
+
+/* Estilo para los cuadrados */
+.cuadrado {
+    border-radius: 0%; /* Cambia el color según el título */
+}
+
+/* Estilo para los círculos */
+.circulo {
+    border-radius: 50%;
+}
+
+/* Clases de color asociadas a las figuras según el color proporcionado en el título */
+.color-cuadrado1 {
+    background-color: #510615; /* Cambia el color según el título */
+}
+
+.color-circulo1 {
+    background-color: #FF0000; /* Cambia el color según el título */
+}
+
