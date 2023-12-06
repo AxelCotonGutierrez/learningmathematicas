@@ -1,5 +1,6 @@
 /* Estilo común para las figuras */
 .figura {
+    width: 100%; 
     width: 12px;
     height: 12px;
     margin-right: 4px; /* Espacio entre figuras en la misma fila */
