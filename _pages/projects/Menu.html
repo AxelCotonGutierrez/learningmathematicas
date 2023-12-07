@@ -285,7 +285,7 @@ function buttonClick(targetIdOrUrl) {
     }
 
    // Función para extraer el contenido del body de una página HTML a partir de la etiqueta <h1>
-function extractBodyContent(html) {
+    function extractBodyContent(html) {
     var bodyStart = html.indexOf('<body>');
     var bodyEnd = html.indexOf('</body>');
 
@@ -294,7 +294,17 @@ function extractBodyContent(html) {
         var h1Start = bodyContent.indexOf('<h1>');
 
         if (h1Start !== -1) {
-            return bodyContent.substring(h1Start);
+            var footerStart = bodyContent.indexOf('<footer>');
+
+            if (footerStart !== -1) {
+                // Si hay un footer, ajusta la posición de finalización del contenido del body
+                bodyContent = bodyContent.substring(h1Start, footerStart);
+            } else {
+                // Si no hay un footer, simplemente extrae desde la etiqueta <h1>
+                bodyContent = bodyContent.substring(h1Start);
+            }
+
+            return bodyContent;
         }
     }
 
