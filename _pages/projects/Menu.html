@@ -247,7 +247,7 @@ comments: true
             <b>(A) Glosario Online</b>
         </div>
 
-            <div class="content" id="content">
+            <div class="content" id="contar3">
                 <h2>Contar hasta 3</h2>
             </div>
 
@@ -287,7 +287,7 @@ comments: true
                 <!-- Puedes agregar más botones según tus necesidades -->
             </div>
 
-            <div class="content" id="content3">
+            <div class="content" id="SND">
                 <h2>Texto de Sección 1</h2>
             </div>
 
@@ -342,12 +342,15 @@ comments: true
 <script>
 function buttonHover(button) {
   button.style.border = "2px solid #3679E5";
-  document.getElementById('content').style.display = "block";
+
+  // Buscar el contenedor '.content' más cercano al botón
+  var contentContainer = button.closest('.index-container').querySelector('.content');
+  contentContainer.style.display = "block";
 
   var targetContent = button.getAttribute('data-target') || button.innerText;
 
-  // Limpiar el contenido existente en '.content'
-  document.querySelector('.content').innerHTML = targetContent;
+  // Limpiar y actualizar el contenido en el contenedor '.content' encontrado
+  contentContainer.innerHTML = targetContent;
 }
 
 function buttonClick(targetIdOrUrl) {
