@@ -1,0 +1,76 @@
+.menu {
+    display: none;
+}
+
+h2 {
+counter-reset: none;
+}
+.index-container {
+width: 100%;
+margin: 0 auto;
+border-radius: 10px;
+overflow: hidden;
+border: 2px solid #3498db;
+}
+
+.index {
+background: #fff;
+color: #0B0B0B;
+border-radius: 10px;
+overflow: hidden;
+}
+
+.button-container {
+display: flex;
+flex-wrap: wrap;
+justify-content: space-around;
+align-items: center;
+width: 100%;
+margin-top: 20px;
+}
+
+.button,
+.additional-button {
+color: #3498db;
+padding: 10px;
+margin-bottom: 10px;
+cursor: pointer;
+text-align: center;
+width: 35%;
+border-radius: 20%;
+}
+
+
+.content {
+padding: 5%;
+display: none;
+border-radius: 8px;
+}
+.content1 {
+padding: 3%; /* Reduce el espacio alrededor del contenido */
+display: none;
+border-radius: 8px;
+font-size: 80%;
+overflow:hidden; /* Agrega barras de desplazamiento horizontal si es necesario */
+max-width: 100%;
+}
+h2 {
+margin-top: 5;
+padding: 10px; 
+border-radius: 8px; 
+margin: auto;
+font-size: 150%;
+}
+
+.additional-buttons {
+display: flex;
+justify-content: space-between;
+margin-top: 20px;
+}
+
+
+#contenidoMenu {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-top: 10px;
+}
