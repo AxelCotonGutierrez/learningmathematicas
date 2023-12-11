@@ -54,6 +54,7 @@ font-size: 80%;
 overflow:hidden; /* Agrega barras de desplazamiento horizontal si es necesario */
 max-width: 100%;
 }
+
 h2 {
 margin-top: 5;
 padding: 10px; 
