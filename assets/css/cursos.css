@@ -154,12 +154,6 @@ table tr td.centrado {
 .fila_oculta[data-codigos*="boton_21"] .columna .cuadrado.boton_21 { background-color: #510615; }
 
 
-/* Estilo para la fila */
-.fila {
-    display: flex;
-    flex-direction: row;
-    margin-bottom: 4px; /* Ajusta el espacio entre filas según sea necesario */
-}
 
 /* Estilo para adaptar a dispositivos móviles */
 @media (max-width: 767px) {
