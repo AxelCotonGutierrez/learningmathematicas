@@ -154,32 +154,12 @@ table tr td.centrado {
 .fila_oculta[data-codigos*="boton_21"] .columna .cuadrado.boton_21 { background-color: #510615; }
 
 
-/* Ajustes para organizar en conjuntos de tres en tres */
-.fila_oculta[data-codigos*="boton_1"] .columna .circulo.boton_1,
-.fila_oculta[data-codigos*="boton_2"] .columna .circulo.boton_2,
-.fila_oculta[data-codigos*="boton_3"] .columna .circulo.boton_3,
-.fila_oculta[data-codigos*="boton_4"] .columna .circulo.boton_4,
-.fila_oculta[data-codigos*="boton_5"] .columna .circulo.boton_5,
-.fila_oculta[data-codigos*="boton_6"] .columna .circulo.boton_6,
-.fila_oculta[data-codigos*="boton_7"] .columna .circulo.boton_7,
-.fila_oculta[data-codigos*="boton_8"] .columna .circulo.boton_8,
-.fila_oculta[data-codigos*="boton_9"] .columna .circulo.boton_9,
-.fila_oculta[data-codigos*="boton_10"] .columna .circulo.boton_10,
-.fila_oculta[data-codigos*="boton_11"] .columna .circulo.boton_11,
-.fila_oculta[data-codigos*="boton_12"] .columna .circulo.boton_12,
-.fila_oculta[data-codigos*="boton_13"] .columna .circulo.boton_13,
-.fila_oculta[data-codigos*="boton_14"] .columna .circulo.boton_14,
-.fila_oculta[data-codigos*="boton_15"] .columna .circulo.boton_15,
-.fila_oculta[data-codigos*="boton_16"] .columna .circulo.boton_16,
-.fila_oculta[data-codigos*="boton_17"] .columna .circulo.boton_17,
-.fila_oculta[data-codigos*="boton_18"] .columna .circulo.boton_18,
-.fila_oculta[data-codigos*="boton_19"] .columna .circulo.boton_19,
-.fila_oculta[data-codigos*="boton_20"] .columna .circulo.boton_20 {
-    margin-bottom: 4px; /* Espacio entre círculos en la misma columna */
+/* Estilo para la fila */
+.fila {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 4px; /* Ajusta el espacio entre filas según sea necesario */
 }
-
-
-
 
 /* Estilo para adaptar a dispositivos móviles */
 @media (max-width: 767px) {
