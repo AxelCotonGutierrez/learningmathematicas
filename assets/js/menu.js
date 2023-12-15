@@ -24,7 +24,14 @@ function mostrarMenu(menuId) {
         menuSeleccionado.style.display = 'block';
     }
 }
-
+function toggleSpoiler(spoiler) {
+    var content = spoiler.nextElementSibling;
+    if (content.style.display === "none") {
+        content.style.display = "block";
+    } else {
+        content.style.display = "none";
+    }
+}
 // Llamar a la función al cargar la página
 mostrarMenuDesdeURL();
 
@@ -122,6 +129,7 @@ function buttonHover(button) {
 }
 
 // Usar esta función después de cargar e insertar el contenido
+var xhr = new XMLHttpRequest();
 xhr.onreadystatechange = function () {
     if (xhr.readyState == 4 && xhr.status == 200) {
         var bodyContent = extractBodyContent(xhr.responseText);
@@ -132,11 +140,3 @@ xhr.onreadystatechange = function () {
     }
 };
 
-function toggleSpoiler(spoiler) {
-    var content = spoiler.nextElementSibling;
-    if (content.style.display === "none") {
-        content.style.display = "block";
-    } else {
-        content.style.display = "none";
-    }
-}
