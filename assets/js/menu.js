@@ -107,25 +107,28 @@ function buttonHover(button) {
   function executeScripts(containerElement) {
     var scripts = containerElement.getElementsByTagName('script');
     for (var i = 0; i < scripts.length; i++) {
-        var script = scripts[i];
+        var originalScript = scripts[i];
         var scriptCopy = document.createElement('script');
-        if (script.src) {
-            scriptCopy.src = script.src;
+
+        if (originalScript.src) {
+            scriptCopy.src = originalScript.src;
         } else {
-            scriptCopy.text = script.text;
+            scriptCopy.text = originalScript.text;
         }
+
         document.head.appendChild(scriptCopy);
         document.head.removeChild(scriptCopy);
     }
 }
 
-// Uso en tu función existente
+// Usar esta función después de cargar e insertar el contenido
 xhr.onreadystatechange = function () {
     if (xhr.readyState == 4 && xhr.status == 200) {
         var bodyContent = extractBodyContent(xhr.responseText);
         var content = document.getElementById('contenidoMenu');
         content.innerHTML = bodyContent;
-        executeScripts(content);
+        executeScripts(content); // Ejecutar los scripts después de insertar el contenido
         content.style.display = 'block';
     }
 };
+
