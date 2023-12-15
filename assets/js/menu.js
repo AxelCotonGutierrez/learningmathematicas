@@ -104,3 +104,28 @@ function buttonHover(button) {
     document.getElementById('content').style.display = "none";
   }
   
+  function executeScripts(containerElement) {
+    var scripts = containerElement.getElementsByTagName('script');
+    for (var i = 0; i < scripts.length; i++) {
+        var script = scripts[i];
+        var scriptCopy = document.createElement('script');
+        if (script.src) {
+            scriptCopy.src = script.src;
+        } else {
+            scriptCopy.text = script.text;
+        }
+        document.head.appendChild(scriptCopy);
+        document.head.removeChild(scriptCopy);
+    }
+}
+
+// Uso en tu función existente
+xhr.onreadystatechange = function () {
+    if (xhr.readyState == 4 && xhr.status == 200) {
+        var bodyContent = extractBodyContent(xhr.responseText);
+        var content = document.getElementById('contenidoMenu');
+        content.innerHTML = bodyContent;
+        executeScripts(content);
+        content.style.display = 'block';
+    }
+};
