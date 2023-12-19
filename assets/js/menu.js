@@ -98,6 +98,11 @@ function executeScripts(containerElement) {
         if (originalScript.src) {
             scriptCopy.src = originalScript.src;
         } else {
+            // Aquí revisamos si la variable ya ha sido definida
+            // y si es así, no ejecutamos el script de nuevo
+            if (originalScript.text.includes("const questions =") && window.questions) {
+                continue;
+            }
             scriptCopy.text = originalScript.text;
         }
         document.head.appendChild(scriptCopy);
