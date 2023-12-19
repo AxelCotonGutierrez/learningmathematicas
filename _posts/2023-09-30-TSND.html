@@ -282,46 +282,48 @@ quizForm.addEventListener("submit", function (event) {
 });
 
 function displayResult() {
-    let score = 0;
+  let score = 0;
 
-    for (const question of selectedQuestions) {
-        const questionNumber = selectedQuestions.indexOf(question) + 1;
-        const selectedOption = document.querySelector(`input[name="question${questionNumber}"]:checked`).value;
+  for (const question of selectedQuestions) {
+    const questionNumber = selectedQuestions.indexOf(question) + 1;
+    const selectedOption = document.querySelector(`input[name="question${questionNumber}"]:checked`).value;
 
-        if (selectedOption === question.answer) {
-            score++;
-        }
+    if (selectedOption === question.answer) {
+      score++;
     }
+  }
 
-    const percentage = (score / selectedQuestions.length) * 100;
+  const percentage = (score / selectedQuestions.length) * 100;
 
-    // Muestra el resultado
-    const resultMessage = `Puntuación: ${score} de ${selectedQuestions.length} (${percentage}%)`;
-    const resultDiv = document.createElement("div");
-    resultDiv.innerHTML = resultMessage;
+  // Muestra el resultado
+  const resultMessage = `Puntuación: ${score} de ${selectedQuestions.length} (${percentage}%)`;
+  const resultDiv = document.createElement("div");
+  resultDiv.innerHTML = resultMessage;
 
-    // Agrega el resultado debajo del formulario
-    quizForm.insertAdjacentElement("afterend", resultDiv);
+  // Agrega el resultado debajo del formulario
+  quizForm.insertAdjacentElement("afterend", resultDiv);
 
-    // Elimina el botón de reinicio existente, si hay alguno
-    const existingResetButton = document.getElementById("resetButton");
-    if (existingResetButton) {
-        existingResetButton.remove();
-    }
-
-    // Agrega un botón de reinicio debajo del resultado
-    const resetButton = document.createElement("button");
-    resetButton.id = "resetButton";  // Asigna un ID al botón
-    resetButton.innerHTML = "Reiniciar Test";
-    resetButton.addEventListener("click", function () {
-        reiniciarTest();
-    });
-    resultDiv.appendChild(resetButton);  // Agrega el botón directamente al resultDiv
-
-    // Agrega un salto de línea entre el resultado y los botones
-    quizForm.insertAdjacentHTML("beforeend", "<br>");
+  function reiniciarTest() {
+    // Limpia el formulario y reinicia las variables
+    const quizForm = document.getElementById("quiz-form");
+    quizForm.innerHTML = '';
+    selectedQuestions = [];
+    selectRandomQuestions();
+    displayQuestions();
 }
 
+// En tu función displayResult, modifica cómo creas el botón de reinicio
+const resetButton = document.createElement("button");
+resetButton.innerHTML = "Reiniciar Test";
+resetButton.addEventListener("click", function () {
+    reiniciarTest(); // Llama a la función reiniciarTest en lugar de recargar la página
+});
+resultDiv.insertAdjacentElement("afterend", resetButton);
+
+
+  // Agrega un salto de línea entre el resultado y los botones
+  quizForm.insertAdjacentHTML("beforeend", "<br>");
+}
 
 </script>
 
