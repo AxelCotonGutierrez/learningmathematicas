@@ -230,25 +230,25 @@ function selectRandomQuestions() {
 }
 
 function displayQuestions() {
-  const quizForm = document.getElementById("quiz-form");
+  var quizForm = document.getElementById("quiz-form");
+  quizForm.innerHTML = ''; // Limpia el formulario
 
-  selectedQuestions.forEach((question, index) => {
-    const questionNumber = index + 1;
+  selectedQuestions.forEach(function(question, index) {
+    var questionNumber = index + 1;
 
     // Crea el elemento de la pregunta
-    const questionDiv = document.createElement("div");
+    var questionDiv = document.createElement("div");
     questionDiv.innerHTML = `<span style="color: #2b00fe;"><b>${questionNumber}. ${question.question}</b></span><br>`;
-
     
     // Crea las opciones para la pregunta
-    question.options.forEach((option, optionIndex) => {
-      const optionInput = document.createElement("input");
+    question.options.forEach(function(option, optionIndex) {
+      var optionInput = document.createElement("input");
       optionInput.setAttribute("type", "radio");
       optionInput.setAttribute("name", `question${questionNumber}`);
       optionInput.setAttribute("value", option.charAt(0).toLowerCase());
       optionInput.id = `q${questionNumber}_option${optionIndex}`;
 
-      const optionLabel = document.createElement("label");
+      var optionLabel = document.createElement("label");
       optionLabel.setAttribute("for", `q${questionNumber}_option${optionIndex}`);
       optionLabel.innerHTML = option;
 
@@ -261,18 +261,15 @@ function displayQuestions() {
     quizForm.appendChild(questionDiv);
     quizForm.appendChild(document.createElement("br")); // Agrega un salto de línea entre preguntas
   });
-// Agrega un salto de línea entre preguntas
-quizForm.appendChild(document.createElement("br"));
-  
-  
+
   // Agregar el botón de envío al final
-  const submitButton = document.createElement("input");
+  var submitButton = document.createElement("input");
   submitButton.setAttribute("type", "submit");
   submitButton.setAttribute("value", "Enviar");
   quizForm.appendChild(submitButton);
 }
 
-const quizForm = document.getElementById("quiz-form");
+var quizForm = document.getElementById("quiz-form");
 selectRandomQuestions();
 displayQuestions();
 
@@ -282,32 +279,32 @@ quizForm.addEventListener("submit", function (event) {
 });
 
 function displayResult() {
-    let score = 0;
+    var score = 0;
 
-    for (const question of selectedQuestions) {
-        const questionNumber = selectedQuestions.indexOf(question) + 1;
-        const selectedOption = document.querySelector(`input[name="question${questionNumber}"]:checked`).value;
+    for (var i = 0; i < selectedQuestions.length; i++) {
+        var questionNumber = i + 1;
+        var selectedOption = document.querySelector(`input[name="question${questionNumber}"]:checked`).value;
 
-        if (selectedOption === question.answer) {
+        if (selectedOption === selectedQuestions[i].answer) {
             score++;
         }
     }
 
-    const percentage = (score / selectedQuestions.length) * 100;
+    var percentage = (score / selectedQuestions.length) * 100;
 
     // Elimina el contenedor de resultados anterior si existe
-    const existingResultDiv = document.getElementById("resultDiv");
+    var existingResultDiv = document.getElementById("resultDiv");
     if (existingResultDiv) {
         existingResultDiv.remove();
     }
 
     // Crea un nuevo contenedor para los resultados
-    const resultDiv = document.createElement("div");
+    var resultDiv = document.createElement("div");
     resultDiv.id = "resultDiv"; // Asigna un ID al contenedor
     resultDiv.innerHTML = `Puntuación: ${score} de ${selectedQuestions.length} (${percentage}%)<br/>`;
 
     // Crea el botón de reinicio y lo agrega dentro del contenedor de resultados
-    const resetButton = document.createElement("button");
+    var resetButton = document.createElement("button");
     resetButton.innerHTML = "Reiniciar Test";
     resetButton.addEventListener("click", function () {
         reiniciarTest();
@@ -319,14 +316,12 @@ function displayResult() {
 }
 
 function reiniciarTest() {
-    // Limpia el formulario y reinicia las variables
-    const quizForm = document.getElementById("quiz-form");
+    var quizForm = document.getElementById("quiz-form");
     quizForm.innerHTML = '';
     selectedQuestions = [];
     selectRandomQuestions();
     displayQuestions();
 }
-
 
 </script>
 
