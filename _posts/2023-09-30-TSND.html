@@ -304,18 +304,18 @@ function displayResult() {
     // Crea un nuevo contenedor para los resultados
     const resultDiv = document.createElement("div");
     resultDiv.id = "resultDiv"; // Asigna un ID al contenedor
-    resultDiv.innerHTML = `Puntuación: ${score} de ${selectedQuestions.length} (${percentage}%)`;
+    resultDiv.innerHTML = `Puntuación: ${score} de ${selectedQuestions.length} (${percentage}%)<br/>`;
 
-    // Agrega el contenedor de resultados debajo del formulario
-    quizForm.insertAdjacentElement("afterend", resultDiv);
-
-    // Crea el botón de reinicio
+    // Crea el botón de reinicio y lo agrega dentro del contenedor de resultados
     const resetButton = document.createElement("button");
     resetButton.innerHTML = "Reiniciar Test";
     resetButton.addEventListener("click", function () {
         reiniciarTest();
     });
-    resultDiv.appendChild(resetButton); // Agrega el botón al contenedor de resultados
+    resultDiv.appendChild(resetButton); 
+
+    // Agrega el contenedor de resultados debajo del formulario
+    quizForm.insertAdjacentElement("afterend", resultDiv);
 }
 
 function reiniciarTest() {
@@ -326,6 +326,7 @@ function reiniciarTest() {
     selectRandomQuestions();
     displayQuestions();
 }
+
 
 </script>
 
