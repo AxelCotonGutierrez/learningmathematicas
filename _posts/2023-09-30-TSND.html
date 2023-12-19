@@ -216,17 +216,17 @@ C:
 ];
 
   
-let selectedQuestions = [];
+var selectedQuestions = []; 
 
 function selectRandomQuestions() {
-  // Reorganiza el array de preguntas al azar
-  for (let i = questions.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [questions[i], questions[j]] = [questions[j], questions[i]];
-  }
+    // Reorganiza el array de preguntas al azar
+    for (var i = questions.length - 1; i > 0; i--) {
+        var j = Math.floor(Math.random() * (i + 1));
+        [questions[i], questions[j]] = [questions[j], questions[i]];
+    }
 
-  // Elige las primeras 10 preguntas para el test
-  selectedQuestions = questions.slice(0, 10);
+    // Elige las primeras 10 preguntas para el test
+    selectedQuestions = questions.slice(0, 10);
 }
 
 function displayQuestions() {
