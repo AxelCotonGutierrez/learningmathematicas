@@ -41,17 +41,13 @@ function buttonHover(button) {
 }
 
 function buttonClick(targetIdOrUrl) {
-    // Primero, limpiamos el contenido existente
-    var content = document.getElementById('contenidoMenu');
-    content.innerHTML = '';
-
-    // Luego, procedemos como antes
     if (isUrl(targetIdOrUrl)) {
         var xhr = new XMLHttpRequest();
         xhr.open('GET', targetIdOrUrl, true);
         xhr.onreadystatechange = function () {
             if (xhr.readyState == 4 && xhr.status == 200) {
                 var bodyContent = extractBodyContent(xhr.responseText);
+                var content = document.getElementById('contenidoMenu');
                 content.innerHTML = bodyContent;
                 executeScripts(content);
                 content.style.display = 'block';
@@ -59,11 +55,10 @@ function buttonClick(targetIdOrUrl) {
         };
         xhr.send();
     } else {
-        var selectedContent = document.getElementById(targetIdOrUrl);
-        selectedContent.style.display = 'block';
+        var content = document.getElementById(targetIdOrUrl);
+        content.style.display = 'block';
     }
 }
-
 
 function extractBodyContent(html) {
     var bodyStart = html.indexOf('<body>');
