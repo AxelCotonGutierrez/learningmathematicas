@@ -51,8 +51,8 @@ C:
 </form>
 
   <script>
-  // Define an array of 20 questions
-  const questions = [
+ if (typeof questions === 'undefined') {
+    var questions = [
   {
     question: "¿Qué son los números en la vida diaria?",
     options: [
@@ -213,107 +213,95 @@ C:
     ],
     answer: "a",
   }
-];
+];}
 
   
 let selectedQuestions = [];
 
-function selectRandomQuestions() {
-  // Reorganiza el array de preguntas al azar
-  for (let i = questions.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [questions[i], questions[j]] = [questions[j], questions[i]];
+  function selectRandomQuestions() {
+    // Reorganiza el array de preguntas al azar
+    for (let i = questions.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [questions[i], questions[j]] = [questions[j], questions[i]];
+    }
+
+    // Elige las primeras 10 preguntas para el test
+    selectedQuestions = questions.slice(0, 10);
   }
 
-  // Elige las primeras 10 preguntas para el test
-  selectedQuestions = questions.slice(0, 10);
-}
+  function displayQuestions() {
+    const quizForm = document.getElementById("quiz-form");
+    quizForm.innerHTML = ''; // Limpia el formulario antes de agregar nuevas preguntas
 
-function displayQuestions() {
-  const quizForm = document.getElementById("quiz-form");
+    selectedQuestions.forEach((question, index) => {
+      const questionNumber = index + 1;
+      const questionDiv = document.createElement("div");
+      questionDiv.innerHTML = `<span style="color: #2b00fe;"><b>${questionNumber}. ${question.question}</b></span><br>`;
 
-  selectedQuestions.forEach((question, index) => {
-    const questionNumber = index + 1;
+      question.options.forEach((option, optionIndex) => {
+        const optionInput = document.createElement("input");
+        optionInput.setAttribute("type", "radio");
+        optionInput.setAttribute("name", `question${questionNumber}`);
+        optionInput.setAttribute("value", option.charAt(0).toLowerCase());
+        optionInput.id = `q${questionNumber}_option${optionIndex}`;
 
-    // Crea el elemento de la pregunta
-    const questionDiv = document.createElement("div");
-    questionDiv.innerHTML = `<span style="color: #2b00fe;"><b>${questionNumber}. ${question.question}</b></span><br>`;
+        const optionLabel = document.createElement("label");
+        optionLabel.setAttribute("for", `q${questionNumber}_option${optionIndex}`);
+        optionLabel.innerHTML = option;
 
-    
-    // Crea las opciones para la pregunta
-    question.options.forEach((option, optionIndex) => {
-      const optionInput = document.createElement("input");
-      optionInput.setAttribute("type", "radio");
-      optionInput.setAttribute("name", `question${questionNumber}`);
-      optionInput.setAttribute("value", option.charAt(0).toLowerCase());
-      optionInput.id = `q${questionNumber}_option${optionIndex}`;
+        questionDiv.appendChild(optionInput);
+        questionDiv.appendChild(optionLabel);
+        questionDiv.appendChild(document.createElement("br"));
+      });
 
-      const optionLabel = document.createElement("label");
-      optionLabel.setAttribute("for", `q${questionNumber}_option${optionIndex}`);
-      optionLabel.innerHTML = option;
-
-      questionDiv.appendChild(optionInput);
-      questionDiv.appendChild(optionLabel);
-      questionDiv.appendChild(document.createElement("br"));
+      quizForm.appendChild(questionDiv);
+      quizForm.appendChild(document.createElement("br"));
     });
 
-    // Agrega la pregunta y opciones al formulario
-    quizForm.appendChild(questionDiv);
-    quizForm.appendChild(document.createElement("br")); // Agrega un salto de línea entre preguntas
-  });
-// Agrega un salto de línea entre preguntas
-quizForm.appendChild(document.createElement("br"));
-  
-  
-  // Agregar el botón de envío al final
-  const submitButton = document.createElement("input");
-  submitButton.setAttribute("type", "submit");
-  submitButton.setAttribute("value", "Enviar");
-  quizForm.appendChild(submitButton);
-}
-
-const quizForm = document.getElementById("quiz-form");
-selectRandomQuestions();
-displayQuestions();
-
-quizForm.addEventListener("submit", function (event) {
-  event.preventDefault();
-  displayResult();
-});
-
-function displayResult() {
-  let score = 0;
-
-  for (const question of selectedQuestions) {
-    const questionNumber = selectedQuestions.indexOf(question) + 1;
-    const selectedOption = document.querySelector(`input[name="question${questionNumber}"]:checked`).value;
-
-    if (selectedOption === question.answer) {
-      score++;
-    }
+    // Agregar el botón de envío al final
+    const submitButton = document.createElement("input");
+    submitButton.setAttribute("type", "submit");
+    submitButton.setAttribute("value", "Enviar");
+    quizForm.appendChild(submitButton);
   }
 
-  const percentage = (score / selectedQuestions.length) * 100;
+  const quizForm = document.getElementById("quiz-form");
+  selectRandomQuestions();
+  displayQuestions();
 
-  // Muestra el resultado
-  const resultMessage = `Puntuación: ${score} de ${selectedQuestions.length} (${percentage}%)`;
-  const resultDiv = document.createElement("div");
-  resultDiv.innerHTML = resultMessage;
-
-  // Agrega el resultado debajo del formulario
-  quizForm.insertAdjacentElement("afterend", resultDiv);
-
-  // Agrega un botón de reinicio debajo del resultado
-  const resetButton = document.createElement("button");
-  resetButton.innerHTML = "Reiniciar Test";
-  resetButton.addEventListener("click", function () {
-    location.reload();
+  quizForm.addEventListener("submit", function (event) {
+    event.preventDefault();
+    displayResult();
   });
-  resultDiv.insertAdjacentElement("afterend", resetButton);
 
-  // Agrega un salto de línea entre el resultado y los botones
-  quizForm.insertAdjacentHTML("beforeend", "<br>");
-}
+  function displayResult() {
+    let score = 0;
+
+    for (const question of selectedQuestions) {
+      const questionNumber = selectedQuestions.indexOf(question) + 1;
+      const selectedOption = document.querySelector(`input[name="question${questionNumber}"]:checked`).value;
+
+      if (selectedOption === question.answer) {
+        score++;
+      }
+    }
+
+    const percentage = (score / selectedQuestions.length) * 100;
+    const resultMessage = `Puntuación: ${score} de ${selectedQuestions.length} (${percentage}%)`;
+    const resultDiv = document.createElement("div");
+    resultDiv.innerHTML = resultMessage;
+
+    quizForm.insertAdjacentElement("afterend", resultDiv);
+
+    const resetButton = document.createElement("button");
+    resetButton.innerHTML = "Reiniciar Test";
+    resetButton.addEventListener("click", function () {
+      location.reload();
+    });
+    resultDiv.insertAdjacentElement("afterend", resetButton);
+
+    quizForm.insertAdjacentHTML("beforeend", "<br>");
+  }
 
 </script>
 
