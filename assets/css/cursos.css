@@ -1,6 +1,6 @@
 #contenedor-superior {
     display: flex;
-    justify-content: left; /* Centrar los botones */
+    justify-content: center; /* Centrar los botones */
     margin-bottom: 10px;
     max-width: 100%;
     margin: 0 auto;
@@ -74,7 +74,7 @@ td, th {
     display: none;
 }
 .cursonivel {
-    text-align: left;
+    text-align: center;
     color: #001F3F;
     font-weight: bold;
     font-size: 20px;
