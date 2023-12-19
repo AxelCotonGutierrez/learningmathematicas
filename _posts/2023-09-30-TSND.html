@@ -303,13 +303,23 @@ function displayResult() {
   // Agrega el resultado debajo del formulario
   quizForm.insertAdjacentElement("afterend", resultDiv);
 
-  // Agrega un botón de reinicio debajo del resultado
-  const resetButton = document.createElement("button");
-  resetButton.innerHTML = "Reiniciar Test";
-  resetButton.addEventListener("click", function () {
-    location.reload();
-  });
-  resultDiv.insertAdjacentElement("afterend", resetButton);
+  function reiniciarTest() {
+    // Limpia el formulario y reinicia las variables
+    const quizForm = document.getElementById("quiz-form");
+    quizForm.innerHTML = '';
+    selectedQuestions = [];
+    selectRandomQuestions();
+    displayQuestions();
+}
+
+// En tu función displayResult, modifica cómo creas el botón de reinicio
+const resetButton = document.createElement("button");
+resetButton.innerHTML = "Reiniciar Test";
+resetButton.addEventListener("click", function () {
+    reiniciarTest(); // Llama a la función reiniciarTest en lugar de recargar la página
+});
+resultDiv.insertAdjacentElement("afterend", resetButton);
+
 
   // Agrega un salto de línea entre el resultado y los botones
   quizForm.insertAdjacentHTML("beforeend", "<br>");
