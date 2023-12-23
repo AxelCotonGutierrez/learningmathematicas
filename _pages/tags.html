@@ -5,7 +5,7 @@ permalink: /tags/
 ---
 
 {% comment %}
-Here we generate all the tags.
+Here we generate all the tags and sort them alphabetically.
 {% endcomment %}
 
 {% assign tag_posts = site.posts | where_exp: "post", "post.tags.size > 0" %}
@@ -15,13 +15,17 @@ Here we generate all the tags.
   {% assign tags = tags | concat: post.tags | uniq %}
 {% endfor %}
 
+{% assign sorted_tags = tags | sort %}
+
 <br/>
 
-{% for tag in tags %}
+<!-- Displaying tags alphabetically -->
+{% for tag in sorted_tags %}
    <a class="label label-success tag-link" href="#" data-tag="{{ tag | slugify }}">{{ tag }}</a> &nbsp;
 {% endfor %}
 
-{% for tag in tags %}
+<!-- Displaying posts related to each tag -->
+{% for tag in sorted_tags %}
   <div id="{{ tag | slugify }}" class="related-posts" style="display: none;">
     <h4>{{ tag }}</h4>
     <ul>
