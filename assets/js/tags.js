@@ -1,17 +1,44 @@
+// Función para manejar los enlaces internos
 function redirectToTagPage(tag) {
-    localStorage.setItem('selectedTag', tag);
-    window.location.href = '/learningmathematicas/tags/';
-  }
-  
-  // El resto del código que maneja la lógica en la página de tags
-  document.addEventListener('DOMContentLoaded', function() {
-    var selectedTag = localStorage.getItem('selectedTag');
-    if (selectedTag) {
-      var selectedDiv = document.getElementById(selectedTag);
-      if (selectedDiv) {
-        selectedDiv.style.display = 'block';
-      }
+  localStorage.setItem('selectedTag', tag);
+  window.location.href = '/learningmathematicas/tags/';
+}
+
+// Esperar a que el contenido del DOM esté cargado
+document.addEventListener('DOMContentLoaded', function() {
+  // Manejar la navegación interna usando localStorage
+  var selectedTagLocalStorage = localStorage.getItem('selectedTag');
+  if (selectedTagLocalStorage) {
+      showTagContent(selectedTagLocalStorage);
       localStorage.removeItem('selectedTag'); // Limpiar la etiqueta seleccionada
-    }
-  });
-  
+  }
+
+  // Manejar el fragmento de URL para la navegación directa
+  var urlParams = new URLSearchParams(window.location.search);
+  var tagParam = urlParams.get('tag');
+  if (tagParam) {
+      showTagContent(slugify(tagParam));
+  }
+
+  function showTagContent(tagSlug) {
+      var selectedDiv = document.getElementById(tagSlug);
+      if (selectedDiv) {
+          var relatedPostsDivs = document.querySelectorAll('.related-posts');
+          relatedPostsDivs.forEach(function(div) {
+              div.style.display = 'none';
+          });
+          selectedDiv.style.display = 'block';
+      }
+  }
+
+
+  function slugify(text) {
+    return text.toString().toLowerCase()
+        .replace(/\s+/g, '-')           // Reemplaza espacios con -
+        .replace(/[^\w\-]+/g, '')       // Elimina todos los caracteres que no sean palabra, guiones o guiones bajos
+        .replace(/\-\-+/g, '-')         // Reemplaza múltiples - con un solo -
+        .replace(/^-+/, '')             // Recorta - del inicio del texto
+        .replace(/-+$/, '');            // Recorta - del final del texto
+}
+
+});
