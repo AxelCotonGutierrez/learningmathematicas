@@ -19,17 +19,24 @@ document.addEventListener('DOMContentLoaded', function() {
   if (tagParam) {
       showTagContent(slugify(tagParam));
   }
+  console.log(tagParam);
+
 
   function showTagContent(tagSlug) {
-      var selectedDiv = document.getElementById(tagSlug);
-      if (selectedDiv) {
-          var relatedPostsDivs = document.querySelectorAll('.related-posts');
-          relatedPostsDivs.forEach(function(div) {
-              div.style.display = 'none';
-          });
-          selectedDiv.style.display = 'block';
-      }
-  }
+    console.log("Mostrando contenido para: " + tagSlug); // Para depuración
+    var selectedDiv = document.getElementById(tagSlug);
+    if (selectedDiv) {
+        console.log("Encontrado div: " + tagSlug); // Para depuración
+        var relatedPostsDivs = document.querySelectorAll('.related-posts');
+        relatedPostsDivs.forEach(function(div) {
+            div.style.display = 'none';
+        });
+        selectedDiv.style.display = 'block';
+    } else {
+        console.log("Div no encontrado para: " + tagSlug); // Para depuración
+    }
+}
+
 
 
   function slugify(text) {
