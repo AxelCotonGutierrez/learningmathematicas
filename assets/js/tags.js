@@ -41,11 +41,12 @@ document.addEventListener('DOMContentLoaded', function() {
 function slugify(text) {
   return text.toString().toLowerCase()
     .replace(/\s+/g, '-')           // Reemplaza espacios con -
-    .replace(/º/g, '-o')            // Manejar caracteres especiales como 'º'
-    .replace(/[^\w\-]+/g, '')       // Elimina todos los caracteres que no sean palabra, guiones o guiones bajos
+    .replace(/º/g, '-º')            // Reemplaza 'º' con '-º'
+    .replace(/[^\w\-º]+/g, '')      // Elimina todos los caracteres que no sean palabra, guiones, guiones bajos o º
     .replace(/\-\-+/g, '-')         // Reemplaza múltiples - con un solo -
     .replace(/^-+/, '')             // Recorta - del inicio del texto
     .replace(/-+$/, '');            // Recorta - del final del texto
 }
+
 
 });
