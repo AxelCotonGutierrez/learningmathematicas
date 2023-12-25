@@ -1,15 +1,15 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Verificar si la URL tiene un fragmento (por ejemplo, #nivel1)
+    // Verificar si la URL tiene un fragmento (por ejemplo, #level-1)
     var hash = window.location.hash;
     if (hash) {
         showLevel(hash.substring(1));
     }
 
     // Evento de clic para mostrar/ocultar secciones
-    document.querySelectorAll('.level-group a').forEach(link => {
+    document.querySelectorAll('.card-link').forEach(link => {
         link.addEventListener('click', function(e) {
             e.preventDefault(); // Previene el desplazamiento al inicio de la página
-            toggleSection(this.getAttribute('href').substring(1));
+            toggleSection(this.getAttribute('onclick').split("'")[1]);
         });
     });
 });
