@@ -47,7 +47,7 @@ comments: true
 <!-- Pagination links -->
 <div>
   {% if paginator.previous_page %}
-    <a href="{{ paginator.previous_page_path | relative_url }}">Previous</a>
+    <a href="{{ paginator.previous_page_path | relative_url }}">Anterior</a>
   {% else %}
     <span>Anterior</span>
   {% endif %}
@@ -55,7 +55,7 @@ comments: true
     Página: {{ paginator.page }} of {{ paginator.total_pages }}
   </span> |
   {% if paginator.next_page %}
-    <a href="{{ paginator.next_page_path | relative_url }}">Next</a>
+    <a href="{{ paginator.next_page_path | relative_url }}">Posterior</a>
   {% else %}
     <span>Posterior</span>
   {% endif %}
