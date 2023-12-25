@@ -26,7 +26,13 @@ function showLevel(levelId) {
     }
 }
 
-function toggleSection(sectionId) {
+function toggleSection(sectionId, event) {
+    event.preventDefault();  // Prevenir el comportamiento predeterminado del enlace
+
     var section = document.getElementById(sectionId);
-    section.classList.toggle('show');
+    if (section.classList.contains('show')) {
+        section.classList.remove('show');
+    } else {
+        section.classList.add('show');
+    }
 }
