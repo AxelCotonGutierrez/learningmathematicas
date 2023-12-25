@@ -10,3 +10,8 @@
     cursor: pointer;
     text-decoration: none;
 }
+/* Estilo de sangría para los niveles y subniveles */
+.level-group, .sub-level, .level-link {
+    margin-left: 20px;
+    display: block; /* Hace que cada enlace de nivel ocupe su propia línea */
+}
