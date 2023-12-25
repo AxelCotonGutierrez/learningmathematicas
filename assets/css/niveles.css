@@ -1,3 +1,9 @@
+.container {
+    border: 2px solid #3498db;
+    padding: 10px;
+    margin-top: 10px;
+}
+
 .sub-levels, .level-details {
     display: none;
     margin-left: 20px; /* Agrega sangría para subniveles */
@@ -8,8 +14,7 @@
     margin-left: 40px; /* Agrega más sangría para detalles de niveles */
 }
 
-/* Estilos para botones */
-button {
+.button {
     color: #3498db;
     padding: 10px;
     margin-bottom: 10px;
