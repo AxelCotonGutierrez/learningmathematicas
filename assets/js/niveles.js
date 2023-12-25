@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Evento de clic para mostrar/ocultar secciones
     document.querySelectorAll('.level-group a').forEach(link => {
         link.addEventListener('click', function(e) {
-            e.preventDefault();
+            e.preventDefault(); // Previene el desplazamiento al inicio de la página
             toggleSection(this.getAttribute('href').substring(1));
         });
     });
@@ -26,13 +26,9 @@ function showLevel(levelId) {
     }
 }
 
-function toggleSection(sectionId, event) {
-    event.preventDefault();  // Prevenir el comportamiento predeterminado del enlace
-
+function toggleSection(sectionId) {
     var section = document.getElementById(sectionId);
-    if (section.classList.contains('show')) {
-        section.classList.remove('show');
-    } else {
-        section.classList.add('show');
+    if (section) {
+        section.classList.toggle('show');
     }
 }
