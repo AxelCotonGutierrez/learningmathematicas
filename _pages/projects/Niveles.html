@@ -42,28 +42,34 @@ comments: true
 </p>
 
 
-<<div id="accordion">
+<div id="accordion">
     <!-- Sección de Niveles 1-100 -->
     <div class="card">
         <div class="card-header">
-            <a href="#" class="card-link" onclick="toggleSection('levels-1-100')">Niveles 1-100: Educación Infantil y Primaria</a>
+            <a href="#levels-1-100" class="card-link" onclick="toggleSection('levels-1-100')">Niveles 1-100: Educación Infantil y Primaria</a>
         </div>
         <div id="levels-1-100" class="collapse level-group">
-            <!-- Lista de Niveles 1-20 -->
-            <a href="#" class="level-link" onclick="toggleSection('levels-1-20')">Niveles 1-20</a>
-            <div id="levels-1-20" class="collapse sub-level">
-                <!-- Enlace a Nivel 1 -->
-                <a href="#" class="level-link" onclick="toggleLevel('level-1')">Nivel 1: Reconocimiento de Números (1-5)</a>
-                <div id="level-1" class="collapse level-content">
-                    <!-- Contenido del Nivel 1 -->
-                    <!-- Descripción detallada del Nivel 1... -->
+            <!-- Subsección de Niveles 1-20 -->
+            <div class="card">
+                <div class="card-header sub-level">
+                    <a href="#sub-levels-1-20" class="card-link" onclick="toggleSection('sub-levels-1-20')">Niveles 1-20</a>
                 </div>
-                <!-- Continuar con los demás niveles... -->
+                <div id="sub-levels-1-20" class="collapse level-group">
+                    <!-- Lista de Niveles Individuales 1-20 -->
+                    <a href="#level-1" class="sub-level-link" onclick="toggleSection('level-1')">Nivel 1: Reconocimiento de Números (1-5)</a>
+                    <div id="level-1" class="collapse level-content">
+                        <!-- Contenido del Nivel 1 -->
+                    </div>
+                    <!-- Continuar con los demás niveles hasta el 20... -->
+                </div>
             </div>
+            <!-- Continuar con las subsecciones de niveles, como Niveles 21-40, etc... dentro de Niveles 1-100 -->
         </div>
     </div>
-    <!-- Continuar con las demás secciones de niveles... -->
+
+    <!-- Continuar con las demás secciones de niveles, como Niveles 101-200, Niveles 201-300, etc... -->
 </div>
+
 
 <script src="/learningmathematicas/assets/js/niveles.js"></script>
 
