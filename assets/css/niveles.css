@@ -1,0 +1,12 @@
+.collapse {
+    display: none;
+}
+
+.collapse.show {
+    display: block;
+}
+
+.card-header a {
+    cursor: pointer;
+    text-decoration: none;
+}
