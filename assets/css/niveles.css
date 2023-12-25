@@ -11,19 +11,15 @@
     text-decoration: none;
 }
 
-.level-group {
-    margin-left: 20px;
-}
-
 .sub-level {
     margin-left: 20px;
 }
 
-.sub-level-link {
-    margin-left: 40px; /* Mayor sangría para subniveles */
+.level-link {
+    margin-left: 40px; /* Sangría para los enlaces de nivel */
     display: block; /* Cada enlace de nivel en su propia línea */
 }
 
 .level-content {
-    margin-left: 60px; /* Mayor sangría para el contenido de cada nivel */
+    margin-left: 60px; /* Sangría para el contenido de cada nivel */
 }
