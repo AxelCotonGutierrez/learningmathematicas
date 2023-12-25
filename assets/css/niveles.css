@@ -10,12 +10,10 @@
 
 .sub-levels, .level-details {
     display: none;
-    margin-left: 20px; /* Agrega sangría para subniveles */
 }
 
 .level-content {
     display: none;
-    margin-left: 40px; /* Agrega más sangría para detalles de niveles */
 }
 
 .button {
@@ -24,6 +22,10 @@
     margin-bottom: 10px;
     cursor: pointer;
     text-align: center;
-    width: 35%;
+    width: 90%; /* Ajustar el ancho al 90% del contenedor */
     border-radius: 20%;
+    background-color: transparent; /* Fondo transparente */
+    font-size: smaller; /* Texto más pequeño */
+    margin: 10px auto; /* Centrar el botón en el contenedor */
+    display: block; /* Asegurar que el botón se muestre como un bloque */
 }
