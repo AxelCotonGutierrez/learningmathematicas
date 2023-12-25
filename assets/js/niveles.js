@@ -6,15 +6,11 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Evento de clic para mostrar/ocultar secciones
-    document.querySelectorAll('.card-link').forEach(link => {
+    document.querySelectorAll('#accordion .card-link, #accordion .level-link').forEach(link => {
         link.addEventListener('click', function(e) {
             e.preventDefault(); // Previene cualquier desplazamiento
-            var sectionId = this.getAttribute('onclick').split("'")[1];
+            var sectionId = this.getAttribute('data-target');
             toggleSection(sectionId);
-            if (hash && sectionId === hash.substring(1)) {
-                // Si el fragmento de la URL coincide con el ID de la sección, mostrar el nivel
-                showLevel(sectionId);
-            }
         });
     });
 });
@@ -37,4 +33,3 @@ function toggleSection(sectionId) {
         section.classList.toggle('show');
     }
 }
-
