@@ -42,31 +42,23 @@ comments: true
 </p>
 
 
-<div id="accordion">
-    <!-- Sección de Niveles 1-100 -->
-    <div class="card">
-        <div class="card-header">
-            <a class="card-link" data-target="levels-1-100">Niveles 1-100: Educación Infantil y Primaria</a>
-        </div>
-        <div id="levels-1-100" class="collapse">
-            <!-- Subsección de Niveles 1-20 -->
-            <div class="card">
-                <div class="card-header">
-                    <a class="card-link" data-target="sub-levels-1-20">Niveles 1-20</a>
-                </div>
-                <div id="sub-levels-1-20" class="collapse">
-                    <!-- Lista de Niveles Individuales 1-20 -->
-                    <a class="level-link" data-target="level-1">Nivel 1: Reconocimiento de Números (1-5)</a>
-                    <div id="level-1" class="collapse level-content">
-                        <!-- Contenido del Nivel 1... -->
-                    </div>
-                    <!-- Continuar con los demás niveles hasta el 20... -->
-                </div>
+<div id="main-levels">
+    <!-- Niveles Principales -->
+    <button onclick="toggleSubLevels('sub-levels-1-100')">Niveles 1-100: Educación Infantil y Primaria</button>
+    <div id="sub-levels-1-100" class="sub-levels">
+        <!-- Subniveles -->
+        <button onclick="toggleSubLevels('levels-1-20')">Niveles 1-20</button>
+        <div id="levels-1-20" class="level-details">
+            <!-- Niveles Individuales -->
+            <button onclick="toggleLevelDetails('level-1-detail')">Nivel 1: Reconocimiento de Números (1-5)</button>
+            <div id="level-1-detail" class="level-content">
+                <!-- Detalles del Nivel 1 -->
             </div>
-            <!-- Continuar con las subsecciones de niveles, como Niveles 21-40, etc... dentro de Niveles 1-100 -->
+            <!-- Continuar con más niveles -->
         </div>
+        <!-- Continuar con más subniveles -->
     </div>
-    <!-- Continuar con las demás secciones de niveles, como Niveles 101-200, Niveles 201-300, etc... -->
+    <!-- Continuar con más niveles principales -->
 </div>
 
 

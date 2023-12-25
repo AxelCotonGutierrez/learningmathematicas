@@ -1,25 +1,20 @@
-.collapse {
+.sub-levels, .level-details {
     display: none;
-}
-
-.collapse.show {
-    display: block;
-}
-
-.card-header a {
-    cursor: pointer;
-    text-decoration: none;
-}
-
-.sub-level {
-    margin-left: 20px;
-}
-
-.level-link {
-    margin-left: 40px; /* Sangría para los enlaces de nivel */
-    display: block; /* Cada enlace de nivel en su propia línea */
+    margin-left: 20px; /* Agrega sangría para subniveles */
 }
 
 .level-content {
-    margin-left: 60px; /* Sangría para el contenido de cada nivel */
+    display: none;
+    margin-left: 40px; /* Agrega más sangría para detalles de niveles */
+}
+
+/* Estilos para botones */
+button {
+    color: #3498db;
+    padding: 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    text-align: center;
+    width: 35%;
+    border-radius: 20%;
 }
