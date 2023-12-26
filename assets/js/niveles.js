@@ -4,32 +4,18 @@ document.addEventListener('DOMContentLoaded', function() {
     if (fragment) {
         showLevelDetail(fragment.substring(1));
     }
-
-    // Eventos de clic para botones de niveles principales y subniveles
-    document.querySelectorAll('.button').forEach(button => {
-        button.addEventListener('click', function() {
-            var targetId = this.getAttribute('data-target');
-            if (targetId.startsWith('sub-levels')) {
-                toggleSubLevels(targetId);
-            } else if (targetId.startsWith('level-')) {
-                toggleLevelDetails(targetId);
-            }
-        });
-    });
 });
 
 function showLevelDetail(levelId) {
-    // Asegúrate de que el nivel y los subniveles correspondientes estén visibles
+    // Encuentra el contenedor del nivel y los contenedores de subniveles asociados
     var levelDetail = document.getElementById(levelId);
     if (levelDetail) {
-        var parentSubLevelId = levelDetail.closest('.sub-levels').id;
-        var parentMainLevelButton = document.querySelector(`[data-target='#${parentSubLevelId}']`);
+        var subLevelContainer = levelDetail.closest('.level-details');
+        var mainLevelContainer = subLevelContainer.closest('.sub-levels');
 
-        // Muestra los niveles y subniveles correspondientes
-        if (parentMainLevelButton) {
-            toggleSubLevels(parentSubLevelId);
-            toggleLevelDetails(parentMainLevelButton.getAttribute('data-target'));
-        }
+        // Expande los subniveles y el nivel principal correspondiente
+        toggleSubLevels(mainLevelContainer.id);
+        toggleSubLevels(subLevelContainer.id);
 
         // Expande el detalle del nivel
         toggleLevelDetails(levelId);
