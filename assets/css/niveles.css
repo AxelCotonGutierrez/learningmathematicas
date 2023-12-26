@@ -38,6 +38,8 @@
 
 .nivel-info h2 {
     font-size: 20px; /* Tamaño de título */
+    list-style-type: none; /* Elimina el estilo de lista para los títulos */
+    margin-left: 0; /* Elimina el margen izquierdo adicional */
 }
 
 .nivel-info ol {
