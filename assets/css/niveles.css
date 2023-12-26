@@ -29,6 +29,10 @@
     margin: 10px auto; /* Centrar el botón en el contenedor */
     display: block; /* Asegurar que el botón se muestre como un bloque */
 }
+
+.nivel-info h2::before {
+    content: none; /* Esto eliminará el contenido generado antes del título */
+}
 .nivel-info {
     font-size: 16px; /* Ajusta el tamaño del texto */
     margin: 10px;
