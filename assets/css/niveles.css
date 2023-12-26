@@ -30,8 +30,16 @@
     display: block; /* Asegurar que el botón se muestre como un bloque */
 }
 .nivel-info {
+    font-size: 16px; /* Ajusta el tamaño del texto */
     margin: 10px;
     padding: 10px;
     border: 1px solid #ccc;
-    font-family: Arial, sans-serif;
+}
+
+.nivel-info h2 {
+    font-size: 20px; /* Tamaño de título */
+}
+
+.nivel-info ol {
+    list-style-type: decimal; /* Estilo de lista decimal para los elementos ordenados */
 }
