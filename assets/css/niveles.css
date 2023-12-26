@@ -29,3 +29,9 @@
     margin: 10px auto; /* Centrar el botón en el contenedor */
     display: block; /* Asegurar que el botón se muestre como un bloque */
 }
+.nivel-info {
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    font-family: Arial, sans-serif;
+}
