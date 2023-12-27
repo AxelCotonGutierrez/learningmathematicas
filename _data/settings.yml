@@ -7,12 +7,10 @@ disqus:
 google-ID: 'G-K1CHGHX488'
 
 menu: 
-  - name: Nivel Educativo
-    submenu:
-      - name: Infantil
-        link: /projects/Infantil
-      - name: Primaria
-        link: /projects/Primaria
+  - name: Cursos y Materias
+    link: /projects/Cursos/
+  - name: Niveles
+    link: /projects/Niveles/
   - name: Entradas
     link: /
   - name: Etiquetas
