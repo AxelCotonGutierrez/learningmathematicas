@@ -60,14 +60,6 @@ table tr td.centrado {
 
 
 
-/* Estilo común para dividir en dos columnas */
-.columna {
-    display: flex;
-    flex-direction: column;
-}
-
-
-
 /* Estilo para la fila */
 .fila {
     display: flex;
