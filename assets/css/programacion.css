@@ -5,6 +5,7 @@
     padding: 10px;
     max-width: 100%;
     margin: 0 auto;
+    border: 1px solid #3498db;
 }
 
 table {
@@ -22,7 +23,7 @@ td, th {
     text-align: center;
     color: #3498db;
     font-weight: bold;
-    font-size: 2em;
+    font-size: 1.5em;
 }
 
 table tr td.centrado {
