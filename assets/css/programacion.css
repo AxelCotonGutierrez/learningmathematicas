@@ -6,36 +6,6 @@
     margin: 0 auto;
 }
 
-.boton_menu_cursos,
-.boton_menu_cursos1 {
-    width: 60px;
-    height: 60px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    border: 3px solid rgb(7, 7, 7);
-    color: white;
-    font-size: 9px;
-    font-weight: bold;
-    text-align: center;
-    position: relative;
-    z-index: 1;
-    margin-right: 5px; /* Ajusta según el espacio deseado entre botones */
-    overflow: hidden; /* Añadido para ocultar el pseudo-elemento */
-}
-
-.boton_menu_cursos {
-     border-radius: 50%;
-}
-
-
-.boton_menu_cursos:not(.on),
-.boton_menu_cursos1:not(.on) {
-    filter: grayscale(25%);
-}
-
 #contenedor-principal {
     display: flex;
     flex-direction: column;
@@ -43,13 +13,6 @@
     padding: 10px;
     max-width: 100%;
     margin: 0 auto;
-}
-.subcontenedor {
-    width: 49.5%; /* Puedes ajustar este valor según tus necesidades */
-    max-width: 50%;
-    margin-bottom: 10px;
-    border: none;
-    padding: 10px;
 }
 
 
@@ -119,10 +82,6 @@ table tr td.centrado {
         width: 100%; /* Ocupa el 100% del ancho disponible en dispositivos móviles */
     }
 
-    .subcontenedor {
-        width: 100%; /* Ocupa el 100% del ancho disponible en dispositivos móviles */
-        max-width: none; /* Anula cualquier restricción de ancho máximo */
-    }
-
+   
 
 }
