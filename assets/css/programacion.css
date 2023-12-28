@@ -53,11 +53,6 @@
 }
 
 
-#contenedor-principal.sin-borde {
-    /* Estilo cuando no hay botones activos */
-    border: none;
-}
-
 
 table {
     width: 100%;
@@ -99,19 +94,8 @@ table tr td.centrado {
     font-size: 75%;
 }
 
-.fila_oculta td {
-    border: 0;
-}
-.fila_oculta td {
-    max-width: none; /* Anula cualquier restricción de ancho máximo */
-}
-/* Estilo común para los círculos */
-.circulo {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    margin-bottom: 4px; /* Espacio entre círculos en la misma columna */
-}
+
+
 
 /* Estilo común para dividir en dos columnas */
 .columna {
@@ -140,22 +124,5 @@ table tr td.centrado {
         max-width: none; /* Anula cualquier restricción de ancho máximo */
     }
 
-    .boton_menu_cursos,
-    .boton_menu_cursos1 {
-        width: 40px; /* Ajusta el tamaño de los botones según tus preferencias */
-        height: 40px;
-        font-size: 5px; /* Ajusta el tamaño del texto según tus preferencias */
-        margin-bottom: 5px; /* Añade espacio entre botones */
-    }
-    .cursonivel {
-        font-size: 10px; }
 
-    /* Estilo específico para círculos y cuadrados en dispositivos móviles */
-    .fila_oculta .columna .circulo,
-    .fila_oculta .columna .cuadrado {
-        width: 8px; /* Ajusta el tamaño de círculos y cuadrados para dispositivos móviles */
-        height: 8px;
-        margin-bottom: 3px; /* Ajusta el espacio entre figuras en la misma columna */
-    }
-    
 }
