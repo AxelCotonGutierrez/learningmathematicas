@@ -1,0 +1,163 @@
+#contenedor-superior {
+    display: flex;
+    justify-content: center; /* Centrar los botones */
+    margin-bottom: 10px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.boton_menu_cursos,
+.boton_menu_cursos1 {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border: 3px solid rgb(7, 7, 7);
+    color: white;
+    font-size: 9px;
+    font-weight: bold;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    margin-right: 5px; /* Ajusta según el espacio deseado entre botones */
+    overflow: hidden; /* Añadido para ocultar el pseudo-elemento */
+}
+
+.boton_menu_cursos {
+     border-radius: 50%;
+}
+
+
+.boton_menu_cursos:not(.on),
+.boton_menu_cursos1:not(.on) {
+    filter: grayscale(25%);
+}
+
+#contenedor-principal {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+.subcontenedor {
+    width: 49.5%; /* Puedes ajustar este valor según tus necesidades */
+    max-width: 50%;
+    margin-bottom: 10px;
+    border: none;
+    padding: 10px;
+}
+
+
+#contenedor-principal.sin-borde {
+    /* Estilo cuando no hay botones activos */
+    border: none;
+}
+
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+td, th {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.fila_oculta {
+    display:  block;
+}
+.cursonivel {
+    text-align: center;
+    color: #001F3F;
+    font-weight: bold;
+    font-size: 20px;
+}
+.centrado {
+    text-align: center;
+    color: #3498db;
+    font-weight: bold;
+}
+
+/* Estilo para la primera celda con la clase .centrado en cada tabla */
+table tr td.centrado {
+    border-radius: 50%; /* Ajusta el valor según tus preferencias */
+    border: 1px solid #3498db; /* Ajusta el color y grosor del borde según tus preferencias */
+}
+.centrado2 {
+    text-align: center;
+    font-weight: bold;
+    color: rgb(54, 121, 229);
+}
+
+.tema {
+    text-align: left;
+    font-size: 75%;
+}
+
+.fila_oculta td {
+    border: 0;
+}
+.fila_oculta td {
+    max-width: none; /* Anula cualquier restricción de ancho máximo */
+}
+/* Estilo común para los círculos */
+.circulo {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin-bottom: 4px; /* Espacio entre círculos en la misma columna */
+}
+
+/* Estilo común para dividir en dos columnas */
+.columna {
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+/* Estilo para la fila */
+.fila {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 4px; /* Ajusta el espacio entre filas según sea necesario */
+}
+
+/* Estilo para adaptar a dispositivos móviles */
+@media (max-width: 767px) {
+    #contenedor-principal {
+        flex-direction: column; /* Cambia la dirección del contenedor principal a columna */
+        width: 100%; /* Ocupa el 100% del ancho disponible en dispositivos móviles */
+    }
+
+    .subcontenedor {
+        width: 100%; /* Ocupa el 100% del ancho disponible en dispositivos móviles */
+        max-width: none; /* Anula cualquier restricción de ancho máximo */
+    }
+
+    .boton_menu_cursos,
+    .boton_menu_cursos1 {
+        width: 40px; /* Ajusta el tamaño de los botones según tus preferencias */
+        height: 40px;
+        font-size: 5px; /* Ajusta el tamaño del texto según tus preferencias */
+        margin-bottom: 5px; /* Añade espacio entre botones */
+    }
+    .cursonivel {
+        font-size: 10px; }
+
+    /* Estilo específico para círculos y cuadrados en dispositivos móviles */
+    .fila_oculta .columna .circulo,
+    .fila_oculta .columna .cuadrado {
+        width: 8px; /* Ajusta el tamaño de círculos y cuadrados para dispositivos móviles */
+        height: 8px;
+        margin-bottom: 3px; /* Ajusta el espacio entre figuras en la misma columna */
+    }
+    
+}
