@@ -214,5 +214,7 @@ h3:before {
 		padding: 10px; /* añade un relleno alrededor del contenido del post */
 	}
 	
-	
+	h1 {
+		font-size: 2em;
+	}
 }
