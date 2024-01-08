@@ -29,33 +29,7 @@
     margin: 10px auto; /* Centrar el botón en el contenedor */
     display: block; /* Asegurar que el botón se muestre como un bloque */
 }
-.button1 {
-    color: #3498db;
-    padding: 10px;
-    margin-bottom: 10px;
-    cursor: pointer;
-    text-align: center;
-    width: 90%; /* Ajustar el ancho al 90% del contenedor */
-    border-radius: 20%;
-    background-color: transparent; /* Fondo transparente */
-    font-size: smaller; /* Texto más pequeño */
-    margin: 10px auto; /* Centrar el botón en el contenedor */
-    display: block; /* Asegurar que el botón se muestre como un bloque */
-}
-.button2 {
-    color: #EABE3F;
-    padding: 10px;
-    margin-bottom: 10px;
-    cursor: pointer;
-    text-align: center;
-    width: 90%; /* Ajustar el ancho al 90% del contenedor */
-    border-radius: 20%;
-    background-color: transparent; /* Fondo transparente */
-    font-size: 2em;
-    font-weight: bold;
-    margin: 10px auto; /* Centrar el botón en el contenedor */
-    display: block; /* Asegurar que el botón se muestre como un bloque */
-}
+
 
 .nivel-info h2::before {
     content: none; /* Esto eliminará el contenido generado antes del título */
