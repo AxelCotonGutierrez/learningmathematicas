@@ -1,22 +1,41 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Escuchadores de eventos para los niveles primarios
-    document.querySelectorAll('.nivel-primario').forEach(function(nivel) {
+    // Escuchadores de eventos para los niveles primarios y secundarios
+    document.querySelectorAll('.nivel-primario, .nivel-secundario').forEach(function(nivel) {
         nivel.addEventListener('click', function() {
-            toggleNiveles('nivel-secundario');
+            // Encuentra el nivel o subnivel asociado y alterna su visibilidad
+            var targetId = this.getAttribute('data-target');
+            toggleSubLevels(targetId);
         });
     });
 
-    // Escuchadores de eventos para los niveles secundarios
-    document.querySelectorAll('.nivel-secundario').forEach(function(subnivel) {
-        subnivel.addEventListener('click', function() {
-            toggleNiveles('nivel-terciario');
-        });
-    });
-
-    // Función para alternar la visibilidad de los niveles
-    function toggleNiveles(claseNivel) {
-        document.querySelectorAll(`.${claseNivel}`).forEach(nivel => {
-            nivel.style.display = nivel.style.display === 'none' ? '' : 'none';
+    // Escuchador de eventos para el nivel terciario "Contar"
+    var nivelContar = document.getElementById('terciario-contar');
+    if (nivelContar) {
+        nivelContar.addEventListener('click', function() {
+            // Alterna los detalles de "Contar"
+            toggleLevelDetails('detalle-contar');
         });
     }
 });
+
+function toggleSubLevels(subLevelId) {
+    var subLevel = document.getElementById(subLevelId);
+    if (subLevel) {
+        subLevel.style.display = subLevel.style.display === "none" ? "table-row" : "none";
+    }
+
+    // Ocultar también los detalles de "Contar" si se está ocultando un subnivel
+    if (subLevelId === 'subnivel-matematicas' && subLevel.style.display === "none") {
+        var detallesContar = document.querySelectorAll('.detalle-contar');
+        detallesContar.forEach(function(detalle) {
+            detalle.style.display = "none";
+        });
+    }
+}
+
+function toggleLevelDetails(levelClass) {
+    var levelDetails = document.querySelectorAll('.' + levelClass);
+    levelDetails.forEach(function(detail) {
+        detail.style.display = detail.style.display === "none" ? "table-row" : "none";
+    });
+}

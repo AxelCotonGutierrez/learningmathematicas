@@ -32,18 +32,13 @@ td, th {
     color: rgb(54, 121, 229);
 }
 
-table tr td.centrado {
-    border-radius: 50%; /* Ajusta el valor según tus preferencias */
-    border: 1px solid #3498db; /* Ajusta el color y grosor del borde según tus preferencias */
-}
-
-/* Estilos adicionales para los nuevos niveles */
-.nivel-secundario, .nivel-terciario {
-    display: none; /* Ocultar inicialmente */
-}
-
-/* Estilos para que las filas de los niveles primarios y secundarios se vean como botones */
+/* Estilo común para todos los botones de nivel */
 .nivel-primario, .nivel-secundario, .nivel-terciario {
     cursor: pointer;
     background-color: #f2f2f2; /* Color de fondo opcional */
+    /* Mantener los estilos de texto de .centrado o .centrado2 */
+}
+
+.nivel-secundario, .nivel-terciario {
+    display: none; /* Ocultar inicialmente */
 }
