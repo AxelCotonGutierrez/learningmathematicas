@@ -35,7 +35,7 @@ td, th {
 /* Estilo común para todos los botones de nivel */
 .nivel-primario, .nivel-secundario, .nivel-terciario {
     cursor: pointer;
-    background-color: #f2f2f2; /* Color de fondo opcional */
+   
     /* Mantener los estilos de texto de .centrado o .centrado2 */
 }
 
