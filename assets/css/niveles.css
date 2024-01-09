@@ -51,3 +51,29 @@
 .nivel-info ol {
     list-style-type: decimal; /* Estilo de lista decimal para los elementos ordenados */
 }
+@media (max-width: 768px) {
+    .button {
+        width: 90%; /* Ancho completo en dispositivos móviles */
+    }
+}
+
+.nivel-info h2::before {
+    content: none; /* Esto eliminará el contenido generado antes del título */
+}
+
+.nivel-info {
+    font-size: 16px; /* Ajusta el tamaño del texto */
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+.nivel-info h2 {
+    font-size: 20px; /* Tamaño de título */
+    list-style-type: none; /* Elimina el estilo de lista para los títulos */
+    margin-left: 0; /* Elimina el margen izquierdo adicional */
+}
+
+.nivel-info ol {
+    list-style-type: decimal; /* Estilo de lista decimal para los elementos ordenados */
+}
