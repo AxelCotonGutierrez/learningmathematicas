@@ -3,51 +3,64 @@ document.addEventListener('DOMContentLoaded', function() {
     document.querySelectorAll('.nivel-primario').forEach(function(nivelPrimario) {
         nivelPrimario.addEventListener('click', function() {
             // Ocultar todos los niveles secundarios, terciarios y detalles
-            document.querySelectorAll('.nivel-secundario, .nivel-terciario').forEach(function(element) {
-                element.style.display = 'none';
-            });
-            document.querySelectorAll('[class$="-detalle"]').forEach(function(detail) {
-                detail.style.display = 'none';
-            });
+            ocultarTodosLosNiveles();
 
-            // Mostrar solo el nivel secundario relacionado
-            var targetId = this.getAttribute('data-target');
-            toggleSubLevels(targetId, true);
+            // Mostrar los niveles secundarios relacionados con el primario
+            var nivelSecundarioId = this.getAttribute('data-target');
+            mostrarNivelSecundario(nivelSecundarioId);
         });
     });
 
     // Escuchadores de eventos para los niveles secundarios
     document.querySelectorAll('.nivel-secundario').forEach(function(nivelSecundario) {
         nivelSecundario.addEventListener('click', function() {
-            var targetId = this.getAttribute('data-target');
-            toggleSubLevels(targetId);
+            // Ocultar todos los detalles
+            ocultarTodosLosDetalles();
+
+            // Mostrar todos los niveles terciarios asociados con el nivel secundario
+            var nivelTerciarioIds = this.getAttribute('data-target').split(',');
+            nivelTerciarioIds.forEach(function(id) {
+                mostrarNivelTerciario(id);
+            });
         });
     });
 
     // Escuchador de eventos para todos los niveles terciarios
     document.querySelectorAll('.nivel-terciario').forEach(function(nivelTerciario) {
         nivelTerciario.addEventListener('click', function() {
-            var detallesClase = nivelTerciario.id + '-detalle';
-            toggleLevelDetails(detallesClase);
+            toggleLevelDetails(this.id + '-detalle');
         });
     });
 });
 
-function toggleSubLevels(subLevelId, isPrimary = false) {
-    var subLevel = document.getElementById(subLevelId);
-    if (subLevel) {
-        if (isPrimary) {
-            // Si es nivel primario, mostrar directamente el subnivel
-            subLevel.style.display = "table-row";
-        } else {
-            // Para niveles secundarios, alternar la visibilidad
-            subLevel.style.display = subLevel.style.display === "none" ? "table-row" : "none";
-        }
+function ocultarTodosLosNiveles() {
+    document.querySelectorAll('.nivel-secundario, .nivel-terciario').forEach(function(element) {
+        element.style.display = 'none';
+    });
+}
+
+function ocultarTodosLosDetalles() {
+    document.querySelectorAll('[class$="-detalle"]').forEach(function(detail) {
+        detail.style.display = 'none';
+    });
+}
+
+function mostrarNivelSecundario(id) {
+    var elemento = document.getElementById(id);
+    if (elemento) {
+        elemento.style.display = "table-row";
     }
 }
 
-function toggleLevelDetails(detallesClase) {
-    document.querySelectorAll('.' + detallesClase).forEach(function(detail) {
+function mostrarNivelTerciario(id) {
+    var elementos = document.querySelectorAll('[data-parent="' + id + '"]');
+    elementos.forEach(function(elemento) {
+        elemento.style.display = "table-row";
+    });
+}
+
+function toggleLevelDetails(clase) {
+    document.querySelectorAll('.' + clase).forEach(function(detail) {
         detail.style.display = detail.style.display === "none" ? "table-row" : "none";
     });
 }
