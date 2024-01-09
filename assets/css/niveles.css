@@ -17,16 +17,18 @@
 }
 
 .button {
-    color: #EABE3F;
+    color: rgb(54, 121, 229);
     padding: 10px;
     margin-bottom: 10px;
     cursor: pointer;
     text-align: center;
+    border: 1px solid #ccc;
     width: 95%; /* Ajustar el ancho al 90% del contenedor */
     background-color: transparent; /* Fondo transparente */
     font-size: smaller; /* Texto más pequeño */
     margin: 10px auto; /* Centrar el botón en el contenedor */
     display: block; /* Asegurar que el botón se muestre como un bloque */
+    border: 1px solid #EABE3F;
 }
 
 
