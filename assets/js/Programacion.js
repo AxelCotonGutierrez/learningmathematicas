@@ -8,14 +8,14 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Escuchador de eventos para el nivel terciario "Contar"
-    var nivelContar = document.getElementById('terciario-contar');
-    if (nivelContar) {
-        nivelContar.addEventListener('click', function() {
-            // Alterna los detalles de "Contar"
-            toggleLevelDetails('detalle-contar');
+    // Escuchador de eventos para todos los niveles terciarios
+    document.querySelectorAll('.nivel-terciario').forEach(function(nivelTerciario) {
+        nivelTerciario.addEventListener('click', function() {
+            // Encuentra y alterna los detalles asociados con este nivel terciario
+            var detallesClase = nivelTerciario.id + '-detalle';
+            toggleLevelDetails(detallesClase);
         });
-    }
+    });
 });
 
 function toggleSubLevels(subLevelId) {
@@ -23,19 +23,10 @@ function toggleSubLevels(subLevelId) {
     if (subLevel) {
         subLevel.style.display = subLevel.style.display === "none" ? "table-row" : "none";
     }
-
-    // Ocultar también los detalles de "Contar" si se está ocultando un subnivel
-    if (subLevelId === 'subnivel-matematicas' && subLevel.style.display === "none") {
-        var detallesContar = document.querySelectorAll('.detalle-contar');
-        detallesContar.forEach(function(detalle) {
-            detalle.style.display = "none";
-        });
-    }
 }
 
-function toggleLevelDetails(levelClass) {
-    var levelDetails = document.querySelectorAll('.' + levelClass);
-    levelDetails.forEach(function(detail) {
+function toggleLevelDetails(detallesClase) {
+    document.querySelectorAll('.' + detallesClase).forEach(function(detail) {
         detail.style.display = detail.style.display === "none" ? "table-row" : "none";
     });
 }
