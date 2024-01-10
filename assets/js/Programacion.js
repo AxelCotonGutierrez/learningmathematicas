@@ -19,11 +19,13 @@ document.addEventListener('DOMContentLoaded', function() {
         nivelSecundario.addEventListener('click', function() {
             // Ocultar todos los niveles terciarios y detalles no relacionados con este nivel secundario
             document.querySelectorAll('.nivel-terciario, [class*="-detalle"]').forEach(function(element) {
-                element.style.display = 'none';
+                if (element.getAttribute('data-parent') !== nivelSecundario.id) {
+                    element.style.display = 'none';
+                }
             });
 
             // Mostrar todos los niveles terciarios relacionados con este nivel secundario
-            document.querySelectorAll('.' + this.id + '-terciario').forEach(function(terciario) {
+            document.querySelectorAll('[data-parent="' + this.id + '"]').forEach(function(terciario) {
                 terciario.style.display = 'table-row';
             });
         });
