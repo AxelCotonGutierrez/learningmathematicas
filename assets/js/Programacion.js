@@ -45,5 +45,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
 function mostrarMensaje(event) {
     event.preventDefault();
+    event.stopPropagation();
     alert('Próximamente');
 }
