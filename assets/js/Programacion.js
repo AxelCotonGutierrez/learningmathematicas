@@ -42,3 +42,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+function mostrarMensaje() {
+    alert('Próximamente');
+}
