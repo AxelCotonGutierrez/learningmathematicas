@@ -13,6 +13,9 @@ body {
 
 h1 {
 	counter-reset: h2counter;
+	text-align: justify;
+	color: #EABE3F;
+	font-weight: bold;
 }
 
 h2 {
