@@ -152,6 +152,7 @@ table tr td.centrado {
 
 /* Estilo específico para el cuadrado del botón 21 */
 .fila_oculta[data-codigos*="boton_21"] .columna .cuadrado.boton_21 { background-color: #510615; }
+.fila_oculta[data-codigos*="boton_22"] .columna .cuadrado.boton_22 { background-color: #0f5e10; }
 
 
 /* Estilo para la fila */
