@@ -25,6 +25,7 @@ document.addEventListener("DOMContentLoaded", function() {
         <img src="https://axelcotongutierrez.github.io/learningmathematicas/assets/images//top.jpg" alt="Blog Mathematica" style="display: block; margin: 0 auto; width: 100%; height: auto;">
     </a>
     `;
+    
     const headerElement = document.createElement('header');
     headerElement.innerHTML = headerHTML;
     document.body.insertBefore(headerElement, document.body.firstChild);
