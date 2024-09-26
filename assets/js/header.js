@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() {
+    // Código del encabezado
     const headerHTML = `
     <div class="menu">
         <button class="menu-toggle">☰</button>
@@ -24,5 +25,15 @@ document.addEventListener("DOMContentLoaded", function() {
         <img src="https://axelcotongutierrez.github.io/learningmathematicas/assets/images//top.jpg" alt="Blog Mathematica" style="display: block; margin: 0 auto; width: 100%; height: auto;">
     </a>
     `;
-    document.getElementById("header-placeholder").innerHTML = headerHTML;
+    const headerElement = document.createElement('header');
+    headerElement.innerHTML = headerHTML;
+    document.body.insertBefore(headerElement, document.body.firstChild);
+
+    // Navegación: Lógica para el menú
+    var menuToggle = document.querySelector('.menu-toggle');
+    var menu = document.querySelector('.menu');
+      
+    menuToggle.addEventListener('click', function() {
+        menu.classList.toggle('active');
+    });
 });
