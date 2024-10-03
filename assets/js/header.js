@@ -35,15 +35,17 @@ const footerHTML = `
 </footer>
 `;
 
-// Insertar el encabezado en el documento
-const headerElement = document.createElement('header');
-headerElement.innerHTML = headerHTML;
-document.body.insertBefore(headerElement, document.body.firstChild);
+// Insertar el encabezado en el placeholder
+const headerPlaceholder = document.getElementById('header-placeholder');
+if (headerPlaceholder) {
+    headerPlaceholder.innerHTML = headerHTML;
+}
 
-// Insertar el pie de página en el documento
-const footerElement = document.createElement('footer');
-footerElement.innerHTML = footerHTML;
-document.body.appendChild(footerElement);  // Coloca el footer al final del body
+// Insertar el pie de página en el placeholder
+const footerPlaceholder = document.getElementById('footer-placeholder');
+if (footerPlaceholder) {
+    footerPlaceholder.innerHTML = footerHTML;
+}
 
 // Navegación: Lógica para el menú
 var menuToggle = document.querySelector('.menu-toggle');
