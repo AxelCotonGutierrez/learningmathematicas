@@ -1,4 +1,4 @@
-// Incluimos las bibliotecas de Firebase (ya cargadas externamente)
+// Configuración de Firebase
 const firebaseConfig = {
     apiKey: "AIzaSyAE3Un38AeJrWtH83ndmXLNSKKFoKQI7K8",
     authDomain: "contador-de-juegos.firebaseapp.com",
@@ -10,9 +10,13 @@ const firebaseConfig = {
     measurementId: "G-QGKEEYVRTR"
   };
   
-  // Inicializar Firebase
-  firebase.initializeApp(firebaseConfig);
-  const database = firebase.database();
+  // Inicializar Firebase (esto solo debe ejecutarse si firebase está definido)
+  if (typeof firebase !== 'undefined') {
+    firebase.initializeApp(firebaseConfig);
+    const database = firebase.database();
+  } else {
+    console.error('Firebase no está cargado.');
+  }
   
   // Función para incrementar el contador del juego en Firebase
   function incrementarContadorFirebase(ruta, juegoId) {
