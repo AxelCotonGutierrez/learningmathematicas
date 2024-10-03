@@ -25,36 +25,16 @@ document.addEventListener("DOMContentLoaded", function() {
         <img src="https://axelcotongutierrez.github.io/learningmathematicas/assets/images//top.jpg" alt="Blog Mathematica" style="display: block; margin: 0 auto; width: 100%; height: auto;">
     </a>
     `;
-
-    // Código del pie de página
-    const footerHTML = `
-    <footer class="footer">
-        <ul class="footer-links">
-            <li><a href="http://github.com/AxelCotonGutierrez"> <img src="githubinverseicon.jpg"></a></li>
-            <li><a href="https://www.youtube.com/@learningmathematicas"> <img src="youtubeinverseicon.jpg"></i></a></li>
-        </ul>
-    </footer>
-    `;
-
-    // Insertar el encabezado en el placeholder
-    const headerPlaceholder = document.getElementById('header-placeholder');
-    if (headerPlaceholder) {
-        headerPlaceholder.innerHTML = headerHTML;
-    }
-
-    // Insertar el pie de página en el placeholder
-    const footerPlaceholder = document.getElementById('footer-placeholder');
-    if (footerPlaceholder) {
-        footerPlaceholder.innerHTML = footerHTML;
-    }
+    
+    const headerElement = document.createElement('header');
+    headerElement.innerHTML = headerHTML;
+    document.body.insertBefore(headerElement, document.body.firstChild);
 
     // Navegación: Lógica para el menú
     var menuToggle = document.querySelector('.menu-toggle');
     var menu = document.querySelector('.menu');
       
-    if (menuToggle && menu) {
-        menuToggle.addEventListener('click', function() {
-            menu.classList.toggle('active');
-        });
-    }
+    menuToggle.addEventListener('click', function() {
+        menu.classList.toggle('active');
+    });
 });
