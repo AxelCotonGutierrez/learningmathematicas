@@ -291,14 +291,19 @@ Verás preguntas sobre números cardinales y ordinales, y cómo los usamos en la
 let selectedQuestions = [];
 
 function selectRandomQuestions() {
-  // Reorganiza el array de preguntas al azar
   for (let i = questions.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
     [questions[i], questions[j]] = [questions[j], questions[i]];
   }
-
-  // Elige las primeras 10 preguntas para el test
   selectedQuestions = questions.slice(0, 10);
+}
+
+// 🔊 Función para leer texto en voz alta
+function leerTexto(texto) {
+  const msg = new SpeechSynthesisUtterance(texto);
+  msg.lang = "es-ES";
+  speechSynthesis.cancel(); // Detiene lecturas anteriores
+  speechSynthesis.speak(msg);
 }
 
 function displayQuestions() {
@@ -306,18 +311,21 @@ function displayQuestions() {
 
   selectedQuestions.forEach((question, index) => {
     const questionNumber = index + 1;
-
-    // Crea el elemento de la pregunta
     const questionDiv = document.createElement("div");
     questionDiv.innerHTML = `<span style="color: #2b00fe;"><b>${questionNumber}. ${question.question}</b></span><br>`;
 
-    
-    // Crea las opciones para la pregunta
+    // 🔊 Construir texto para lectura automática
+    let textoLeido = `Pregunta ${questionNumber}. ${question.question} `;
+
     question.options.forEach((option, optionIndex) => {
+      const letra = option.charAt(0);
+      const texto = option.slice(3); // Quita "a. ", "b. ", etc.
+      textoLeido += `Opción ${letra}: ${texto}. `;
+
       const optionInput = document.createElement("input");
       optionInput.setAttribute("type", "radio");
       optionInput.setAttribute("name", `question${questionNumber}`);
-      optionInput.setAttribute("value", option.charAt(0).toLowerCase());
+      optionInput.setAttribute("value", letra.toLowerCase());
       optionInput.id = `q${questionNumber}_option${optionIndex}`;
 
       const optionLabel = document.createElement("label");
@@ -329,15 +337,15 @@ function displayQuestions() {
       questionDiv.appendChild(document.createElement("br"));
     });
 
-    // Agrega la pregunta y opciones al formulario
     quizForm.appendChild(questionDiv);
-    quizForm.appendChild(document.createElement("br")); // Agrega un salto de línea entre preguntas
+    quizForm.appendChild(document.createElement("br"));
+
+    // 🔊 Leer en voz alta la pregunta y sus opciones
+    leerTexto(textoLeido);
   });
-// Agrega un salto de línea entre preguntas
-quizForm.appendChild(document.createElement("br"));
-  
-  
-  // Agregar el botón de envío al final
+
+  quizForm.appendChild(document.createElement("br"));
+
   const submitButton = document.createElement("input");
   submitButton.setAttribute("type", "submit");
   submitButton.setAttribute("value", "Enviar");
@@ -358,24 +366,20 @@ function displayResult() {
 
   for (const question of selectedQuestions) {
     const questionNumber = selectedQuestions.indexOf(question) + 1;
-    const selectedOption = document.querySelector(`input[name="question${questionNumber}"]:checked`).value;
-
-    if (selectedOption === question.answer) {
+    const selectedOption = document.querySelector(`input[name="question${questionNumber}"]:checked`);
+    if (selectedOption && selectedOption.value === question.answer) {
       score++;
     }
   }
 
   const percentage = (score / selectedQuestions.length) * 100;
 
-  // Muestra el resultado
   const resultMessage = `Puntuación: ${score} de ${selectedQuestions.length} (${percentage}%)`;
   const resultDiv = document.createElement("div");
   resultDiv.innerHTML = resultMessage;
 
-  // Agrega el resultado debajo del formulario
   quizForm.insertAdjacentElement("afterend", resultDiv);
 
-  // Agrega un botón de reinicio debajo del resultado
   const resetButton = document.createElement("button");
   resetButton.innerHTML = "Reiniciar Test";
   resetButton.addEventListener("click", function () {
@@ -383,13 +387,9 @@ function displayResult() {
   });
   resultDiv.insertAdjacentElement("afterend", resetButton);
 
-  // Agrega un salto de línea entre el resultado y los botones
   quizForm.insertAdjacentHTML("beforeend", "<br>");
 }
-
 </script>
-
-
 
   
 <br>
