@@ -290,6 +290,7 @@ Verás preguntas sobre números cardinales y ordinales, y cómo los usamos en la
   
 let selectedQuestions = [];
 
+// Mezcla las preguntas y selecciona 10
 function selectRandomQuestions() {
   for (let i = questions.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
@@ -298,69 +299,69 @@ function selectRandomQuestions() {
   selectedQuestions = questions.slice(0, 10);
 }
 
-// 🔊 Función para leer texto en voz alta
+// Función de lectura por voz
 function leerTexto(texto) {
   const msg = new SpeechSynthesisUtterance(texto);
   msg.lang = "es-ES";
-  speechSynthesis.cancel(); // Detiene lecturas anteriores
+  speechSynthesis.cancel();
   speechSynthesis.speak(msg);
 }
 
+// Muestra las preguntas y añade botón "Escuchar"
 function displayQuestions() {
   const quizForm = document.getElementById("quiz-form");
 
   selectedQuestions.forEach((question, index) => {
     const questionNumber = index + 1;
     const questionDiv = document.createElement("div");
+
+    // Enunciado
     questionDiv.innerHTML = `<span style="color: #2b00fe;"><b>${questionNumber}. ${question.question}</b></span><br>`;
 
-    // 🔊 Construir texto para lectura automática
+    // Construcción del texto para lectura
     let textoLeido = `Pregunta ${questionNumber}. ${question.question} `;
-
-    question.options.forEach((option, optionIndex) => {
-      const letra = option.charAt(0);
-      const texto = option.slice(3); // Quita "a. ", "b. ", etc.
+    question.options.forEach((opcion, idx) => {
+      const letra = opcion.charAt(0);
+      const texto = opcion.slice(3);
       textoLeido += `Opción ${letra}: ${texto}. `;
+    });
 
+    // Botón de lectura
+    const botonAudio = document.createElement("button");
+    botonAudio.innerHTML = "🔊 Escuchar";
+    botonAudio.style.margin = "5px";
+    botonAudio.onclick = () => leerTexto(textoLeido);
+    questionDiv.appendChild(botonAudio);
+
+    // Opciones
+    question.options.forEach((option, optionIndex) => {
       const optionInput = document.createElement("input");
       optionInput.setAttribute("type", "radio");
       optionInput.setAttribute("name", `question${questionNumber}`);
-      optionInput.setAttribute("value", letra.toLowerCase());
+      optionInput.setAttribute("value", option.charAt(0).toLowerCase());
       optionInput.id = `q${questionNumber}_option${optionIndex}`;
 
       const optionLabel = document.createElement("label");
       optionLabel.setAttribute("for", `q${questionNumber}_option${optionIndex}`);
       optionLabel.innerHTML = option;
 
+      questionDiv.appendChild(document.createElement("br"));
       questionDiv.appendChild(optionInput);
       questionDiv.appendChild(optionLabel);
-      questionDiv.appendChild(document.createElement("br"));
     });
 
     quizForm.appendChild(questionDiv);
     quizForm.appendChild(document.createElement("br"));
-
-    // 🔊 Leer en voz alta la pregunta y sus opciones
-    leerTexto(textoLeido);
   });
 
-  quizForm.appendChild(document.createElement("br"));
-
+  // Botón de envío
   const submitButton = document.createElement("input");
   submitButton.setAttribute("type", "submit");
   submitButton.setAttribute("value", "Enviar");
   quizForm.appendChild(submitButton);
 }
 
-const quizForm = document.getElementById("quiz-form");
-selectRandomQuestions();
-displayQuestions();
-
-quizForm.addEventListener("submit", function (event) {
-  event.preventDefault();
-  displayResult();
-});
-
+// Corrección del test
 function displayResult() {
   let score = 0;
 
@@ -373,8 +374,8 @@ function displayResult() {
   }
 
   const percentage = (score / selectedQuestions.length) * 100;
-
   const resultMessage = `Puntuación: ${score} de ${selectedQuestions.length} (${percentage}%)`;
+
   const resultDiv = document.createElement("div");
   resultDiv.innerHTML = resultMessage;
 
@@ -386,11 +387,18 @@ function displayResult() {
     location.reload();
   });
   resultDiv.insertAdjacentElement("afterend", resetButton);
-
-  quizForm.insertAdjacentHTML("beforeend", "<br>");
 }
-</script>
 
+// Inicia todo
+const quizForm = document.getElementById("quiz-form");
+selectRandomQuestions();
+displayQuestions();
+
+quizForm.addEventListener("submit", function (event) {
+  event.preventDefault();
+  displayResult();
+});
+</script>
   
 <br>
 
