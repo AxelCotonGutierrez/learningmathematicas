@@ -1,160 +1,73 @@
-// Función para mostrar el menú correspondiente
+// Mostrar el menú desde la URL
 function mostrarMenuDesdeURL() {
-    var urlParams = new URLSearchParams(window.location.search);
-    var menuParam = urlParams.get('menu');
-    if (menuParam) {
-        mostrarMenu(menuParam);
-    }
-}
-
-// Función para mostrar el menú según el ID
-function mostrarMenu(menuId) {
-    var menus = document.getElementsByClassName('menu');
-    for (var i = 0; i < menus.length; i++) {
+    const urlParams = new URLSearchParams(window.location.search);
+    const menuParam = urlParams.get('menu');
+    if (menuParam) mostrarMenu(menuParam);
+  }
+  
+  // Mostrar el menú y cargar el JSON como diapositivas estilo Canvas
+  function mostrarMenu(menuId) {
+    const menus = document.getElementsByClassName('menu');
+    for (let i = 0; i < menus.length; i++) {
       menus[i].style.display = 'none';
     }
-  
-    var menuSeleccionado = document.getElementById(menuId);
+    const menuSeleccionado = document.getElementById(menuId);
     if (menuSeleccionado) {
       menuSeleccionado.style.display = 'block';
-    }
-  
-    // Si el menú tiene versión JSON, cargarla:
-    const contenedorIndex = menuSeleccionado.querySelector('.index-container');
-    if (contenedorIndex) {
-      const index = contenedorIndex.querySelector('#index1');
-      if (index) {
-        cargarMenuJSON(menuId, index); // <--- esta es la llamada al fetch
+      const contenedorIndex = menuSeleccionado.querySelector('.index-container');
+      if (contenedorIndex) {
+        const index = contenedorIndex.querySelector('#index1');
+        if (index) {
+          cargarMenuJSON(menuId, index);
+        }
       }
     }
   }
   
-
-// Función para alternar la visibilidad del spoiler
-function toggleSpoiler(spoiler) {
-    var content = spoiler.nextElementSibling;
-    if (content.style.display === "none") {
-        content.style.display = "block";
-    } else {
-        content.style.display = "none";
-    }
-}
-
-// Llamar a mostrarMenuDesdeURL al cargar la página
-mostrarMenuDesdeURL();
-
-function buttonHover(button) {
-    button.style.border = "2px solid #3679E5";
-    var contentContainer = button.closest('.index-container').querySelector('.content');
-    contentContainer.style.display = "block";
-    var targetContent = button.getAttribute('data-target') || button.innerText;
-    contentContainer.innerHTML = targetContent;
-}
-
-function buttonClick(targetIdOrUrl) {
-    if (isUrl(targetIdOrUrl)) {
-        var xhr = new XMLHttpRequest();
-        xhr.open('GET', targetIdOrUrl, true);
-        xhr.onreadystatechange = function () {
-            if (xhr.readyState == 4 && xhr.status == 200) {
-                var bodyContent = extractBodyContent(xhr.responseText);
-                var content = document.getElementById('contenidoMenu');
-                content.innerHTML = bodyContent;
-                executeScripts(content);
-                content.style.display = 'block';
-            }
-        };
-        xhr.send();
-    } else {
-        var content = document.getElementById(targetIdOrUrl);
-        content.style.display = 'block';
-    }
-}
-
-function extractBodyContent(html) {
-    var bodyStart = html.indexOf('<body>');
-    var bodyEnd = html.indexOf('</body>');
-    if (bodyStart !== -1 && bodyEnd !== -1) {
-        var bodyContent = html.substring(bodyStart + 6, bodyEnd);
-        var h1Start = bodyContent.indexOf('<h1>');
-        if (h1Start !== -1) {
-            var footerStart = bodyContent.indexOf('<footer>');
-            if (footerStart !== -1) {
-                bodyContent = bodyContent.substring(h1Start, footerStart);
-            } else {
-                bodyContent = bodyContent.substring(h1Start);
-            }
-            return bodyContent;
-        }
-    }
-    return html;
-}
-
-function isUrl(str) {
-    return str.startsWith('http') || str.startsWith('www');
-}
-
-function buttonOut(button) {
-    if (button.classList.contains('additional-button')) {
-        button.style.border = "none";
-    }
-    document.getElementById('content').style.display = "none";
-}
-
-function executeScripts(containerElement) {
-    var scripts = containerElement.getElementsByTagName('script');
-    for (var i = 0; i < scripts.length; i++) {
-        var originalScript = scripts[i];
-        var scriptCopy = document.createElement('script');
-        if (originalScript.src) {
-            scriptCopy.src = originalScript.src;
-        } else {
-            scriptCopy.text = originalScript.text;
-        }
-        document.head.appendChild(scriptCopy);
-        document.head.removeChild(scriptCopy);
-    }
-}
-function cargarMenuJSON(menuId) {
+  // Cargar menú desde JSON y generar las "slides"
+  function cargarMenuJSON(menuId, contenedor) {
     fetch('/learningmathematicas/assets/js/jsonmenu/menu-' + menuId + '.json')
       .then(res => res.json())
       .then(data => {
-        const contenedor = document.getElementById("index1");
-        contenedor.innerHTML = `
-          <h1 style="text-align: center;">${data.titulo}</h1>
-          <div class="button-container" id="botonera"></div>
-          <div class="content" id="content"><h2>Texto de Sección 1</h2></div>
-        `;
-  
-        const botonera = document.getElementById("botonera");
-  
         const simbolos = {
           CP: "📚",
           TD: "📄",
-          S: "🧮",
+          T: "📘",
           V: "🎬",
           A: "🧰",
+          J: "🎮",
           ET: "📝",
           ER: "✅"
         };
   
-        data.bloques.forEach(b => {
-          const btn = document.createElement("div");
-          btn.className = "additional-button";
-          btn.innerHTML = `<b>(${b.categoria}) ${simbolos[b.categoria] || ""} ${b.texto}</b>`;
+        contenedor.innerHTML = `<h1 style='text-align:center;'>${data.titulo}</h1>`;
+        const slides = [];
   
-          if (b.url) {
-            btn.setAttribute("onclick", `buttonClick('${b.url}')`);
-          }
-  
-          if (b.contenido) {
-            btn.setAttribute("data-target", b.contenido);
-            btn.setAttribute("onmouseover", "buttonHover(this)");
-            btn.setAttribute("onmouseout", "buttonOut(this)");
-          }
-  
-          botonera.appendChild(btn);
+        data.bloques.forEach((b, i) => {
+          const slide = document.createElement("div");
+          slide.className = "slide";
+          if (i === 0) slide.classList.add("active");
+          slide.id = `slide-${i}`;
+          slide.innerHTML = `
+            <h2>(${b.categoria}) ${simbolos[b.categoria] || ''} ${b.texto}</h2>
+            <div class="contenido">
+              ${b.contenido || `<iframe src='${b.url}' style='width:100%;height:500px;border:none;'></iframe>`}
+            </div>
+            <div class="nav-buttons">
+              ${i > 0 ? `<button onclick='mostrarSlide(${i - 1})'>Anterior</button>` : ''}
+              ${i < data.bloques.length - 1 ? `<button onclick='mostrarSlide(${i + 1})'>Siguiente</button>` : ''}
+            </div>
+          `;
+          slides.push(slide);
+          contenedor.appendChild(slide);
         });
       });
   }
   
+  // Mostrar una slide concreta
+  function mostrarSlide(n) {
+    document.querySelectorAll(".slide").forEach(s => s.classList.remove("active"));
+    document.getElementById(`slide-${n}`).classList.add("active");
+  }
+  
+  document.addEventListener("DOMContentLoaded", mostrarMenuDesdeURL);
