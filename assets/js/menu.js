@@ -17,11 +17,12 @@ function mostrarMenuDesdeURL() {
       menuSeleccionado.style.display = 'flex'; // ahora es flex (columnas)
       const contenedorIndex = menuSeleccionado.querySelector('.index-container');
       if (contenedorIndex) {
-        const index = contenedorIndex.querySelector('#index1');
-        const visor = contenedorIndex.querySelector('#visor');
-        if (index && visor) {
-          cargarMenuLateral(menuId, index, visor);
-        }
+        const index = menuSeleccionado.querySelector('#index1');
+        const visor = document.getElementById('visor');
+      if (index && visor) {
+       cargarMenuLateral(menuId, index, visor);
+      }
+
       }
     }
   }
