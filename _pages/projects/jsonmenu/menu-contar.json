@@ -13,6 +13,12 @@
         "contenido": "<p style='text-align: justify;'>¿Qué es contar? ¿Sabes cuál es el procedimiento que se sigue para ello?</p><p style='text-align: justify;'>Contar es una habilidad fundamental en matemáticas...</p>"
       }, 
       {
+        "categoria": "T",
+        "texto": "Contar y Enumerar",
+        "url": "https://axelcotongutierrez.github.io/learningmathematicas/posts/ContarEnumerar/",
+        "contenido": "<p style='text-align: justify;'>Hoy comenzamos un viaje sencillo pero fundamental: descubrir qué significa contar...</p>"
+      },
+      {
         "categoria": "ET",
         "texto": "Examen tipo Test",
         "url": "https://axelcotongutierrez.github.io/learningmathematicas/posts/001Contar/"
@@ -30,12 +36,7 @@
         "url": "https://axelcotongutierrez.github.io/learningmathematicas/posts/PSoroban/",
         "contenido": "<p style='text-align: justify;'>¡Bienvenido al fascinante mundo del soroban! En este vídeo, te sumergirás en sus partes...</p>"
       },
-      {
-        "categoria": "V",
-        "texto": "Contar y Enumerar",
-        "url": "https://axelcotongutierrez.github.io/learningmathematicas/posts/ContarEnumerar/",
-        "contenido": "<p style='text-align: justify;'>Hoy comenzamos un viaje sencillo pero fundamental: descubrir qué significa contar...</p>"
-      },
+      
       {
         "categoria": "A",
         "texto": "Soroban Online",
