@@ -91,7 +91,10 @@ function mostrarMenuDesdeURL() {
       const btnToggle = document.createElement('button');
       btnToggle.id = 'fullscreen-toggle';
       btnToggle.textContent = '🔳 Pantalla completa';
-      menuContenedor.prepend(btnToggle);
+      const indexContainer = menuContenedor.querySelector('.index-container');
+if (indexContainer) {
+  indexContainer.insertBefore(btnToggle, indexContainer.firstChild);
+}
   
       btnToggle.addEventListener('click', () => {
         if (!document.fullscreenElement) {

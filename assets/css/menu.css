@@ -114,8 +114,6 @@ body {
     }
   }
   #fullscreen-toggle {
-    margin: 0 1rem 1rem 1rem;
-    align-self: center;
     background-color: white;
     color: #2b7cff;
     border: none;
@@ -123,4 +121,7 @@ body {
     padding: 0.5rem 1rem;
     font-size: 0.9rem;
     cursor: pointer;
+    margin: 1rem;
+    align-self: center;
   }
+  
