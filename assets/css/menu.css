@@ -114,16 +114,13 @@ body {
     }
   }
   #fullscreen-toggle {
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    z-index: 1000;
-    padding: 0.5rem 1rem;
-    background-color: #ff2b2b;
-    color: white;
+    margin: 0 1rem 1rem 1rem;
+    align-self: center;
+    background-color: white;
+    color: #2b7cff;
     border: none;
     border-radius: 6px;
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
     cursor: pointer;
-    font-size: 1rem;
   }
-  
