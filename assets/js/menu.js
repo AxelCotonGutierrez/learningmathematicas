@@ -66,8 +66,20 @@ function mostrarMenuDesdeURL() {
             if (bloque.contenido) {
               cuerpo.innerHTML = bloque.contenido;
             } else if (bloque.url) {
-              cuerpo.innerHTML = `<iframe src="${bloque.url}" style="width:100%; height:500px; border:none; border-radius:10px;"></iframe>`;
-            } else {
+              fetch(bloque.url)
+                .then(response => response.text())
+                .then(html => {
+                  const parser = new DOMParser();
+                  const doc = parser.parseFromString(html, 'text/html');
+                  const bodyContent = doc.body.innerHTML;
+                  cuerpo.innerHTML = bodyContent;
+                })
+                .catch(error => {
+                  cuerpo.innerHTML = '<p style="color:red;">Error al cargar el contenido externo.</p>';
+                  console.error('Error al cargar la URL externa:', error);
+                });
+            }
+             else {
               cuerpo.textContent = 'Contenido no disponible.';
             }
   
