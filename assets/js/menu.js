@@ -81,3 +81,22 @@ function mostrarMenuDesdeURL() {
   
   document.addEventListener('DOMContentLoaded', mostrarMenuDesdeURL);
   
+  document.addEventListener('DOMContentLoaded', () => {
+    mostrarMenuDesdeURL();
+  
+    const btnToggle = document.getElementById('fullscreen-toggle');
+    const menu = document.querySelector('.menu');
+  
+    btnToggle.addEventListener('click', () => {
+      if (!document.fullscreenElement) {
+        menu.requestFullscreen().then(() => {
+          btnToggle.textContent = '❌ Salir de pantalla completa';
+        });
+      } else {
+        document.exitFullscreen().then(() => {
+          btnToggle.textContent = '🔳 Pantalla completa';
+        });
+      }
+    });
+  });
+  
