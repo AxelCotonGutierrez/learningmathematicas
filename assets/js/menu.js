@@ -116,7 +116,7 @@ function executeScripts(containerElement) {
     }
 }
 function cargarMenuJSON(menuId) {
-    fetch(`/learningmathematicas/jsonmenu/menu-${menuId}.json`)
+    fetch(`../jsonmenu/menu-${menuId}.json`)
       .then(res => res.json())
       .then(data => {
         const contenedor = document.getElementById("index1");
