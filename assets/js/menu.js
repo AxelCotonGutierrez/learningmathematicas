@@ -79,24 +79,30 @@ function mostrarMenuDesdeURL() {
       });
   }
   
-  document.addEventListener('DOMContentLoaded', mostrarMenuDesdeURL);
-  
   document.addEventListener('DOMContentLoaded', () => {
     mostrarMenuDesdeURL();
   
-    const btnToggle = document.getElementById('fullscreen-toggle');
-    const menu = document.querySelector('.menu');
+    // Crear el botón automáticamente
+    const menuContenedor = document.querySelector('.menu');
+    if (menuContenedor) {
+      const btnToggle = document.createElement('button');
+      btnToggle.id = 'fullscreen-toggle';
+      btnToggle.textContent = '🔳 Pantalla completa';
+      menuContenedor.prepend(btnToggle); // Insertar arriba dentro de .menu
   
-    btnToggle.addEventListener('click', () => {
-      if (!document.fullscreenElement) {
-        menu.requestFullscreen().then(() => {
-          btnToggle.textContent = '❌ Salir de pantalla completa';
-        });
-      } else {
-        document.exitFullscreen().then(() => {
-          btnToggle.textContent = '🔳 Pantalla completa';
-        });
-      }
-    });
+      // Activar funcionalidad
+      btnToggle.addEventListener('click', () => {
+        if (!document.fullscreenElement) {
+          menuContenedor.requestFullscreen().then(() => {
+            btnToggle.textContent = '❌ Salir de pantalla completa';
+          });
+        } else {
+          document.exitFullscreen().then(() => {
+            btnToggle.textContent = '🔳 Pantalla completa';
+          });
+        }
+      });
+    }
   });
+  
   
