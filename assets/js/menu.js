@@ -14,18 +14,20 @@ function mostrarMenuDesdeURL() {
   
     const menuSeleccionado = document.getElementById(menuId);
     if (menuSeleccionado) {
-      menuSeleccionado.style.display = 'flex'; // ahora es flex (columnas)
+      menuSeleccionado.style.display = 'flex';
+      insertarBotonPantallaCompleta(); // 🔁 Insertar el botón cuando se muestra el menú
+  
       const contenedorIndex = menuSeleccionado.querySelector('.index-container');
       if (contenedorIndex) {
-        const index = menuSeleccionado.querySelector('#index1');
+        const index = contenedorIndex.querySelector('#index1');
         const visor = document.getElementById('visor');
-      if (index && visor) {
-       cargarMenuLateral(menuId, index, visor);
-      }
-
+        if (index && visor) {
+          cargarMenuLateral(menuId, index, visor);
+        }
       }
     }
   }
+  
   
   // Cargar el JSON del menú y construir lista + visor
   function cargarMenuLateral(menuId, listaContenedor, visorContenedor) {
@@ -81,16 +83,16 @@ function mostrarMenuDesdeURL() {
   
   document.addEventListener('DOMContentLoaded', () => {
     mostrarMenuDesdeURL();
+  });
   
-    // Crear el botón automáticamente
+  function insertarBotonPantallaCompleta() {
     const menuContenedor = document.querySelector('.menu');
-    if (menuContenedor) {
+    if (menuContenedor && !document.getElementById('fullscreen-toggle')) {
       const btnToggle = document.createElement('button');
       btnToggle.id = 'fullscreen-toggle';
       btnToggle.textContent = '🔳 Pantalla completa';
-      menuContenedor.prepend(btnToggle); // Insertar arriba dentro de .menu
+      menuContenedor.prepend(btnToggle);
   
-      // Activar funcionalidad
       btnToggle.addEventListener('click', () => {
         if (!document.fullscreenElement) {
           menuContenedor.requestFullscreen().then(() => {
@@ -103,6 +105,5 @@ function mostrarMenuDesdeURL() {
         }
       });
     }
-  });
-  
+  }
   
