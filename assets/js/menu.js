@@ -5,69 +5,78 @@ function mostrarMenuDesdeURL() {
     if (menuParam) mostrarMenu(menuParam);
   }
   
-  // Mostrar el menú y cargar el JSON como diapositivas estilo Canvas
+  // Mostrar el menú con estructura lateral
   function mostrarMenu(menuId) {
     const menus = document.getElementsByClassName('menu');
     for (let i = 0; i < menus.length; i++) {
       menus[i].style.display = 'none';
     }
+  
     const menuSeleccionado = document.getElementById(menuId);
     if (menuSeleccionado) {
-      menuSeleccionado.style.display = 'block';
+      menuSeleccionado.style.display = 'flex'; // ahora es flex (columnas)
       const contenedorIndex = menuSeleccionado.querySelector('.index-container');
       if (contenedorIndex) {
         const index = contenedorIndex.querySelector('#index1');
-        if (index) {
-          cargarMenuJSON(menuId, index);
+        const visor = contenedorIndex.querySelector('#visor');
+        if (index && visor) {
+          cargarMenuLateral(menuId, index, visor);
         }
       }
     }
   }
   
-  // Cargar menú desde JSON y generar las "slides"
-  function cargarMenuJSON(menuId, contenedor) {
+  // Cargar el JSON del menú y construir lista + visor
+  function cargarMenuLateral(menuId, listaContenedor, visorContenedor) {
     fetch('/learningmathematicas/assets/js/jsonmenu/menu-' + menuId + '.json')
       .then(res => res.json())
       .then(data => {
-        const simbolos = {
-          CP: "📚",
-          TD: "📄",
-          T: "📘",
-          V: "🎬",
-          A: "🧰",
-          J: "🎮",
-          ET: "📝",
-          ER: "✅"
-        };
+        listaContenedor.innerHTML = '';
+        visorContenedor.innerHTML = '';
   
-        contenedor.innerHTML = `<h1 style='text-align:center;'>${data.titulo}</h1>`;
-        const slides = [];
+        // Título del tema
+        const titulo = document.createElement('h1');
+        titulo.textContent = data.titulo;
+        titulo.style.textAlign = 'center';
+        titulo.style.padding = '1rem';
+        titulo.style.fontSize = '1.8rem';
+        listaContenedor.appendChild(titulo);
   
-        data.bloques.forEach((b, i) => {
-          const slide = document.createElement("div");
-          slide.className = "slide";
-          if (i === 0) slide.classList.add("active");
-          slide.id = `slide-${i}`;
-          slide.innerHTML = `
-            <h2>(${b.categoria}) ${simbolos[b.categoria] || ''} ${b.texto}</h2>
-            <div class="contenido">
-              ${b.contenido || `<iframe src='${b.url}' style='width:100%;height:500px;border:none;'></iframe>`}
-            </div>
-            <div class="nav-buttons">
-              ${i > 0 ? `<button onclick='mostrarSlide(${i - 1})'>Anterior</button>` : ''}
-              ${i < data.bloques.length - 1 ? `<button onclick='mostrarSlide(${i + 1})'>Siguiente</button>` : ''}
-            </div>
-          `;
-          slides.push(slide);
-          contenedor.appendChild(slide);
+        // Generar botones
+        data.bloques.forEach((bloque, index) => {
+          const boton = document.createElement('button');
+          boton.className = 'menu-boton';
+          boton.textContent = bloque.texto;
+  
+          boton.addEventListener('click', () => {
+            visorContenedor.innerHTML = ''; // Limpiar visor
+  
+            const contenido = document.createElement('div');
+            contenido.className = 'visor-bloque';
+  
+            const titulo = document.createElement('h2');
+            titulo.textContent = bloque.texto;
+  
+            const cuerpo = document.createElement('div');
+            cuerpo.className = 'contenido';
+  
+            if (bloque.contenido) {
+              cuerpo.innerHTML = bloque.contenido;
+            } else if (bloque.url) {
+              cuerpo.innerHTML = `<iframe src="${bloque.url}" style="width:100%; height:500px; border:none; border-radius:10px;"></iframe>`;
+            } else {
+              cuerpo.textContent = 'Contenido no disponible.';
+            }
+  
+            contenido.appendChild(titulo);
+            contenido.appendChild(cuerpo);
+            visorContenedor.appendChild(contenido);
+          });
+  
+          listaContenedor.appendChild(boton);
         });
       });
   }
   
-  // Mostrar una slide concreta
-  function mostrarSlide(n) {
-    document.querySelectorAll(".slide").forEach(s => s.classList.remove("active"));
-    document.getElementById(`slide-${n}`).classList.add("active");
-  }
+  document.addEventListener('DOMContentLoaded', mostrarMenuDesdeURL);
   
-  document.addEventListener("DOMContentLoaded", mostrarMenuDesdeURL);
