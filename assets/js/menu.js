@@ -11,13 +11,24 @@ function mostrarMenuDesdeURL() {
 function mostrarMenu(menuId) {
     var menus = document.getElementsByClassName('menu');
     for (var i = 0; i < menus.length; i++) {
-        menus[i].style.display = 'none';
+      menus[i].style.display = 'none';
     }
+  
     var menuSeleccionado = document.getElementById(menuId);
     if (menuSeleccionado) {
-        menuSeleccionado.style.display = 'block';
+      menuSeleccionado.style.display = 'block';
     }
-}
+  
+    // Si el menú tiene versión JSON, cargarla:
+    const contenedorIndex = menuSeleccionado.querySelector('.index-container');
+    if (contenedorIndex) {
+      const index = contenedorIndex.querySelector('#index1');
+      if (index) {
+        cargarMenuJSON(menuId, index); // <--- esta es la llamada al fetch
+      }
+    }
+  }
+  
 
 // Función para alternar la visibilidad del spoiler
 function toggleSpoiler(spoiler) {
@@ -104,3 +115,46 @@ function executeScripts(containerElement) {
         document.head.removeChild(scriptCopy);
     }
 }
+function cargarMenuJSON(menuId) {
+    fetch(`/learningmathematicas/jsonmenu/menu-${menuId}.json`)
+      .then(res => res.json())
+      .then(data => {
+        const contenedor = document.getElementById("index1");
+        contenedor.innerHTML = `
+          <h1 style="text-align: center;">${data.titulo}</h1>
+          <div class="button-container" id="botonera"></div>
+          <div class="content" id="content"><h2>Texto de Sección 1</h2></div>
+        `;
+  
+        const botonera = document.getElementById("botonera");
+  
+        const simbolos = {
+          CP: "📚",
+          TD: "📄",
+          S: "🧮",
+          V: "🎬",
+          A: "🧰",
+          ET: "📝",
+          ER: "✅"
+        };
+  
+        data.bloques.forEach(b => {
+          const btn = document.createElement("div");
+          btn.className = "additional-button";
+          btn.innerHTML = `<b>(${b.categoria}) ${simbolos[b.categoria] || ""} ${b.texto}</b>`;
+  
+          if (b.url) {
+            btn.setAttribute("onclick", `buttonClick('${b.url}')`);
+          }
+  
+          if (b.contenido) {
+            btn.setAttribute("data-target", b.contenido);
+            btn.setAttribute("onmouseover", "buttonHover(this)");
+            btn.setAttribute("onmouseout", "buttonOut(this)");
+          }
+  
+          botonera.appendChild(btn);
+        });
+      });
+  }
+  
