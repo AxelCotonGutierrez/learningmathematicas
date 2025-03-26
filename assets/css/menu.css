@@ -67,7 +67,7 @@ body {
   flex: 1;
   padding: 2rem;
   overflow-y: auto;
-  background-color: #fff; /* CAMBIO: fondo del visor blanco */
+  background-color: #000;/* CAMBIO: fondo del visor blanco */
   color: #000;
 }
 
@@ -80,7 +80,7 @@ body {
 .contenido {
   font-size: 1.8rem;
   line-height: 1.8;
-  color: #111;
+  color: #fff;
 }
 
 /* === VÍDEO ADAPTADO A 80% Y 16:9 === */
