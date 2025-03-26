@@ -4,7 +4,7 @@ body {
   font-family: 'Segoe UI', sans-serif;
   background-color: #ffff;
   color: #f2f2f2;
-  font-size: 1.2rem;
+  font-size: 3rem;
 }
 
 /* === CONTENEDOR PRINCIPAL === */
@@ -47,7 +47,7 @@ body {
   color: #f0c040;
   border: 1px solid #f0c040;
   padding: 0.75rem 1rem;
-  font-size: 1rem;
+  font-size: 2.5rem;
   text-align: left;
   border-radius: 6px;
   cursor: pointer;
@@ -69,7 +69,7 @@ body {
 }
 
 .visor-bloque h2 {
-  font-size: 2.8rem;
+  font-size: 2.2rem;
   color: #f0c040;
   margin-bottom: 1rem;
 }
@@ -86,7 +86,7 @@ body {
 
 /* === VÍDEO === */
 .video-embed {
-  width: 100%;
+  width: 80%;
   height: 56.25vw;
   max-height: 80vh;
   border: none;
@@ -97,7 +97,7 @@ body {
 
 /* === IMAGEN DE ACTIVIDAD === */
 .actividad-img {
-  width: 100%;
+  width: 80%;
   max-width: 600px;
   display: block;
   margin: 1rem auto;
