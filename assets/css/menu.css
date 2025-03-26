@@ -2,14 +2,15 @@
 body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
-  background-color: #ffffff; /* Fondo global blanco */
-  color: #ffffff; 
+  background-color: #ffffff; /* <-- cambia de #111 a blanco */
+  color: #ffffff;
   font-size: 2.2rem;
 }
 
+
 /* === CONTENEDOR PRINCIPAL === */
 .menu {
-  background-color: #ffffff;
+  background-color: #fff;
   display: flex;
   height: 100vh;
   overflow: hidden;
@@ -37,9 +38,8 @@ body {
 
 #index1 h1 {
   color: #f0c040;
-  font-size: 3rem;
-  font-weight: bold;
-  margin: 1.5rem 0;
+  font-size: 3rem; /* AUMENTAMOS TAMAÑO DEL TÍTULO DEL MENÚ */
+  margin: 1rem 0;
   text-align: center;
 }
 
@@ -67,13 +67,13 @@ body {
   flex: 1;
   padding: 2rem;
   overflow-y: auto;
-  background-color: #ffffff;
+  background-color: #fff; /* CAMBIO: fondo del visor blanco */
   color: #000;
 }
 
 .visor-bloque h2 {
   font-size: 2.8rem;
-  color: #2b7cff;
+  color: #f0c040;
   margin-bottom: 1rem;
 }
 
@@ -81,34 +81,30 @@ body {
   font-size: 1.8rem;
   line-height: 1.8;
   color: #111;
-  text-align: justify;
 }
 
-/* === VÍDEO EMBED RESPONSIVE === */
-.video-embed {
+/* === VÍDEO ADAPTADO A 80% Y 16:9 === */
+.video-container {
   position: relative;
-  width: 80%;
-  max-width: 960px;
+  padding-bottom: 56.25%; /* relación 16:9 */
+  height: 0;
   margin: 2rem auto;
-  padding-top: 56.25%; /* 16:9 aspect ratio */
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 0 12px rgba(0,0,0,0.2);
+  width: 80%;
 }
 
-.video-embed iframe {
+.video-container iframe {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
+  border-radius: 10px;
   border: none;
 }
 
 /* === IMAGEN DE ACTIVIDAD === */
 .actividad-img {
   width: 80%;
-  max-width: 600px;
   display: block;
   margin: 2rem auto;
   border-radius: 8px;
@@ -158,7 +154,7 @@ body {
     height: auto;
   }
 
-  .video-embed {
+  .video-container {
     width: 95%;
   }
 }
