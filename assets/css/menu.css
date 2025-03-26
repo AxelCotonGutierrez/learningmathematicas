@@ -2,14 +2,14 @@
 body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
-  background-color: #111;
-  color: #f2f2f2;
+  background-color: #ffffff; /* Fondo global blanco */
+  color: #ffffff; 
   font-size: 2.2rem;
 }
 
 /* === CONTENEDOR PRINCIPAL === */
 .menu {
-  background-color: #ffffff; /* Fondo blanco para el área principal */
+  background-color: #ffffff;
   display: flex;
   height: 100vh;
   overflow: hidden;
@@ -37,8 +37,9 @@ body {
 
 #index1 h1 {
   color: #f0c040;
-  font-size: 2rem;
-  margin-bottom: 1rem;
+  font-size: 3rem;
+  font-weight: bold;
+  margin: 1.5rem 0;
   text-align: center;
 }
 
@@ -66,42 +67,50 @@ body {
   flex: 1;
   padding: 2rem;
   overflow-y: auto;
-  background-color: #1a1a1a;
+  background-color: #ffffff;
+  color: #000;
 }
 
 .visor-bloque h2 {
   font-size: 2.8rem;
-  color: #f0c040;
+  color: #2b7cff;
   margin-bottom: 1rem;
-}
-
-.visor-bloque h2::before {
-  content: none !important; /* Elimina el número "1." */
 }
 
 .contenido {
   font-size: 1.8rem;
   line-height: 1.8;
-  color: #e0e0e0;
+  color: #111;
+  text-align: justify;
 }
 
-/* === VÍDEO === */
+/* === VÍDEO EMBED RESPONSIVE === */
 .video-embed {
+  position: relative;
+  width: 80%;
+  max-width: 960px;
+  margin: 2rem auto;
+  padding-top: 56.25%; /* 16:9 aspect ratio */
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 12px rgba(0,0,0,0.2);
+}
+
+.video-embed iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  height: 56.25vw;
-  max-height: 80vh;
+  height: 100%;
   border: none;
-  border-radius: 8px;
-  margin-top: 1rem;
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
 }
 
 /* === IMAGEN DE ACTIVIDAD === */
 .actividad-img {
-  width: 100%;
+  width: 80%;
   max-width: 600px;
   display: block;
-  margin: 1rem auto;
+  margin: 2rem auto;
   border-radius: 8px;
   box-shadow: 0 0 8px rgba(255, 215, 0, 0.2);
 }
@@ -148,14 +157,8 @@ body {
     padding: 1rem;
     height: auto;
   }
-}
-/* Centrar imágenes y vídeos al 80% */
-.contenido iframe,
-.contenido img {
-  display: block;
-  margin: 2rem auto;
-  max-width: 80%;
-  height: auto;
-  border-radius: 10px;
-  box-shadow: 0 0 12px rgba(0,0,0,0.1);
+
+  .video-embed {
+    width: 95%;
+  }
 }
