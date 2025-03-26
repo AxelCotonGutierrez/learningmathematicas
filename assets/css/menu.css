@@ -149,3 +149,13 @@ body {
     height: auto;
   }
 }
+/* Centrar imágenes y vídeos al 80% */
+.contenido iframe,
+.contenido img {
+  display: block;
+  margin: 2rem auto;
+  max-width: 80%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 0 12px rgba(0,0,0,0.1);
+}
