@@ -1,144 +1,150 @@
 /* === DISEÑO GENERAL === */
 body {
-    margin: 0;
-    font-family: 'Segoe UI', sans-serif;
-    background-color: #f5f7fa;
-    color: #333;
-  }
-  
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #111;
+  color: #f2f2f2;
+  font-size: 1.2rem;
+}
+
+/* === CONTENEDOR PRINCIPAL === */
+.menu {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* === MENÚ LATERAL === */
+.index-container {
+  width: 300px;
+  background-color: #000;
+  color: #f0c040;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  padding: 1rem 0;
+  overflow-y: auto;
+  box-shadow: 2px 0 10px rgba(0,0,0,0.3);
+}
+
+#index1 {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  padding: 0 1rem;
+}
+
+#index1 h1 {
+  color: #f0c040;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+/* === BOTONES DEL MENÚ === */
+.menu-boton {
+  background-color: #222;
+  color: #f0c040;
+  border: 1px solid #f0c040;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  text-align: left;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.menu-boton:hover,
+.menu-boton.activo {
+  background-color: #f0c040;
+  color: #000;
+}
+
+/* === VISOR DE CONTENIDO === */
+#visor {
+  flex: 1;
+  padding: 2rem;
+  overflow-y: auto;
+  background-color: #1a1a1a;
+}
+
+.visor-bloque h2 {
+  font-size: 1.8rem;
+  color: #f0c040;
+  margin-bottom: 1rem;
+}
+
+.visor-bloque h2::before {
+  content: none !important; /* Elimina el número "1." */
+}
+
+.contenido {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: #e0e0e0;
+}
+
+/* === VÍDEO === */
+.video-embed {
+  width: 100%;
+  height: 56.25vw;
+  max-height: 80vh;
+  border: none;
+  border-radius: 8px;
+  margin-top: 1rem;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+/* === IMAGEN DE ACTIVIDAD === */
+.actividad-img {
+  width: 100%;
+  max-width: 600px;
+  display: block;
+  margin: 1rem auto;
+  border-radius: 8px;
+  box-shadow: 0 0 8px rgba(255, 215, 0, 0.2);
+}
+
+/* === BOTÓN DE PANTALLA COMPLETA === */
+#fullscreen-toggle {
+  background-color: #000;
+  color: #f0c040;
+  border: 1px solid #f0c040;
+  border-radius: 6px;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+  margin: 1rem;
+  align-self: center;
+}
+
+/* === RESPONSIVE === */
+@media screen and (max-width: 768px) {
   .menu {
-    display: flex;
-    height: 100vh;
-    overflow: hidden;
+    flex-direction: column;
   }
-  
-  /* === MENÚ LATERAL === */
+
   .index-container {
-    width: 280px;
-    background-color: #2b7cff;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-    padding: 1rem 0;
-    overflow-y: auto;
-    box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+    width: 100%;
+    height: auto;
+    flex-direction: row;
+    overflow-x: auto;
+    white-space: nowrap;
   }
-  
+
   #index1 {
-    display: flex;
-    flex-direction: column;
+    flex-direction: row;
     gap: 0.5rem;
-    padding: 0 1rem;
+    padding: 1rem;
   }
-  
-  #index1 h1 {
-    color: white;
-    font-size: 1.6rem;
-    margin-bottom: 1rem;
-    text-align: center;
-  }
-  
-  /* === BOTONES DEL MENÚ === */
+
   .menu-boton {
-    background-color: white;
-    color: #2b7cff;
-    border: none;
-    padding: 0.75rem 1rem;
-    font-size: 1rem;
-    text-align: left;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: all 0.2s ease;
+    white-space: normal;
+    min-width: 200px;
   }
-  
-  .menu-boton:hover {
-    background-color: #e6f0ff;
-  }
-  
-  /* === VISOR DE CONTENIDO === */
+
   #visor {
-    flex: 1;
-    padding: 2rem;
-    overflow-y: auto;
-    background-color: #ffffff;
+    padding: 1rem;
+    height: auto;
   }
-  
-  .visor-bloque h2 {
-    font-size: 1.5rem;
-    color: #2b7cff;
-    margin-bottom: 1rem;
-  }
-  
-  .contenido {
-    font-size: 1.1rem;
-    line-height: 1.6;
-  }
-  
-  iframe {
-    width: 100%;
-    height: 500px;
-    border: none;
-    border-radius: 10px;
-    box-shadow: 0 0 8px rgba(0,0,0,0.05);
-  }
-  
-  /* === RESPONSIVE === */
-  @media screen and (max-width: 768px) {
-    .menu {
-      flex-direction: column;
-    }
-  
-    .index-container {
-      width: 100%;
-      height: auto;
-      flex-direction: row;
-      overflow-x: auto;
-      white-space: nowrap;
-    }
-  
-    #index1 {
-      flex-direction: row;
-      gap: 0.5rem;
-      padding: 1rem;
-    }
-  
-    .menu-boton {
-      white-space: normal;
-      min-width: 200px;
-    }
-  
-    #visor {
-      padding: 1rem;
-      height: auto;
-    }
-  }
-  #fullscreen-toggle {
-    background-color: white;
-    color: #2b7cff;
-    border: none;
-    border-radius: 6px;
-    padding: 0.5rem 1rem;
-    font-size: 0.9rem;
-    cursor: pointer;
-    margin: 1rem;
-    align-self: center;
-  }
-  .video-embed {
-    width: 100%;
-    height: 56.25vw; /* 16:9 aspect ratio */
-    max-height: 80vh;
-    border: none;
-    border-radius: 8px;
-    margin-top: 1rem;
-  }
-  
-  .actividad-img {
-    width: 100%;
-    max-width: 600px;
-    display: block;
-    margin: 1rem auto;
-    border-radius: 8px;
-    box-shadow: 0 0 8px rgba(0,0,0,0.1);
-  }
-  
+}
