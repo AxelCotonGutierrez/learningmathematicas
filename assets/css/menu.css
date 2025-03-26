@@ -9,6 +9,7 @@ body {
 
 /* === CONTENEDOR PRINCIPAL === */
 .menu {
+  background-color: #ffffff; /* Fondo blanco para el área principal */
   display: flex;
   height: 100vh;
   overflow: hidden;
@@ -36,7 +37,7 @@ body {
 
 #index1 h1 {
   color: #f0c040;
-  font-size: 1.8rem;
+  font-size: 2.8rem;
   margin-bottom: 1rem;
   text-align: center;
 }
@@ -69,7 +70,7 @@ body {
 }
 
 .visor-bloque h2 {
-  font-size: 1.8rem;
+  font-size: 2.8rem;
   color: #f0c040;
   margin-bottom: 1rem;
 }
@@ -79,7 +80,7 @@ body {
 }
 
 .contenido {
-  font-size: 1.2rem;
+  font-size: 2.2rem;
   line-height: 1.8;
   color: #e0e0e0;
 }
@@ -112,7 +113,7 @@ body {
   border: 1px solid #f0c040;
   border-radius: 6px;
   padding: 0.5rem 1rem;
-  font-size: 1rem;
+  font-size: 2rem;
   cursor: pointer;
   margin: 1rem;
   align-self: center;
