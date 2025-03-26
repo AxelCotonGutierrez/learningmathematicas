@@ -22,6 +22,12 @@
         "contenido": "<p style='text-align: justify;'>En este breve test pondremos a prueba tus conocimientos sobre contar y enumerar. Verás preguntas sobre números cardinales y ordinales, y cómo los usamos en la vida diaria. ¿Listo para demostrar cuánto sabes? 👉 ¡Vamos a empezar!</p>",
         "imagen": "https://axelcotongutierrez.github.io/learningmathematicas/assets/images//posts/001Contar/test.png",
         "link": "https://axelcotongutierrez.github.io/learningmathematicas/posts/001Contar/"
+      },
+      {
+        "texto": "Glosario Online (A)",
+        "contenido": "<p style='text-align: justify;'> Presentamos un <b><span style=\"color: #2b00fe;\"><i>glosario científico-tecnológico</i></span></b> que proporciona dos definiciones, una oficial o formal y otra en lenguaje coloquial, junto con enlaces a recursos adicionales como Wikipedia, ofrece una serie de ventajas educativas y de comprensión.</p>",
+        "imagen": "https://axelcotongutierrez.github.io/learningmathematicas/assets/images/pages/Glosario/Glosario.jpg",
+        "link": "https://axelcotongutierrez.github.io/GlosarioCT/"
       }
     ]
   }
