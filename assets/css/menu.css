@@ -2,15 +2,13 @@
 body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
-  background-color: #ffffff; /* <-- cambia de #111 a blanco */
-  color: #ffffff;
-  font-size: 2.2rem;
+  background-color: #ffff;
+  color: #f2f2f2;
+  font-size: 1.2rem;
 }
-
 
 /* === CONTENEDOR PRINCIPAL === */
 .menu {
-  background-color: #fff;
   display: flex;
   height: 100vh;
   overflow: hidden;
@@ -38,8 +36,8 @@ body {
 
 #index1 h1 {
   color: #f0c040;
-  font-size: 3rem; /* AUMENTAMOS TAMAÑO DEL TÍTULO DEL MENÚ */
-  margin: 1rem 0;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
   text-align: center;
 }
 
@@ -49,7 +47,7 @@ body {
   color: #f0c040;
   border: 1px solid #f0c040;
   padding: 0.75rem 1rem;
-  font-size: 2rem;
+  font-size: 1rem;
   text-align: left;
   border-radius: 6px;
   cursor: pointer;
@@ -67,46 +65,42 @@ body {
   flex: 1;
   padding: 2rem;
   overflow-y: auto;
-  background-color: #000;/* CAMBIO: fondo del visor blanco */
-  color: #000;
+  background-color: #1a1a1a;
 }
 
 .visor-bloque h2 {
-  font-size: 2.8rem;
+  font-size: 1.8rem;
   color: #f0c040;
   margin-bottom: 1rem;
 }
 
+.visor-bloque h2::before {
+  content: none !important; /* Elimina el número "1." */
+}
+
 .contenido {
-  font-size: 1.8rem;
+  font-size: 1.2rem;
   line-height: 1.8;
-  color: #fff;
+  color: #e0e0e0;
 }
 
-/* === VÍDEO ADAPTADO A 80% Y 16:9 === */
-.video-container {
-  position: relative;
-  padding-bottom: 56.25%; /* relación 16:9 */
-  height: 0;
-  margin: 2rem auto;
-  width: 80%;
-}
-
-.video-container iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
+/* === VÍDEO === */
+.video-embed {
   width: 100%;
-  height: 100%;
-  border-radius: 10px;
+  height: 56.25vw;
+  max-height: 80vh;
   border: none;
+  border-radius: 8px;
+  margin-top: 1rem;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
 }
 
 /* === IMAGEN DE ACTIVIDAD === */
 .actividad-img {
-  width: 80%;
+  width: 100%;
+  max-width: 600px;
   display: block;
-  margin: 2rem auto;
+  margin: 1rem auto;
   border-radius: 8px;
   box-shadow: 0 0 8px rgba(255, 215, 0, 0.2);
 }
@@ -118,7 +112,7 @@ body {
   border: 1px solid #f0c040;
   border-radius: 6px;
   padding: 0.5rem 1rem;
-  font-size: 2rem;
+  font-size: 1rem;
   cursor: pointer;
   margin: 1rem;
   align-self: center;
@@ -152,9 +146,5 @@ body {
   #visor {
     padding: 1rem;
     height: auto;
-  }
-
-  .video-container {
-    width: 95%;
   }
 }
