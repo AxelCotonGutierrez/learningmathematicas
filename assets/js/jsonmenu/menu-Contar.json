@@ -8,9 +8,21 @@
       },
       {
         "texto": "Contar y Enumerar (T) (V)",
-        "contenido": "<p>Introducción...</p>",
+        "contenido": "<p style='text-align: justify;'>Desde tiempos prehistóricos, los seres humanos han tenido la necesidad de llevar un registro de las cosas que les rodeaban. Contar es determinar cuántos objetos hay en un grupo. Al principio se hacía con dedos, piedras o marcas en huesos. Hoy seguimos usando esta misma idea con números.</p><p style='text-align: justify;'>En este vídeo, veremos cómo nació el conteo, qué diferencia hay entre contar y numerar, y por qué esta habilidad es la base de todas las matemáticas. A través de ejemplos simples, como contar lápices, canicas o marcas, entenderás cómo esta acción tan sencilla ha sido clave en la historia de la humanidad.</p>",
         "video": "https://www.youtube.com/embed/D0R5KXQiEao?si=mXJ2ZIeAK2aTp1yu"  
-             }
+      },
+      {
+        "texto": "Teoría para docentes (TD)",
+        "contenido": "<p style='text-align: justify;'>¿Qué es contar? ¿Sabes cuál es el procedimiento que se sigue para ello?</p><p style='text-align: justify;'>Contar es una habilidad fundamental en matemáticas que nos permite determinar la cantidad de elementos en un conjunto. En este vídeo, te guiaré paso a paso a través del proceso de contar, siguiendo las distintas fases que conlleva.</p>",
+        "video": "https://www.youtube.com/embed/ID"
+             
+      },
+      {
+        "texto": "Test (ET)",
+        "contenido": "<p style='text-align: justify;'>En este breve test pondremos a prueba tus conocimientos sobre contar y enumerar. Verás preguntas sobre números cardinales y ordinales, y cómo los usamos en la vida diaria. ¿Listo para demostrar cuánto sabes? 👉 ¡Vamos a empezar!</p>",
+        "imagen": "https://axelcotongutierrez.github.io/learningmathematicas/assets/images//posts/001Contar/top.jpg",
+        "link": "https://axelcotongutierrez.github.io/learningmathematicas/posts/001Contar/"
+      }
     ]
   }
   
