@@ -1,11 +1,9 @@
-// Mostrar el menú desde la URL
 function mostrarMenuDesdeURL() {
   const urlParams = new URLSearchParams(window.location.search);
   const menuParam = urlParams.get('menu');
   if (menuParam) mostrarMenu(menuParam);
 }
 
-// Mostrar el menú con estructura lateral
 function mostrarMenu(menuId) {
   const menus = document.getElementsByClassName('menu');
   for (let i = 0; i < menus.length; i++) {
@@ -15,7 +13,7 @@ function mostrarMenu(menuId) {
   const menuSeleccionado = document.getElementById(menuId);
   if (menuSeleccionado) {
     menuSeleccionado.style.display = 'flex';
-    insertarBotonPantallaCompleta(); // Botón fullscreen
+    insertarBotonPantallaCompleta();
 
     const contenedorIndex = menuSeleccionado.querySelector('.index-container');
     if (contenedorIndex) {
@@ -28,7 +26,6 @@ function mostrarMenu(menuId) {
   }
 }
 
-// Cargar el JSON del menú y construir lista + visor
 function cargarMenuLateral(menuId, listaContenedor, visorContenedor) {
   fetch('/learningmathematicas/assets/js/jsonmenu/menu-' + menuId + '.json')
     .then(res => res.json())
@@ -36,7 +33,6 @@ function cargarMenuLateral(menuId, listaContenedor, visorContenedor) {
       listaContenedor.innerHTML = '';
       visorContenedor.innerHTML = '';
 
-      // Título del tema
       const titulo = document.createElement('h1');
       titulo.textContent = data.titulo;
       titulo.style.textAlign = 'center';
@@ -44,17 +40,16 @@ function cargarMenuLateral(menuId, listaContenedor, visorContenedor) {
       titulo.style.fontSize = '1.8rem';
       listaContenedor.appendChild(titulo);
 
-      // Botones del menú
       data.bloques.forEach((bloque, index) => {
         const boton = document.createElement('button');
         boton.className = 'menu-boton';
         boton.textContent = bloque.texto;
 
         boton.addEventListener('click', () => {
-          visorContenedor.innerHTML = ''; // Limpiar visor
+          visorContenedor.innerHTML = '';
 
-          const contenido = document.createElement('div');
-          contenido.className = 'visor-bloque';
+          const bloqueDiv = document.createElement('div');
+          bloqueDiv.className = 'visor-bloque';
 
           const titulo = document.createElement('h2');
           titulo.textContent = bloque.texto;
@@ -62,28 +57,45 @@ function cargarMenuLateral(menuId, listaContenedor, visorContenedor) {
           const cuerpo = document.createElement('div');
           cuerpo.className = 'contenido';
 
+          // 1. Texto introductorio
           if (bloque.contenido) {
-            cuerpo.innerHTML = bloque.contenido;
-          } else if (bloque.url) {
-            fetch(bloque.url)
-              .then(response => response.text())
-              .then(html => {
-                const parser = new DOMParser();
-                const doc = parser.parseFromString(html, 'text/html');
-                const bodyContent = doc.body ? doc.body.innerHTML : '<p>Contenido no disponible.</p>';
-                cuerpo.innerHTML = bodyContent;
-              })
-              .catch(error => {
-                cuerpo.innerHTML = '<p style="color:red;">Error al cargar el contenido externo.</p>';
-                console.error('Error al cargar la URL externa:', error);
-              });
-          } else {
-            cuerpo.textContent = 'Contenido no disponible.';
+            const intro = document.createElement('div');
+            intro.innerHTML = bloque.contenido;
+            cuerpo.appendChild(intro);
           }
 
-          contenido.appendChild(titulo);
-          contenido.appendChild(cuerpo);
-          visorContenedor.appendChild(contenido);
+          // 2. Vídeo
+          if (bloque.video) {
+            const iframe = document.createElement('iframe');
+            iframe.src = bloque.video;
+            iframe.allowFullscreen = true;
+            iframe.className = 'video-embed';
+            cuerpo.appendChild(iframe);
+          }
+
+          // 3. Imagen con enlace
+          else if (bloque.imagen && bloque.link) {
+            const enlace = document.createElement('a');
+            enlace.href = bloque.link;
+            enlace.target = '_blank';
+            const img = document.createElement('img');
+            img.src = bloque.imagen;
+            img.alt = 'Actividad';
+            img.className = 'actividad-img';
+            enlace.appendChild(img);
+            cuerpo.appendChild(enlace);
+          }
+
+          // 4. Texto extra (solo si no hay vídeo ni imagen)
+          else if (bloque.textoExtra) {
+            const extra = document.createElement('div');
+            extra.innerHTML = bloque.textoExtra;
+            cuerpo.appendChild(extra);
+          }
+
+          bloqueDiv.appendChild(titulo);
+          bloqueDiv.appendChild(cuerpo);
+          visorContenedor.appendChild(bloqueDiv);
         });
 
         listaContenedor.appendChild(boton);
@@ -91,7 +103,6 @@ function cargarMenuLateral(menuId, listaContenedor, visorContenedor) {
     });
 }
 
-// Insertar botón de pantalla completa automáticamente
 function insertarBotonPantallaCompleta() {
   const menuContenedor = document.querySelector('.menu');
   if (menuContenedor && !document.getElementById('fullscreen-toggle')) {

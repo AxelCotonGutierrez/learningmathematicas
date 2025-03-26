@@ -2,58 +2,15 @@
     "titulo": "¿Qué es Contar?",
     "bloques": [
       {
-        "categoria": "CP",
-        "texto": "Conocimientos Previos",
-        "contenido": "<p style='text-align: justify;'><span>Ninguno. Este nivel está pensado como introducción al mundo de los números.</span></p>"
+        "texto": "Conocimientos Previos (CP)",
+        "contenido": "<p>Los conocimientos previos requeridos y su correspondencia con los respectivos niveles son:</p>",
+        "textoExtra": "<p style='text-align: justify;'><span>Ninguno. Este nivel está pensado como introducción al mundo de los números.</span></p>"
       },
       {
-        "categoria": "TD",
-        "texto": "Teoría para docentes",
-        "url": "https://axelcotongutierrez.github.io/learningmathematicas/posts/Contar/",
-        "contenido": "<p style='text-align: justify;'>¿Qué es contar? ¿Sabes cuál es el procedimiento que se sigue para ello?</p><p style='text-align: justify;'>Contar es una habilidad fundamental en matemáticas...</p>"
-      }, 
-      {
-        "categoria": "T",
-        "texto": "Contar y Enumerar",
-        "url": "https://axelcotongutierrez.github.io/learningmathematicas/posts/ContarEnumerar/",
-        "contenido": "<p style='text-align: justify;'>Hoy comenzamos un viaje sencillo pero fundamental: descubrir qué significa contar...</p>"
-      },
-      {
-        "categoria": "ET",
-        "texto": "Examen tipo Test",
-        "url": "https://axelcotongutierrez.github.io/learningmathematicas/posts/001Contar/"
-      },
-
-      {
-        "categoria": "S",
-        "texto": "Soroban",
-        "url": "https://axelcotongutierrez.github.io/learningmathematicas/posts/Soroban/",
-        "contenido": "<p style='text-align: justify;'>Explora el <b>soroban</b>, un antiguo ábaco japonés utilizado para realizar cálculos...</p>"
-      },
-      {
-        "categoria": "V",
-        "texto": "Partes de un Soroban",
-        "url": "https://axelcotongutierrez.github.io/learningmathematicas/posts/PSoroban/",
-        "contenido": "<p style='text-align: justify;'>¡Bienvenido al fascinante mundo del soroban! En este vídeo, te sumergirás en sus partes...</p>"
-      },
-      
-      {
-        "categoria": "A",
-        "texto": "Soroban Online",
-        "url": "https://axelcotongutierrez.github.io/learningmathematicas/projects/Utilidades/Soroban.html/",
-        "contenido": "<p style='text-align: justify;'>Explora y enriquece tus habilidades mediante nuestro soroban online.</p>"
-      },
-      {
-        "categoria": "A",
-        "texto": "Glosario Online",
-        "url": "https://axelcotongutierrez.github.io/learningmathematicas/projects/Utilidades/Glosario.html/",
-        "contenido": "<p style='text-align: justify;'>Consulta los términos en nuestro Glosario Online.</p>"
-      },
-           {
-        "categoria": "ER",
-        "texto": "Preguntas resueltas",
-        "url": "https://axelcotongutierrez.github.io/learningmathematicas/tests/ContarResueltas/"
-      }
+        "texto": "Contar y Enumerar (T) (V)",
+        "contenido": "<p>Introducción...</p>",
+        "video": "https://www.youtube.com/embed/D0R5KXQiEao?si=mXJ2ZIeAK2aTp1yu"  
+             }
     ]
   }
   
