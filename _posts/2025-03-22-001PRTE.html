@@ -132,16 +132,39 @@ tags: [Aritmética, Contar, Infantil, Matemáticas, 2.º Primaria, 1.º Primaria
 <br>
 
 <script>
+  function leerTexto(texto) {
+    const msg = new SpeechSynthesisUtterance(texto);
+    msg.lang = "es-ES";
+    speechSynthesis.cancel();
+    speechSynthesis.speak(msg);
+  }
+  
   function toggleSpoiler(spoiler) {
-    var content = spoiler.nextElementSibling;
+    const content = spoiler.nextElementSibling;
+  
     if (content.style.display === "none") {
       content.style.display = "block";
+  
+      // Evita añadir múltiples botones si ya existe uno
+      if (!content.querySelector('.audio-button')) {
+        const texto = content.innerText.trim();
+  
+        const botonAudio = document.createElement("button");
+        botonAudio.className = "audio-button";
+        botonAudio.innerHTML = "🔊 Escuchar";
+        botonAudio.style.margin = "5px";
+        botonAudio.onclick = () => leerTexto(texto);
+  
+        content.appendChild(document.createElement("br"));
+        content.appendChild(botonAudio);
+      }
+  
     } else {
       content.style.display = "none";
     }
   }
-</script>
-
+  </script>
+  
 
 
   <br>
