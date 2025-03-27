@@ -21,20 +21,72 @@ tags: [Aritmética, Contar, Infantil, Matemáticas, 2.º Primaria, 1.º Primaria
 <h1>Preguntas Resueltas sobre Contar y Enumerar</h1>
 
 <style>
-  /* Estilo para el contenedor del spoiler */
-  .spoiler {
-    background-color: hsl(84, 71%, 84%);
-    padding: 10px;
-    border: 1px solid #ccc;
-    cursor: pointer;
-    max-width: 80%;
-  }
+ /* Fondo general de las preguntas */
+div.spoiler {
+  background-color: #111; /* negro casi puro */
+  color: #f5c542;          /* dorado */
+  border-left: 4px solid #f5c542;
+  padding: 1rem;
+  margin-top: 1.5rem;
+  border-radius: 8px;
+  font-family: 'Segoe UI', sans-serif;
+  cursor: pointer;
+}
 
-  /* Estilo para el contenido oculto */
-  .spoiler-content {
-    display: none;
-    max-width: 80%;
-  }
+/* Cuando el usuario pasa el ratón sobre la pregunta */
+div.spoiler:hover {
+  background-color: #1a1a1a;
+}
+
+/* Contenedor de la respuesta */
+div.spoiler-content {
+  background-color: #1a1a1a; /* gris oscuro */
+  color: #f8f8f8;
+  padding: 1rem;
+  margin-bottom: 2rem;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-family: 'Segoe UI', sans-serif;
+  border-left: 3px solid #f5c542;
+}
+
+/* Estilo para listas dentro de respuestas */
+div.spoiler-content ol,
+div.spoiler-content ul {
+  padding-left: 1.5rem;
+}
+
+div.spoiler-content li {
+  margin-bottom: 0.5rem;
+}
+
+/* Estilo elegante para el botón de escuchar (ya visto) */
+.audio-button {
+  background-color: #000;
+  color: #f5c542;
+  border: 2px solid #f5c542;
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-size: 1rem;
+  font-family: 'Segoe UI', sans-serif;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 1rem;
+}
+
+.audio-button:hover {
+  background-color: #f5c542;
+  color: #000;
+}
+
+.audio-button::before {
+  content: "🔊";
+  font-size: 1.2rem;
+}
+
 </style>
 <p style="text-align: justify;">
  Os dejamos una serie de preguntas cortas resueltas sobre Contar y Enumerar. 
