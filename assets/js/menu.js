@@ -16,10 +16,12 @@ function mostrarMenu(menuId) {
     insertarBotonPantallaCompleta();
 
     const contenedorIndex = menuSeleccionado.querySelector('.index-container');
-    if (contenedorIndex) {
-      const visor = document.getElementById('visor');
+    const visor = document.getElementById('visor');
+    if (contenedorIndex && visor) {
+      insertarBotonPantallaCompleta(); // <-- se mantiene como antes
       cargarMenuLateral(menuId, contenedorIndex, visor);
     }
+    
   }
 }
 
