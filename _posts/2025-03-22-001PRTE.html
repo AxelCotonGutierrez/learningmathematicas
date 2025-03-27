@@ -142,11 +142,10 @@ tags: [Aritmética, Contar, Infantil, Matemáticas, 2.º Primaria, 1.º Primaria
   function toggleSpoiler(spoiler) {
     const content = spoiler.nextElementSibling;
   
-    // Mostrar u ocultar el contenido
     if (!content.style.display || content.style.display === "none") {
       content.style.display = "block";
   
-      // Si no tiene botón de audio aún, lo añadimos
+      // Añadir botón de audio en la respuesta si no existe
       if (!content.querySelector('.audio-button')) {
         const texto = content.innerText.trim();
   
@@ -159,7 +158,6 @@ tags: [Aritmética, Contar, Infantil, Matemáticas, 2.º Primaria, 1.º Primaria
         content.appendChild(document.createElement('br'));
         content.appendChild(boton);
       }
-  
     } else {
       content.style.display = "none";
     }
@@ -169,14 +167,9 @@ tags: [Aritmética, Contar, Infantil, Matemáticas, 2.º Primaria, 1.º Primaria
     const preguntas = document.querySelectorAll('div.spoiler');
   
     preguntas.forEach(pregunta => {
-      // Asegurarse de que el siguiente hermano sea el spoiler-content
-      const respuesta = pregunta.nextElementSibling;
-      if (respuesta && respuesta.classList.contains('spoiler-content')) {
-        respuesta.style.display = "none"; // aseguramos oculto al inicio
-      }
-  
-      // Añadir botón de audio debajo de la pregunta
-      if (!pregunta.querySelector('.audio-button')) {
+      // Añadir botón de audio después del spoiler
+      const siguiente = pregunta.nextElementSibling;
+      if (!pregunta.classList.contains('boton-insertado')) {
         const texto = pregunta.innerText.trim();
   
         const botonAudio = document.createElement('button');
@@ -186,10 +179,17 @@ tags: [Aritmética, Contar, Infantil, Matemáticas, 2.º Primaria, 1.º Primaria
         botonAudio.onclick = () => leerTexto(texto);
   
         pregunta.insertAdjacentElement('afterend', botonAudio);
+        pregunta.classList.add('boton-insertado');
+      }
+  
+      // Asegurar que la respuesta empieza oculta
+      if (siguiente && siguiente.classList.contains('spoiler-content')) {
+        siguiente.style.display = "none";
       }
     });
   });
   </script>
+  
   
 
   <br>
