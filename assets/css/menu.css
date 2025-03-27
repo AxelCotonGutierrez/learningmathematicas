@@ -165,16 +165,29 @@ body {
 }
 
 /* === RESPONSIVE === */
-/* === RESPONSIVE === */
 @media screen and (max-width: 768px) {
-  .hamburguesa {
-    display: block;
+  .menu {
+    flex-direction: column;
+    height: auto;
   }
 
   .index-container {
     width: 100%;
     flex-direction: column;
-    overflow-y: visible;
+    overflow: visible;
+    align-items: stretch;
+  }
+
+  .hamburguesa {
+    display: block;
+    background-color: #000;
+    color: #f0c040;
+    border: 1px solid #f0c040;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border-radius: 6px;
+    margin: 0.5rem auto;
+    cursor: pointer;
   }
 
   #index1 {
@@ -188,14 +201,13 @@ body {
     display: flex;
   }
 
-  /* Reorganiza los elementos uno debajo del otro */
   #fullscreen-toggle {
-    align-self: stretch;
-    margin: 0.5rem auto;
+    align-self: center;
+    margin-bottom: 1rem;
   }
 
-  #index1 h1 {
-    font-size: 1.5rem;
-    margin: 0.5rem 0;
+  #visor {
+    padding: 1rem;
+    width: 100%;
   }
 }
