@@ -135,16 +135,18 @@ tags: [Aritmética, Contar, Infantil, Matemáticas, 2.º Primaria, 1.º Primaria
   function leerTexto(texto) {
     const msg = new SpeechSynthesisUtterance(texto);
     msg.lang = "es-ES";
-    speechSynthesis.cancel(); // Detiene cualquier lectura en curso
+    speechSynthesis.cancel();
     speechSynthesis.speak(msg);
   }
   
   function toggleSpoiler(spoiler) {
     const content = spoiler.nextElementSibling;
-    if (content.style.display === "none") {
+  
+    // Mostrar u ocultar el contenido
+    if (!content.style.display || content.style.display === "none") {
       content.style.display = "block";
   
-      // Solo añade botón si no está ya
+      // Si no tiene botón de audio aún, lo añadimos
       if (!content.querySelector('.audio-button')) {
         const texto = content.innerText.trim();
   
@@ -167,7 +169,13 @@ tags: [Aritmética, Contar, Infantil, Matemáticas, 2.º Primaria, 1.º Primaria
     const preguntas = document.querySelectorAll('div.spoiler');
   
     preguntas.forEach(pregunta => {
-      // Añade botón de audio a la pregunta si no lo tiene ya
+      // Asegurarse de que el siguiente hermano sea el spoiler-content
+      const respuesta = pregunta.nextElementSibling;
+      if (respuesta && respuesta.classList.contains('spoiler-content')) {
+        respuesta.style.display = "none"; // aseguramos oculto al inicio
+      }
+  
+      // Añadir botón de audio debajo de la pregunta
       if (!pregunta.querySelector('.audio-button')) {
         const texto = pregunta.innerText.trim();
   
@@ -177,19 +185,12 @@ tags: [Aritmética, Contar, Infantil, Matemáticas, 2.º Primaria, 1.º Primaria
         botonAudio.style.margin = '10px 0';
         botonAudio.onclick = () => leerTexto(texto);
   
-        // Insertar justo después del div.spoiler
         pregunta.insertAdjacentElement('afterend', botonAudio);
-      }
-  
-      // Asegurar que la respuesta esté inicialmente oculta
-      const respuesta = pregunta.nextElementSibling;
-      if (respuesta && respuesta.classList.contains('spoiler-content')) {
-        respuesta.style.display = 'none';
       }
     });
   });
   </script>
-
+  
 
   <br>
 <p>¡Gracias por leer!</p>
