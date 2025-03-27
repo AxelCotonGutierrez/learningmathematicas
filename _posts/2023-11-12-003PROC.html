@@ -146,30 +146,28 @@ tags: [Primaria, ESO, ESPA, ESPAD, Matemáticas, Preguntas Resueltas, Cardinales
     speechSynthesis.speak(msg);
   }
   
-  function toggleSpoiler(spoiler) {
-    const content = spoiler.nextElementSibling;
+  // Añade botón de audio automáticamente a cada pregunta visible
+  function generarAudioEnPreguntasSpoiler() {
+    const spoilers = document.querySelectorAll('div.spoiler');
   
-    if (content.style.display === "none") {
-      content.style.display = "block";
+    spoilers.forEach(spoiler => {
+      // Evitar duplicado
+      if (!spoiler.querySelector('.audio-button')) {
+        const texto = spoiler.innerText.trim();
   
-      // Evita añadir múltiples botones si ya existe uno
-      if (!content.querySelector('.audio-button')) {
-        const texto = content.innerText.trim();
-  
-        const botonAudio = document.createElement("button");
-        botonAudio.className = "audio-button";
-        botonAudio.innerHTML = "🔊 Escuchar";
-        botonAudio.style.margin = "5px";
+        const botonAudio = document.createElement('button');
+        botonAudio.className = 'audio-button';
+        botonAudio.innerHTML = '🔊 Escuchar';
+        botonAudio.style.margin = '5px';
         botonAudio.onclick = () => leerTexto(texto);
   
-        content.appendChild(document.createElement("br"));
-        content.appendChild(botonAudio);
+        spoiler.appendChild(document.createElement('br'));
+        spoiler.appendChild(botonAudio);
       }
-  
-    } else {
-      content.style.display = "none";
-    }
+    });
   }
+  
+  document.addEventListener('DOMContentLoaded', generarAudioEnPreguntasSpoiler);
   </script>
   
 
