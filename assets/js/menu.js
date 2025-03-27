@@ -31,6 +31,17 @@ function cargarMenuLateral(menuId, listaContenedor, visorContenedor) {
     .then(res => res.json())
     .then(data => {
       listaContenedor.innerHTML = '';
+      // Insertar botón hamburguesa solo en móviles
+const botonHamburguesa = document.createElement('button');
+botonHamburguesa.id = 'menu-toggle';
+botonHamburguesa.className = 'hamburguesa';
+botonHamburguesa.textContent = '☰ Menú';
+listaContenedor.appendChild(botonHamburguesa);
+
+botonHamburguesa.addEventListener('click', () => {
+  listaContenedor.classList.toggle('mostrar');
+});
+
       visorContenedor.innerHTML = '';
 
 // Mostrar título del menú en grande en el visor al inicio
