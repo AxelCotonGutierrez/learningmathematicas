@@ -120,6 +120,19 @@ body {
   margin: 1rem;
   align-self: center;
 }
+.titulo-portada {
+  font-size: 3rem;
+  color: #f0c040;
+  text-align: center;
+  margin-top: 3rem;
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
 
 /* === RESPONSIVE === */
 @media screen and (max-width: 768px) {

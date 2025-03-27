@@ -33,6 +33,18 @@ function cargarMenuLateral(menuId, listaContenedor, visorContenedor) {
       listaContenedor.innerHTML = '';
       visorContenedor.innerHTML = '';
 
+// Mostrar título del menú en grande en el visor al inicio
+const portada = document.createElement('div');
+portada.className = 'visor-portada';
+
+const tituloGrande = document.createElement('h1');
+tituloGrande.textContent = data.titulo;
+tituloGrande.className = 'titulo-portada';
+
+portada.appendChild(tituloGrande);
+visorContenedor.appendChild(portada);
+
+
       const titulo = document.createElement('h1');
       titulo.textContent = data.titulo;
       titulo.style.textAlign = 'center';
