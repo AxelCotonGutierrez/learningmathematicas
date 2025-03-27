@@ -17,11 +17,8 @@ function mostrarMenu(menuId) {
 
     const contenedorIndex = menuSeleccionado.querySelector('.index-container');
     if (contenedorIndex) {
-      const index = contenedorIndex.querySelector('#index1');
       const visor = document.getElementById('visor');
-      if (index && visor) {
-        cargarMenuLateral(menuId, index, visor);
-      }
+      cargarMenuLateral(menuId, contenedorIndex, visor);
     }
   }
 }
@@ -31,50 +28,45 @@ function cargarMenuLateral(menuId, listaContenedor, visorContenedor) {
     .then(res => res.json())
     .then(data => {
       listaContenedor.innerHTML = '';
+      visorContenedor.innerHTML = '';
+
+      // 1. Título del menú (lateral)
+      const titulo = document.createElement('h1');
+      titulo.textContent = data.titulo;
+      titulo.style.textAlign = 'center';
+      titulo.style.padding = '1rem';
+      titulo.style.fontSize = '1.8rem';
+      titulo.style.color = '#f0c040';
+      listaContenedor.appendChild(titulo);
+
+      // 2. Botón hamburguesa solo en móviles
       if (window.innerWidth <= 768) {
         const botonHamburguesa = document.createElement('button');
         botonHamburguesa.id = 'menu-toggle';
         botonHamburguesa.className = 'hamburguesa';
         botonHamburguesa.textContent = '☰ Menú';
         listaContenedor.appendChild(botonHamburguesa);
-      
+
         botonHamburguesa.addEventListener('click', () => {
           listaContenedor.classList.toggle('mostrar');
         });
       }
-      
-      // Insertar botón hamburguesa solo en móviles
-const botonHamburguesa = document.createElement('button');
-botonHamburguesa.id = 'menu-toggle';
-botonHamburguesa.className = 'hamburguesa';
-botonHamburguesa.textContent = '☰ Menú';
-listaContenedor.appendChild(botonHamburguesa);
 
-botonHamburguesa.addEventListener('click', () => {
-  listaContenedor.classList.toggle('mostrar');
-});
+      // 3. Contenedor de botones del menú
+      const index1 = document.createElement('div');
+      index1.id = 'index1';
+      listaContenedor.appendChild(index1);
 
-      visorContenedor.innerHTML = '';
+      // 4. Mostrar título en visor principal
+      const portada = document.createElement('div');
+      portada.className = 'visor-portada';
+      const tituloGrande = document.createElement('h1');
+      tituloGrande.textContent = data.titulo;
+      tituloGrande.className = 'titulo-portada';
+      portada.appendChild(tituloGrande);
+      visorContenedor.appendChild(portada);
 
-// Mostrar título del menú en grande en el visor al inicio
-const portada = document.createElement('div');
-portada.className = 'visor-portada';
-
-const tituloGrande = document.createElement('h1');
-tituloGrande.textContent = data.titulo;
-tituloGrande.className = 'titulo-portada';
-
-portada.appendChild(tituloGrande);
-visorContenedor.appendChild(portada);
-
-
-      const titulo = document.createElement('h1');
-      titulo.textContent = data.titulo;
-      titulo.style.textAlign = 'center';
-      titulo.style.padding = '1rem';
-      titulo.style.fontSize = '1.8rem';
-      listaContenedor.appendChild(titulo);
-
+      // 5. Crear botones de bloques
       data.bloques.forEach((bloque, index) => {
         const boton = document.createElement('button');
         boton.className = 'menu-boton';
@@ -131,9 +123,14 @@ visorContenedor.appendChild(portada);
           bloqueDiv.appendChild(titulo);
           bloqueDiv.appendChild(cuerpo);
           visorContenedor.appendChild(bloqueDiv);
+
+          // Cerrar el menú desplegable si estamos en móvil
+          if (window.innerWidth <= 768) {
+            listaContenedor.classList.remove('mostrar');
+          }
         });
 
-        listaContenedor.appendChild(boton);
+        index1.appendChild(boton);
       });
     });
 }
