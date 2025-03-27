@@ -135,36 +135,60 @@ tags: [Aritmética, Contar, Infantil, Matemáticas, 2.º Primaria, 1.º Primaria
   function leerTexto(texto) {
     const msg = new SpeechSynthesisUtterance(texto);
     msg.lang = "es-ES";
-    speechSynthesis.cancel();
+    speechSynthesis.cancel(); // Detiene cualquier lectura en curso
     speechSynthesis.speak(msg);
   }
   
   function toggleSpoiler(spoiler) {
     const content = spoiler.nextElementSibling;
-  
     if (content.style.display === "none") {
       content.style.display = "block";
   
-      // Evita añadir múltiples botones si ya existe uno
+      // Solo añade botón si no está ya
       if (!content.querySelector('.audio-button')) {
         const texto = content.innerText.trim();
   
-        const botonAudio = document.createElement("button");
-        botonAudio.className = "audio-button";
-        botonAudio.innerHTML = "🔊 Escuchar";
-        botonAudio.style.margin = "5px";
-        botonAudio.onclick = () => leerTexto(texto);
+        const boton = document.createElement('button');
+        boton.className = 'audio-button';
+        boton.innerHTML = '🔊 Escuchar';
+        boton.style.margin = '10px 0';
+        boton.onclick = () => leerTexto(texto);
   
-        content.appendChild(document.createElement("br"));
-        content.appendChild(botonAudio);
+        content.appendChild(document.createElement('br'));
+        content.appendChild(boton);
       }
   
     } else {
       content.style.display = "none";
     }
   }
-  </script>
   
+  document.addEventListener('DOMContentLoaded', () => {
+    const preguntas = document.querySelectorAll('div.spoiler');
+  
+    preguntas.forEach(pregunta => {
+      // Añade botón de audio a la pregunta si no lo tiene ya
+      if (!pregunta.querySelector('.audio-button')) {
+        const texto = pregunta.innerText.trim();
+  
+        const botonAudio = document.createElement('button');
+        botonAudio.className = 'audio-button';
+        botonAudio.innerHTML = '🔊 Escuchar';
+        botonAudio.style.margin = '10px 0';
+        botonAudio.onclick = () => leerTexto(texto);
+  
+        // Insertar justo después del div.spoiler
+        pregunta.insertAdjacentElement('afterend', botonAudio);
+      }
+  
+      // Asegurar que la respuesta esté inicialmente oculta
+      const respuesta = pregunta.nextElementSibling;
+      if (respuesta && respuesta.classList.contains('spoiler-content')) {
+        respuesta.style.display = 'none';
+      }
+    });
+  });
+  </script>
 
 
   <br>
