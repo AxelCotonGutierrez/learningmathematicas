@@ -1,0 +1,55 @@
+{
+  "titulo": "Test sobre Contar y Enumerar",
+  "preguntas": [
+    {
+      "question": "¿Qué significa contar?",
+      "options": [
+        "a. Hacer operaciones complejas.",
+        "b. Determinar cuántos objetos hay en un grupo.",
+        "c. Dibujar objetos uno por uno.",
+        "d. Inventar historias con números."
+      ],
+      "answer": "b"
+    },
+    {
+      "question": "¿Qué se usaba para contar en la prehistoria?",
+      "options": [
+        "a. Relojes de sol.",
+        "b. Cuerdas con nudos.",
+        "c. Dedos, piedras o marcas en huesos.",
+        "d. Abacos electrónicos."
+      ],
+      "answer": "c"
+    },
+    {
+      "question": "¿Qué es el hueso de Ishango?",
+      "options": [
+        "a. Un instrumento musical antiguo.",
+        "b. Un animal prehistórico.",
+        "c. Un hueso con marcas talladas para contar.",
+        "d. Una estatua de un pastor."
+      ],
+      "answer": "c"
+    },
+    {
+      "question": "¿Dónde se encontró el hueso de Ishango?",
+      "options": [
+        "a. América del Sur.",
+        "b. África.",
+        "c. Asia.",
+        "d. Oceanía."
+      ],
+      "answer": "b"
+    },
+    {
+      "question": "¿Cuántos años de antigüedad tiene el hueso de Ishango aproximadamente?",
+      "options": [
+        "a. 5000.",
+        "b. 10 000.",
+        "c. 20 000.",
+        "d. 30 000."
+      ],
+      "answer": "c"
+    }
+  ]
+}
