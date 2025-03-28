@@ -1,0 +1,32 @@
+---
+layout: default
+title: Login
+permalink: /projects/Login/
+description: Login Usuarios
+comments: true
+---
+
+ 
+<div class="container" style="max-width: 500px; margin-top: 3rem;">
+  <h2 style="color: #f0c040;">Iniciar sesión en el Blog</h2>
+  <form id="login-form">
+    <label for="nick" style="color: #ccc;">Nombre de usuario:</label><br>
+    <input type="text" id="nick" name="nick" required style="width: 100%; padding: 8px;"><br><br>
+
+    <label for="password" style="color: #ccc;">Contraseña:</label><br>
+    <input type="password" id="password" name="password" required style="width: 100%; padding: 8px;"><br><br>
+
+    <button type="submit" style="background-color: #f0c040; border: none; padding: 10px 20px;">Iniciar sesión</button>
+  </form>
+
+  <p id="login-error" style="color: red; margin-top: 1rem;"></p>
+</div>
+
+<script>
+  document.getElementById("login-form").addEventListener("submit", function (e) {
+    e.preventDefault();
+    const nick = document.getElementById("nick").value.trim();
+    const password = document.getElementById("password").value.trim();
+    iniciarSesionDesdeBlog(nick, password);
+  });
+</script>

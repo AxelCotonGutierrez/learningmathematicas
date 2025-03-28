@@ -1,12 +1,12 @@
-{
-    "usuarios": [
-      {
-        "nick": "Goheim",
-        "password": "Miajadas2025*"
-      },
-      {
-        "nick": "alumno1",
-        "password": "clave123"
+  {
+        "usuarios": [
+          {
+            "nick": "Goheim",
+            "password": "Miajadas2025*",
+            "pais": "España",
+            "tipo_usuario": "administrador",
+            "nivel_educativo": "Universidad"
+          }
+        ]
       }
-    ]
-  }
+  
