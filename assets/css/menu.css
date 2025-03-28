@@ -88,8 +88,7 @@ body {
 .video-embed {
   width: 70%;
   height: 70%;
-  max-height: 80vh;
-    border: none;
+  border: none;
   border-radius: 8px;
   margin-top: 1rem;
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
