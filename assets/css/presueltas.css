@@ -1,0 +1,62 @@
+/* Pregunta */
+div.spoiler {
+    color: #f5c542;
+    border-left: 4px solid #f5c542;
+    padding: 1rem;
+    border-radius: 8px;
+    border-color: #000;
+    font-family: 'Segoe UI', sans-serif;
+    cursor: pointer;
+    font-size: 2rem;
+  }
+  
+  /* Hover de la pregunta */
+  div.spoiler:hover {
+    background-color: #1a1a1a;
+  }
+  
+  /* Respuesta */
+  div.spoiler-content {
+    color: #000;
+    margin-left: 1.5cm;
+    padding: 1rem;
+    border-radius: 6px;
+    font-size: 2rem;
+    font-family: 'Segoe UI', sans-serif;
+    border-left: 3px solid #f5c542;
+    line-height: 1.6;
+  }
+  
+  /* Listas dentro de la respuesta */
+  div.spoiler-content ol,
+  div.spoiler-content ul {
+    margin-left: 2rem; 
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  div.spoiler-content li {
+    margin-bottom: 0.6rem;
+    line-height: 1.6;
+  }
+  /* Botón de audio */
+  .audio-button {
+    color: #f5c542;
+    border: 2px solid #f5c542;
+    border-radius: 8px;
+    padding: 8px 16px;
+    font-size: 1rem;
+    font-family: 'Segoe UI', sans-serif;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 1rem;
+  }
+  
+  .audio-button:hover {
+    background-color: #f5c542;
+    color: #000;
+  }
+  
