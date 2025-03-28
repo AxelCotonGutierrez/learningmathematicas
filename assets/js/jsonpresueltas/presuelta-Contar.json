@@ -1,0 +1,26 @@
+{
+  "titulo": "Preguntas Resueltas sobre Contar",
+  "bloques": [
+    {
+      "textoExtra": "\n<div class=\"spoiler\" onclick=\"toggleSpoiler(this)\"><b>1. Explica con tus propias palabras qué significa contar.</b></div>\n<div class=\"spoiler-content\">\n  <p style=\"text-align: justify;\">\n    Contar significa determinar cuántos elementos hay en un grupo, asignando un número a cada uno de ellos.\n  </p>\n</div>\n"
+    },
+    {
+      "textoExtra": "\n<div class=\"spoiler\" onclick=\"toggleSpoiler(this)\"><b>2. ¿Por qué los primeros seres humanos necesitaban contar?</b></div>\n<div class=\"spoiler-content\">\n  <p style=\"text-align: justify;\">\n    Los primeros seres humanos necesitaban contar para llevar un control de sus recursos, como alimentos, herramientas y animales.\n  </p>\n</div>\n"
+    },
+    {
+      "textoExtra": "\n<div class=\"spoiler\" onclick=\"toggleSpoiler(this)\"><b>3. ¿Cuáles fueron algunos de los primeros métodos que usaron las civilizaciones antiguas para contar?</b></div>\n<div class=\"spoiler-content\">\n  <p style=\"text-align: justify;\">\n    Algunos métodos antiguos para contar fueron:\n    <ul>\n      <li>Usar los dedos.</li>\n      <li>Hacer marcas en huesos o piedras.</li>\n      <li>Usar nudos en cuerdas (como el quipu inca).</li>\n      <li>Llevar un registro con fichas de arcilla.</li>\n    </ul>\n  </p>\n</div>\n"
+    },
+    {
+      "textoExtra": "\n<div class=\"spoiler\" onclick=\"toggleSpoiler(this)\"><b>4. ¿Cuál es la diferencia entre contar y numerar?</b></div>\n<div class=\"spoiler-content\">\n  <p style=\"text-align: justify;\">\n    Contar es determinar cuántos elementos hay, mientras que Numerar es asignar un número específico a cada objeto para darles un orden.\n  </p>\n</div>\n"
+    },
+    {
+      "textoExtra": "\n<div class=\"spoiler\" onclick=\"toggleSpoiler(this)\"><b>5. Si cuentas cinco lápices sobre una mesa, ¿cambia la cantidad si los ordenas de otra manera? ¿Por qué?</b></div>\n<div class=\"spoiler-content\">\n  <p style=\"text-align: justify;\">\n    No, la cantidad sigue siendo la misma sin importar cómo se ordenen los objetos.\n  </p>\n</div>\n"
+    },
+    {
+      "textoExtra": "\n<div class=\"spoiler\" onclick=\"toggleSpoiler(this)\"><b>6. Un pastor tiene 12 ovejas y decide contarlas cada mañana antes de sacarlas a pastar. Si al final del día solo regresan 10, ¿qué ha sucedido? ¿Qué método podría usar el pastor para asegurarse de que todas sus ovejas regresan?</b></div>\n<div class=\"spoiler-content\">\n  <p style=\"text-align: justify;\">\n    Dos se han perdido o están en otro lugar. Poner una piedra en una bolsa por cada oveja que sale y luego comparar con las que regresan. Marcar cada oveja con pintura o una cuerda para asegurarse de que todas vuelvan.\n  </p>\n</div>\n"
+    },
+    {
+      "textoExtra": "\n<div class=\"spoiler\" onclick=\"toggleSpoiler(this)\"><b>7. Un grupo de exploradores quiere recordar cuántos días han pasado en la selva. Cada día hacen una marca en un árbol.\n  <ol type=\"a\">\n    <li>Si llevan 7 días y hacen una marca diaria, ¿cuántas marcas habrá en el árbol?</li>\n    <li>Si borran 2 marcas por error, ¿cómo pueden saber cuántos días han pasado realmente?</li>\n  </ol></b></div>\n<div class=\"spoiler-content\">\n  <p style=\"text-align: justify;\">\n    <ol type=\"a\">\n      <li>\n        Si hacen una marca por día y han pasado 7 días, habrá <strong>7 marcas</strong> en el árbol.\n      </li>\n      <li>\n        Si borran 2 marcas por error, todavía pueden saber cuántos días han pasado si:\n        <ul>\n          <li>Llevan un registro en otro lugar (como en una libreta).</li>\n          <li>Recuerdan el último día que hicieron la marca.</li>\n          <li>Cuentan los suministros consumidos si tenían uno por día.</li>\n        </ul>\n      </li>\n    </ol>\n  </p>\n</div>\n"
+    }
+  ]
+}
