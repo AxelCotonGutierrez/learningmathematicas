@@ -22,11 +22,21 @@ function iniciarSesionDesdeBlog(nick, password) {
     const usuario = localStorage.getItem('usuarioBlog');
   
     if (usuario) {
-      contenedor.innerHTML = `<span style="color:#f0c040">👤 ${usuario}</span>`;
+      contenedor.innerHTML = `
+        <span style="color:#f0c040">👤 ${usuario.toUpperCase()}</span>
+        <button onclick="cerrarSesion()" style="margin-left: 10px; background: none; border: none; color: red; cursor: pointer;">Cerrar sesión</button>
+      `;
     } else {
       contenedor.innerHTML = `<a href="/learningmathematicas/Login/">Iniciar sesión</a>`;
     }
   }
+  
+  function cerrarSesion() {
+    localStorage.removeItem('usuarioBlog');
+    mostrarEstadoLogin();
+    alert("Sesión cerrada.");
+  }
+  
   
   document.addEventListener("DOMContentLoaded", mostrarEstadoLogin);
   
