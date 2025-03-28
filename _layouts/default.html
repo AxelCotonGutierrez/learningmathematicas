@@ -73,21 +73,7 @@
   {% include analytics.html %}
 
   <!-- Script para comprobar login -->
-  <script>
-    fetch("https://goheim.myqnapcloud.com:8443/Blog/get_usuario.php")
-      .then(res => res.json())
-      .then(data => {
-        const estado = document.getElementById("estado-login");
-        if (data.logueado) {
-          estado.innerHTML = `👤 ${data.usuario} | <a href="https://goheim.myqnapcloud.com:8443/Blog/logout.php" style="color: #f0c040" target="_blank">Cerrar sesión</a>`;
-        } else {
-          estado.innerHTML = `<a href="https://goheim.myqnapcloud.com:8443/Blog/Blog.php" style="color: #f0c040" target="_blank">Iniciar sesión</a>`;
-        }
-      })
-      .catch(() => {
-        const estado = document.getElementById("estado-login");
-        if (estado) estado.textContent = "🔒 Error al conectar";
-      });
-  </script>
+  <script src="/learningmathematicas/assets/js/login-blog.js" defer></script>
+
 </body>
 </html>
