@@ -47,7 +47,7 @@ body {
   color: #f0c040;
   border: 1px solid #f0c040;
   padding: 0.75rem 1rem;
-  font-size: 2rem;
+  font-size: 1.6rem;
   text-align: left;
   border-radius: 6px;
   cursor: pointer;
@@ -87,7 +87,7 @@ body {
 /* === VÍDEO === */
 .video-embed {
   width: 70%;
-  height: 56.25vw;
+  height: 70%;
   max-height: 80vh;
     border: none;
   border-radius: 8px;
