@@ -64,10 +64,17 @@ function displayQuestions() {
     quizForm.appendChild(document.createElement("br"));
   });
 
+  // Botón de envío
   const submitButton = document.createElement("input");
   submitButton.type = "submit";
   submitButton.value = "Enviar";
   quizForm.appendChild(submitButton);
+
+  // Evento de envío
+  quizForm.addEventListener("submit", function (event) {
+    event.preventDefault();
+    displayResult();
+  });
 }
 
 function displayResult() {
@@ -88,6 +95,7 @@ function displayResult() {
   resetButton.textContent = "Reiniciar Test";
   resetButton.onclick = () => location.reload();
 
+  const quizForm = document.getElementById("quiz-form");
   quizForm.insertAdjacentElement("afterend", resultDiv);
   resultDiv.insertAdjacentElement("afterend", resetButton);
 }
@@ -107,9 +115,4 @@ function mostrarTestDesdeURL() {
 
 document.addEventListener("DOMContentLoaded", () => {
   mostrarTestDesdeURL();
-  const quizForm = document.getElementById("quiz-form");
-  quizForm?.addEventListener("submit", (event) => {
-    event.preventDefault();
-    displayResult();
-  });
 });
