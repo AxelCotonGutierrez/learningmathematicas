@@ -4,100 +4,90 @@
 
 <body>
   <script src="/learningmathematicas/assets/js/tags.js"></script>
-	{% include header.html %}
-	<div class="container">
+  {% include header.html %}
 
-	{% if page.id %}
-	<p>
-		<strong>{{ page.published | date: '%d/%m/%Y' }} (última actualización: {{ page.date | date: '%d/%m/%Y' }})
-		<br>
-    {% for tag in page.tags %}
-    <a class="label label-default" href="javascript:void(0);" onclick="redirectToTagPage('{{ tag | slugify }}')">{{ tag }}</a>
-{% endfor %}
+  <!-- Estado del login -->
+  <div style="position: absolute; top: 10px; right: 20px; z-index: 1000; font-weight: bold;">
+    <span id="estado-login" style="color: #f0c040;">Conectando...</span>
+  </div>
 
+  <div class="container">
+
+    {% if page.id %}
+    <p>
+      <strong>{{ page.published | date: '%d/%m/%Y' }} (última actualización: {{ page.date | date: '%d/%m/%Y' }})
+      <br>
+      {% for tag in page.tags %}
+      <a class="label label-default" href="javascript:void(0);" onclick="redirectToTagPage('{{ tag | slugify }}')">{{ tag }}</a>
+      {% endfor %}
     </p>
-	{% if page.github %}
-  <p>
-    <a href="{{ page.github }}" class="btn btn-default">
-      <i class="fa fa-github fa-2x"></i>  {{ page.github }}
-    </a>
-  </p>
-{% endif %}
 
-{% if page.github2 %}
-  <p>
-    <a href="{{ page.github2 }}" class="btn btn-default">
-      <i class="fa fa-github fa-2x"></i>  {{ page.github2 }}
-    </a>
-  </p>
-{% endif %}
+    {% if page.github %}
+    <p><a href="{{ page.github }}" class="btn btn-default"><i class="fa fa-github fa-2x"></i> {{ page.github }}</a></p>
+    {% endif %}
 
-{% if page.github3 %}
-  <p>
-    <a href="{{ page.github3 }}" class="btn btn-default">
-      <i class="fa fa-github fa-2x"></i>  {{ page.github3 }}
-    </a>
-  </p>
-{% endif %}
+    {% if page.github2 %}
+    <p><a href="{{ page.github2 }}" class="btn btn-default"><i class="fa fa-github fa-2x"></i> {{ page.github2 }}</a></p>
+    {% endif %}
 
-{% if page.github4 %}
-  <p>
-    <a href="{{ page.github4 }}" class="btn btn-default">
-      <i class="fa fa-github fa-2x"></i>  {{ page.github4 }}
-    </a>
-  </p>
-{% endif %}
+    {% if page.github3 %}
+    <p><a href="{{ page.github3 }}" class="btn btn-default"><i class="fa fa-github fa-2x"></i> {{ page.github3 }}</a></p>
+    {% endif %}
 
-{% if page.github5 %}
-  <p>
-    <a href="{{ page.github5 }}" class="btn btn-default">
-      <i class="fa fa-github fa-2x"></i>  {{ page.github5 }}
-    </a>
-  </p>
-{% endif %}
-	<hr>
+    {% if page.github4 %}
+    <p><a href="{{ page.github4 }}" class="btn btn-default"><i class="fa fa-github fa-2x"></i> {{ page.github4 }}</a></p>
+    {% endif %}
 
-	
-	{% endif %}
+    {% if page.github5 %}
+    <p><a href="{{ page.github5 }}" class="btn btn-default"><i class="fa fa-github fa-2x"></i> {{ page.github5 }}</a></p>
+    {% endif %}
 
-	{{ content }}
+    <hr>
+    {% endif %}
 
+    {{ content }}
 
-	{% if page.id %}
-	<p>Originalmente publicado {{ page.published | date: '%d/%m/%Y' }}
-    <br> Ùltima actualización {{ page.date | date: '%d/%m/%Y' }}</p>
+    {% if page.id %}
+    <p>Originalmente publicado {{ page.published | date: '%d/%m/%Y' }}
+    <br> Última actualización {{ page.date | date: '%d/%m/%Y' }}</p>
 
     <p><strong>Últimas Entradas relacionadas:</strong></p>
-   
     <ul>
       {% assign count = 0 %}
       {% for allpost in site.posts %}
-        {% if count < 5 %}
-          {% assign common_tags = allpost.tags | where_exp: "tag", "page.tags contains tag" %}
-          {% if common_tags.size > 0 and allpost.id != page.id %}
-            <li>
-              <a href="{{ site.baseurl }}{{ allpost.url }}">
-                {{ allpost.title }}
-              </a>
-            </li>
-            {% assign count = count | plus: 1 %}
-          {% endif %}
-        {% endif %}
+      {% if count < 5 %}
+      {% assign common_tags = allpost.tags | where_exp: "tag", "page.tags contains tag" %}
+      {% if common_tags.size > 0 and allpost.id != page.id %}
+      <li><a href="{{ site.baseurl }}{{ allpost.url }}">{{ allpost.title }}</a></li>
+      {% assign count = count | plus: 1 %}
+      {% endif %}
+      {% endif %}
       {% endfor %}
     </ul>
-    
-    
-	{% endif %}
+    {% endif %}
 
-	{% include disqus.html %}
-	</div>
-	{% include footer.html %}
-	{% include analytics.html %}
+    {% include disqus.html %}
+  </div>
 
-	
-	
- 
+  {% include footer.html %}
+  {% include analytics.html %}
+
+  <!-- Script para comprobar login -->
+  <script>
+    fetch("https://goheim.myqnapcloud.com:8443/Blog/get_usuario.php")
+      .then(res => res.json())
+      .then(data => {
+        const estado = document.getElementById("estado-login");
+        if (data.logueado) {
+          estado.innerHTML = `👤 ${data.usuario} | <a href="https://goheim.myqnapcloud.com:8443/Blog/logout.php" style="color: #f0c040" target="_blank">Cerrar sesión</a>`;
+        } else {
+          estado.innerHTML = `<a href="https://goheim.myqnapcloud.com:8443/Blog/Blog.php" style="color: #f0c040" target="_blank">Iniciar sesión</a>`;
+        }
+      })
+      .catch(() => {
+        const estado = document.getElementById("estado-login");
+        if (estado) estado.textContent = "🔒 Error al conectar";
+      });
+  </script>
 </body>
 </html>
-
-
