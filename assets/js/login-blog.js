@@ -1,5 +1,5 @@
 function iniciarSesionDesdeBlog(nick, password) {
-  fetch("https://blog.gogelythegreat.es/MiBlog/registro_login.php", {
+  fetch("https://blog.gogelythegreat.es/Blog/registro_login.php", {
     method: "POST",
     headers: {
       "Content-Type": "application/x-www-form-urlencoded"
