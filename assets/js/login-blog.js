@@ -1,41 +1,41 @@
 function iniciarSesionDesdeBlog(nick, password) {
-  fetch('/learningmathematicas/assets/js/usuarios.json')
-    .then(response => response.json())
+  fetch("https://blog.gogelythegreat.es/MiBlog/registro_login.php", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/x-www-form-urlencoded"
+    },
+    body: `nick=${encodeURIComponent(nick)}&password=${encodeURIComponent(password)}`
+  })
+    .then(res => res.json())
     .then(data => {
-      const user = data.usuarios.find(u => u.nick === nick && u.password === password);
-
-      if (user) {
-        localStorage.setItem('usuarioBlog', nick);
+      if (data.status === "ok") {
+        localStorage.setItem("usuarioBlog", nick);
         mostrarEstadoLogin();
         alert(`¡Bienvenido, ${nick}!`);
 
-        // Enviar al NAS que el usuario se ha logueado
-        fetch("https://goheim.myqnapcloud.com:8443/Blog/registro_login.php", {
+        // Registrar acceso en la BD del NAS
+        fetch("https://blog.gogelythegreat.es/MiBlog/log_acceso.php", {
           method: "POST",
           headers: {
-            "Content-Type": "application/x-www-form-urlencoded",
+            "Content-Type": "application/x-www-form-urlencoded"
           },
           body: `nick=${encodeURIComponent(nick)}`
-        })
-        .then(res => res.json())
-        .then(data => {
-          if (data.status !== "ok") {
-            console.warn("Error al registrar en el NAS:", data.mensaje);
-          }
-        })
-        .catch(err => console.error("Fallo de conexión al NAS:", err));
+        });
+
+        // ✅ Redirigir automáticamente al blog
+        window.location.href = "https://axelcotongutierrez.github.io/learningmathematicas/";
       } else {
-        alert('Usuario o contraseña incorrectos.');
+        alert("Usuario o contraseña incorrectos.");
       }
     })
     .catch(err => {
-      console.error("Error al cargar el JSON de usuarios:", err);
+      console.error("Fallo de conexión al NAS:", err);
     });
 }
 
 function mostrarEstadoLogin() {
   const contenedor = document.getElementById("estado-login");
-  const usuario = localStorage.getItem('usuarioBlog');
+  const usuario = localStorage.getItem("usuarioBlog");
 
   if (usuario) {
     contenedor.innerHTML = `
@@ -48,7 +48,7 @@ function mostrarEstadoLogin() {
 }
 
 function cerrarSesion() {
-  localStorage.removeItem('usuarioBlog');
+  localStorage.removeItem("usuarioBlog");
   mostrarEstadoLogin();
   alert("Sesión cerrada.");
 }
