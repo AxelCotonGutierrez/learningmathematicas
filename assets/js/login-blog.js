@@ -39,12 +39,8 @@ function mostrarEstadoLogin() {
 
   if (usuario) {
     contenedor.innerHTML = `
-     <a href="/learningmathematicas/Usuario/" style="color:#f0c040; text-decoration:none;">
-    👤 ${usuario.toUpperCase()}
-  </a>
-  <button onclick="cerrarSesion()" style="margin-left: 10px; background: none; border: none; color: red; cursor: pointer;">
-    Cerrar sesión
-  </button>
+     <a href="/learningmathematicas/Usuario/" style="color:#f0c040; text-decoration:none;">👤 ${usuario.toUpperCase()}
+  </a> <button onclick="cerrarSesion()" style="margin-left: 10px; background: none; border: none; color: red; cursor: pointer;">Cerrar sesión</button>
 `;
   } else {
     contenedor.innerHTML = `<a href="/learningmathematicas/Login/">Iniciar sesión</a>`;
