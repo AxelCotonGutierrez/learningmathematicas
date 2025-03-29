@@ -40,7 +40,7 @@ function mostrarEstadoLogin() {
   if (usuario) {
     contenedor.innerHTML = `
      <a href="/learningmathematicas/usuario/" style="color:#f0c040; text-decoration:none;">👤 ${usuario.toUpperCase()}
-  </a> <button onclick="cerrarSesion()" style="margin-left: 10px; background: none; border: none; color: red; cursor: pointer;">Cerrar sesión</button>
+  </a> <button onclick="cerrarSesion()" style="margin-left: 10px; font-size: 0,5rem; background: none; border: none; color: red; cursor: pointer;">Cerrar sesión</button>
 `;
   } else {
     contenedor.innerHTML = `<a href="/learningmathematicas/Login/">Iniciar sesión</a>`;
