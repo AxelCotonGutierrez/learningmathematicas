@@ -1,0 +1,47 @@
+body {
+    background: #111;
+    color: #f0c040;
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .perfil-container {
+    padding: 2em;
+    max-width: 900px;
+    margin: auto;
+  }
+  
+  h1, h2 {
+    text-align: center;
+    margin-top: 1em;
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .galeria {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  .galeria img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    border: 2px solid #f0c040;
+    border-radius: 10px;
+    background-color: #222;
+  }
+  
+  @media (max-width: 600px) {
+    .galeria img {
+      width: 80px;
+      height: 80px;
+    }
+  }
+  
