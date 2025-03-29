@@ -69,17 +69,32 @@ body {
       font-size: 1.2em;
     }
   }
-  #estado-login {
-    font-size: 14px;
+ /* Ajusta tamaño y alineación de usuario y botón de cerrar sesión */
+#estado-login {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 10px;
+    font-size: 16px; /* más pequeño */
+    position: relative;
+    top: 0;
+    right: 0;
+    padding: 0 10px;
+  }
+  
+  #estado-login span {
+    color: #f0c040;
+    font-weight: bold;
   }
   
   #estado-login button {
+    background: none;
+    border: none;
+    color: red;
     font-size: 14px;
-    padding: 2px 6px;
+    cursor: pointer;
+    padding: 0;
   }
+  
   .tabs {
     display: flex;
     gap: 10px;
