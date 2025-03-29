@@ -14,7 +14,7 @@ function iniciarSesionDesdeBlog(nick, password) {
         alert(`¡Bienvenido, ${nick}!`);
 
         // Registrar acceso en la BD del NAS
-        fetch("https://blog.gogelythegreat.es/MiBlog/log_acceso.php", {
+        fetch("https://blog.gogelythegreat.es/Blog/log_acceso.php", {
           method: "POST",
           headers: {
             "Content-Type": "application/x-www-form-urlencoded"
