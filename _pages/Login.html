@@ -6,20 +6,32 @@ description: Login Usuarios
 comments: true
 ---
 
- 
-<div class="container" style="max-width: 500px; margin-top: 3rem;">
-  <h2 style="color: #f0c040;">Iniciar sesión en el Blog</h2>
-  <form id="login-form">
-    <label for="nick" style="color: #ccc;">Nombre de usuario:</label><br>
-    <input type="text" id="nick" name="nick" required style="width: 100%; padding: 8px;"><br><br>
+<div class="login-container" style="max-width: 400px; margin: 3rem auto; padding: 2rem; background: #111; color: white; border-radius: 10px; box-shadow: 0 0 15px rgba(0,0,0,0.5); font-family: sans-serif;">
 
-    <label for="password" style="color: #ccc;">Contraseña:</label><br>
-    <input type="password" id="password" name="password" required style="width: 100%; padding: 8px;"><br><br>
+  <h2 style="text-align: center; color: #f0c040;">1. Iniciar sesión en el Blog</h2>
 
-    <button type="submit" style="background-color: #f0c040; border: none; padding: 10px 20px;">Iniciar sesión</button>
+  <form id="login-form" style="margin-top: 2rem;">
+    <label for="nick" style="color: #ccc;">Nombre de usuario:</label>
+    <input type="text" id="nick" name="nick" required
+           style="width: 100%; padding: 10px; margin: 8px 0; border-radius: 5px; border: none;">
+
+    <label for="password" style="color: #ccc;">Contraseña:</label>
+    <input type="password" id="password" name="password" required
+           style="width: 100%; padding: 10px; margin: 8px 0; border-radius: 5px; border: none;">
+
+    <button type="submit"
+            style="width: 100%; padding: 12px; background-color: #f0c040; color: black; font-weight: bold; border: none; border-radius: 5px; cursor: pointer;">
+      Iniciar sesión
+    </button>
   </form>
 
   <p id="login-error" style="color: red; margin-top: 1rem;"></p>
+
+  <p style="color: #999; font-size: 0.9rem; margin-top: 2rem; text-align: center;">
+    ¿No tienes cuenta? Puedes solicitarla enviando un email a<br>
+    <a href="mailto:learningmathematicas@gmail.com" style="color: #f0c040;">learningmathematicas@gmail.com</a><br>
+    indicando tu <strong>nick</strong>, <strong>contraseña</strong>, <strong>país</strong>, si eres <strong>alumno/profesor</strong> y tu <strong>nivel de estudios</strong>.
+  </p>
 </div>
 
 <script>
