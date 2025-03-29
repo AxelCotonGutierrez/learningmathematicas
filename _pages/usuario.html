@@ -11,19 +11,22 @@ comments: true
 
   <div class="perfil-container">
     <h1>Perfil de <span id="usuario-nick"></span></h1>
-    
-    <section class="datos-personales">
-      <h2>Datos del usuario</h2>
+  
+    <nav class="tabs">
+      <button onclick="mostrarSeccion('datos')">1. Datos del usuario</button>
+      <button onclick="mostrarSeccion('insignias')">2. Insignias obtenidas</button>
+      <button onclick="mostrarSeccion('cartas')">3. Colección de cartas</button>
+    </nav>
+  
+    <section id="seccion-datos" class="tab-content">
       <ul id="datos-usuario"></ul>
     </section>
-
-    <section class="insignias">
-      <h2>Insignias obtenidas</h2>
+  
+    <section id="seccion-insignias" class="tab-content" style="display: none;">
       <div id="galeria-insignias" class="galeria"></div>
     </section>
-
-    <section class="cartas">
-      <h2>Colección de cartas</h2>
+  
+    <section id="seccion-cartas" class="tab-content" style="display: none;">
       <div id="galeria-cartas" class="galeria"></div>
     </section>
   </div>

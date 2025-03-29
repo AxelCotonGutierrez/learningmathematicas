@@ -69,4 +69,37 @@ body {
       font-size: 1.2em;
     }
   }
+  #estado-login {
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  #estado-login button {
+    font-size: 14px;
+    padding: 2px 6px;
+  }
+  .tabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .tabs button {
+    background-color: #222;
+    border: 1px solid #f0c040;
+    color: #f0c040;
+    padding: 8px 16px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background 0.3s;
+  }
+  
+  .tabs button:hover {
+    background-color: #444;
+  }
   
