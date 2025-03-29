@@ -50,6 +50,24 @@ body {
   .galeria img:hover {
     transform: scale(1.1);
   }
+  .oculto {
+    display: none;
+  }
+  
+  .seccion h2 {
+    cursor: pointer;
+    padding: 10px;
+    background-color: #222;
+    border-radius: 6px;
+    margin: 10px 0;
+    transition: background 0.3s;
+  }
+  
+  .seccion h2:hover {
+    background-color: #333;
+  }
+  
+
   
   @media (max-width: 600px) {
     .perfil-container {
@@ -69,52 +87,5 @@ body {
       font-size: 1.2em;
     }
   }
- /* Ajusta tamaño y alineación de usuario y botón de cerrar sesión */
-#estado-login {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-size: 16px; /* más pequeño */
-    position: relative;
-    top: 0;
-    right: 0;
-    padding: 0 10px;
-  }
   
-  #estado-login span {
-    color: #f0c040;
-    font-weight: bold;
-  }
-  
-  #estado-login button {
-    background: none;
-    border: none;
-    color: red;
-    font-size: 14px;
-    cursor: pointer;
-    padding: 0;
-  }
-  
-  .tabs {
-    display: flex;
-    gap: 10px;
-    margin-bottom: 20px;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  
-  .tabs button {
-    background-color: #222;
-    border: 1px solid #f0c040;
-    color: #f0c040;
-    padding: 8px 16px;
-    font-size: 1rem;
-    cursor: pointer;
-    border-radius: 8px;
-    transition: background 0.3s;
-  }
-  
-  .tabs button:hover {
-    background-color: #444;
-  }
-  
+ 

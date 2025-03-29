@@ -6,28 +6,26 @@ description: Perfil de Usuario
 comments: true
 ---
 
-  <link href="/learningmathematicas/assets/css/usuario.css" rel="stylesheet">
-  <script src="/learningmathematicas/assets/js/usuario.js" defer></script>
+<link href="/learningmathematicas/assets/css/usuario.css" rel="stylesheet">
+<script src="/learningmathematicas/assets/js/usuario.js" defer></script>
 
-  <div class="perfil-container">
-    <h1>Perfil de <span id="usuario-nick"></span></h1>
-  
-    <nav class="tabs">
-      <button onclick="mostrarSeccion('datos')">1. Datos del usuario</button>
-      <button onclick="mostrarSeccion('insignias')">2. Insignias obtenidas</button>
-      <button onclick="mostrarSeccion('cartas')">3. Colección de cartas</button>
-    </nav>
-  
-    <section id="seccion-datos" class="tab-content">
-      <ul id="datos-usuario"></ul>
-    </section>
-  
-    <section id="seccion-insignias" class="tab-content" style="display: none;">
-      <div id="galeria-insignias" class="galeria"></div>
-    </section>
-  
-    <section id="seccion-cartas" class="tab-content" style="display: none;">
-      <div id="galeria-cartas" class="galeria"></div>
-    </section>
+<div class="perfil-container">
+  <h1>Perfil de <span id="usuario-nick"></span></h1>
+
+  <div class="secciones">
+    <div class="seccion">
+      <h2 onclick="toggleSeccion(this)">Datos del usuario</h2>
+      <ul id="datos-usuario" class="contenido-seccion oculto"></ul>
+    </div>
+
+    <div class="seccion">
+      <h2 onclick="toggleSeccion(this)">Insignias obtenidas</h2>
+      <div id="galeria-insignias" class="galeria contenido-seccion oculto"></div>
+    </div>
+
+    <div class="seccion">
+      <h2 onclick="toggleSeccion(this)">Colección de cartas</h2>
+      <div id="galeria-cartas" class="galeria contenido-seccion oculto"></div>
+    </div>
   </div>
-
+</div>

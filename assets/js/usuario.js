@@ -46,15 +46,8 @@ document.addEventListener("DOMContentLoaded", async () => {
       contenedor.appendChild(img);
     });
   }
-  function mostrarSeccion(seccion) {
-    document.querySelectorAll('.tab-content').forEach(el => el.style.display = 'none');
-  
-    const id = {
-      datos: 'seccion-datos',
-      insignias: 'seccion-insignias',
-      cartas: 'seccion-cartas'
-    }[seccion];
-  
-    document.getElementById(id).style.display = 'block';
+  function toggleSeccion(header) {
+    const contenido = header.nextElementSibling;
+    contenido.classList.toggle("oculto");
   }
   
