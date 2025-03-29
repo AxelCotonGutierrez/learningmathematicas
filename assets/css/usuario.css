@@ -7,7 +7,7 @@ body {
   }
   
   .perfil-container {
-    padding: 2em;
+    padding: 2em 1em;
     max-width: 900px;
     margin: auto;
   }
@@ -20,6 +20,13 @@ body {
   ul {
     list-style: none;
     padding: 0;
+    margin: 1em auto;
+    max-width: 600px;
+  }
+  
+  ul li {
+    padding: 0.5em;
+    border-bottom: 1px solid #444;
   }
   
   .galeria {
@@ -27,6 +34,7 @@ body {
     flex-wrap: wrap;
     justify-content: center;
     gap: 10px;
+    margin-top: 1em;
   }
   
   .galeria img {
@@ -36,12 +44,29 @@ body {
     border: 2px solid #f0c040;
     border-radius: 10px;
     background-color: #222;
+    transition: transform 0.2s ease;
+  }
+  
+  .galeria img:hover {
+    transform: scale(1.1);
   }
   
   @media (max-width: 600px) {
+    .perfil-container {
+      padding: 1em;
+    }
+  
     .galeria img {
       width: 80px;
       height: 80px;
+    }
+  
+    h1 {
+      font-size: 1.5em;
+    }
+  
+    h2 {
+      font-size: 1.2em;
     }
   }
   
