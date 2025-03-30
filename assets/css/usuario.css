@@ -57,7 +57,21 @@ body {
     background-color: #333;
   }
   
-
+  .boton-logout {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  .boton-logout:hover {
+    background-color: darkred;
+  }
+  
   
   @media (max-width: 600px) {
     .perfil-container {
