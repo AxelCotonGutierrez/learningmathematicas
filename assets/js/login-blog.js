@@ -1,5 +1,5 @@
 function iniciarSesionDesdeBlog(nick, password) {
-  fetch("https://blog.gogelythegreat.es/Blog/registro_login.php", {
+  fetch("../php/registro_login.php", {
     method: "POST",
     headers: {
       "Content-Type": "application/x-www-form-urlencoded"
@@ -13,8 +13,8 @@ function iniciarSesionDesdeBlog(nick, password) {
         mostrarEstadoLogin();
         alert(`¡Bienvenido, ${nick}!`);
 
-        // Registrar acceso en la BD del NAS
-        fetch("https://blog.gogelythegreat.es/Blog/log_acceso.php", {
+        // Registrar acceso en la base de datos del NAS
+        fetch("../php/log_acceso.php", {
           method: "POST",
           headers: {
             "Content-Type": "application/x-www-form-urlencoded"
@@ -22,8 +22,8 @@ function iniciarSesionDesdeBlog(nick, password) {
           body: `nick=${encodeURIComponent(nick)}`
         });
 
-        // ✅ Redirigir automáticamente al blog
-        window.location.href = "https://axelcotongutierrez.github.io/learningmathematicas/";
+        // Redirigir a la página principal de la web
+        window.location.href = "/index.html";
       } else {
         alert("Usuario o contraseña incorrectos.");
       }
@@ -33,15 +33,17 @@ function iniciarSesionDesdeBlog(nick, password) {
     });
 }
 
-function mostrarEstadoLogin() {
-  const contenedor = document.getElementById("estado-login");
-  const usuario = localStorage.getItem("usuarioBlog");
+f
   if (usuario) {
     contenedor.innerHTML = `
-      <span style="color:#f0c040">👤 <a href="/learningmathematicas/usuario/" style="color:#f0c040; text-decoration:none;">${usuario.toUpperCase()}</a></span>
+      <span style="color:#f0c040">👤 
+        <a href="/usuario.html" style="color:#f0c040; text-decoration:none;">
+          ${usuario.toUpperCase()}
+        </a>
+      </span>
     `;
   } else {
-    contenedor.innerHTML = `<a href="/learningmathematicas/Login/">Iniciar sesión</a>`;
+    contenedor.innerHTML = `<a href="/Login/index.html">Iniciar sesión</a>`;
   }
 }
 
